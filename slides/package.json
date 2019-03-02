@@ -1,0 +1,16 @@
+{
+  "name": "interactive-front-end-development-slides",
+  "version": "1.0.0",
+  "description": "Markdown-based slides for Interactive Front-end Development course",
+  "main": "index.js",
+  "author": "Urmas Talimaa",
+  "license": "MIT",
+  "dependencies": {
+    "remarker": "^1.9.4"
+  },
+  "scripts": {
+    "build-all": "./build-all",
+    "build": "remarker build",
+    "serve": "remarker serve"
+  }
+}

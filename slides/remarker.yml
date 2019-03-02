@@ -1,0 +1,10 @@
+port: 6275
+dest: build
+title: 'Interactive Frontend Development'
+cssFiles: ['remarker.css']
+livereload: true
+livereloadPort: 35729
+remarkConfig:
+  highlightStyle: monokai
+  highlightLanguage: remark
+  highlightLines: true

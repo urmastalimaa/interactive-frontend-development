@@ -1,0 +1,4 @@
+--require test/TestHelper
+--recursive
+--reporter spec
+--ui bdd

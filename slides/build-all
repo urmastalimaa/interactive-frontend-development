@@ -1,0 +1,11 @@
+#!/bin/bash
+
+set -euo pipefail
+
+for SLIDE in intro js_ecosystem
+do
+  echo "Building $SLIDE"
+  ./node_modules/.bin/remarker build -s $SLIDE.md
+  rm -f $SLIDE.html
+  mv ./build/index.html $SLIDE.html
+done
