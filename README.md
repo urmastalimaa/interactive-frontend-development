@@ -11,6 +11,8 @@ example code.
   * [Course intro slides](https://urmastalimaa.github.io/interactive-frontend-development/slides/intro.html)
   * [JavaScript ecosystem slides](https://urmastalimaa.github.io/interactive-frontend-development/slides/js_ecosystem.html)
   * [JavaScript ecosystem book chapter](https://urmastalimaa.github.io/interactive-frontend-development/book/lecture_1/)
+* Lecture 2 - Introduction to React
+  * [Introduction to React slides](https://urmastalimaa.github.io/interactive-frontend-development/slides/react_intro.html)
 
 ## Concepts and techniques
 The course will concentrate on declarative programming and extensive testing.

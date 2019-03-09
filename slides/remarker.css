@@ -28,6 +28,11 @@ p, ul {
   color: #695d46;
 }
 
+a {
+  color: #ce93d8;
+  text-decoration-color: #ce93d859;
+}
+
 .right-image {
   width: 100%;
   text-align: right;
@@ -49,4 +54,17 @@ p, ul {
   flex-direction: row;
   justify-content: space-evenly;
   margin: 0px 10% 0px 10%;
+}
+
+.footer {
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  color: #9099a1;
+  padding-top: 1em;
+}
+
+.footer a {
+  color: #9099a1;
+  text-decoration: none;
 }
