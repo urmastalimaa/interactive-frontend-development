@@ -427,7 +427,7 @@ myDiv.onclick = function(){
 
 [Requirements](https://github.com/urmastalimaa/interactive-frontend-development/blob/master/homework/thump/exercise1.md)
 
-Deadline 24/03/2017 23:59
+Deadline 24/03/2019 23:59
 
 **Only submit what is yours**
 

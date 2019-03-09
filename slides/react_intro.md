@@ -684,7 +684,7 @@ Excellent tutorials, examples and API documentation
 
 **Only submit what is yours**
 
-Deadline 31/03/2017 23:59
+Deadline 31/03/2019 23:59
 
 Unit tests for **React components only** are **not** mandatory
 
