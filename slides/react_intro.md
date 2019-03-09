@@ -694,7 +694,7 @@ Unit tests for **React components only** are **not** mandatory
 
 If you need to provide further information, include it in README.md.
 
-Submit zipped file to https://courses.cs.ut.ee/2018/react/Main/Submit
+Submit zipped file to https://courses.cs.ut.ee/2019/react/Main/Submit
 
 Don’t include node_modules/ or .git/, .hg/, .svn/, make sure that your zipped
 file size is reasonable. You can use/modify/extend [this
