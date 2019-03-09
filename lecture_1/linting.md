@@ -22,11 +22,15 @@ Each error is caused by a specific rule,
 
 ## Explanation
 
-`yarn lint` refers to the `lint` script that is defined in [_package.json_](./package.json#L29). This is equivalent to running `./node_modules/.bin/eslint src/` from the command line.
-_eslint_ will validate that JavaScript source files pass a rules that help to avoid common errors or confusing code.
-It also enforces formatting to an extent.
+`yarn lint` refers to the `lint` script that is defined in
+[_package.json_](https://github.com/urmastalimaa/interactive-frontend-development/tree/master/lecture_1/package.json#L31).
+This is equivalent to running `./node_modules/.bin/eslint src/` from the
+command line.  _eslint_ will validate that JavaScript source files pass a rules
+that help to avoid common errors or confusing code.  It also enforces
+formatting to an extent.
 
-_eslint_ ruleset is configured in [_.eslintrc_](./.eslintrc).
+_eslint_ ruleset is configured in
+[_.eslintrc_](https://github.com/urmastalimaa/interactive-frontend-development/tree/master/lecture_1/.eslintrc).
 
 * _import_ plugin is used to validate that import statements resolve
 * _eslint:recommended_ and _google_ rulesets are used as a baseline.

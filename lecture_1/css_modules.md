@@ -33,8 +33,10 @@ basic example is given in this example.
 
 ### Explanation
 
-[_webpack.config.js_](./webpack.config.js) specifies two loaders for `.css`
-files: 'style-loader' and 'css-loader'. The first ones allows `import`-ing a
-CSS file in a JavaScript file and the latter one allows using CSS imports.
-There are other ways to output CSS with Webpack, but importing the CSS file in
-the [top-level JavaScript file](./src/index.js) suffices for this course.
+[_webpack.config.js_](https://github.com/urmastalimaa/interactive-frontend-development/tree/master/lecture_1/webpack.config.js)
+specifies two loaders for `.css` files: 'style-loader' and 'css-loader'. The
+first ones allows `import`-ing a CSS file in a JavaScript file and the latter
+one allows using CSS imports.  There are other ways to output CSS with Webpack,
+but importing the CSS file in the [top-level JavaScript
+file](https://github.com/urmastalimaa/interactive-frontend-development/tree/master/lecture_1/src/index.js)
+suffices for this course.

@@ -35,17 +35,19 @@ having saner defaults.
 ```
 yarn build
 ```
-`build` refers to the `build` script that is defined in [_package.json_](./package.json#L26). This is
-equivalent to running `./node_modules/.bin/webpack --config webpack.config.js` from the command
-line.
+`build` refers to the `build` script that is defined in
+[_package.json_](https://github.com/urmastalimaa/interactive-frontend-development/tree/master/lecture_1/package.json#L28).
+This is equivalent to running `./node_modules/.bin/webpack --config
+webpack.config.js` from the command line.
 
 ### Webpack
 
 Webpack generates a JavaScript file (_public/app.js_) using the specified
-configuration file ([_webpack.config.js_](./webpack.config.js)). Webpack resolves all module imports
-and outputs one file that can be included in the browser using a `<script>`
-tag. Various plugins can be included in the Webpack build process to perform
-additional changes to the source files.
+configuration file
+([_webpack.config.js_](https://github.com/urmastalimaa/interactive-frontend-development/tree/master/lecture_1/webpack.config.js)).
+Webpack resolves all module imports and outputs one file that can be included
+in the browser using a `<script>` tag. Various plugins can be included in the
+Webpack build process to perform additional changes to the source files.
 
 #### Babel
 
@@ -65,28 +67,36 @@ remove "IE 10") and see how the distribution file changes (search for `class`).
 
 #### Building on source file change
 
-`yarn build:watch` refers to the `build:watch` script that is defined in [_package.json_](./package.json#L27).
-This is equivalent to running `./node_modules/.bin/webpack --config webpack.config.js --watch`. The
-`watch` flag instructs Webpack to automatically rebuild the bundle whenever any
-source file changes. New changes are visible after refreshing the web
-application in the browser.
+`yarn build:watch` refers to the `build:watch` script that is defined in
+[_package.json_](https://github.com/urmastalimaa/interactive-frontend-development/tree/master/lecture_1/package.json#L29).
+This is equivalent to running `./node_modules/.bin/webpack --config
+webpack.config.js --watch`. The `watch` flag instructs Webpack to automatically
+rebuild the bundle whenever any source file changes. New changes are visible
+after refreshing the web application in the browser.
 
 [Learn more][1]
 
 #### Refreshing whenever source files change
 
-`yarn start` refers to the `start` script that is defined in [_package.json_](./package.json#L28).
-This is equivalent to running `./node_modules/.bin/webpack-dev-server --open --config webpack.config.js`. The `open` flag opens the default browser on the specified port (default 8080) on localhost.
+`yarn start` refers to the `start` script that is defined in
+[_package.json_](https://github.com/urmastalimaa/interactive-frontend-development/tree/master/lecture_1/package.json#L30).
+This is equivalent to running `./node_modules/.bin/webpack-dev-server --open
+--config webpack.config.js`. The `open` flag opens the default browser on the
+specified port (default 8080) on localhost.
 
-Try changing [src/index.js](./src/index.js) and see that the browser pages refreshes automatically once you save your change.
+Try changing
+[src/index.js](https://github.com/urmastalimaa/interactive-frontend-development/tree/master/lecture_1/src/index.js)
+and see that the browser pages refreshes automatically once you save your
+change.
 
 [Learn more][2]
 
 #### Source Maps
 
-[_webpack.config.js_](./webpack.config.js#L13) defines `devtool: "inline-source-map"` which instructs
-Webpack to add a link to the source code definitions to the end of app.js.
-This link is call a _source map_.
+[_webpack.config.js_](https://github.com/urmastalimaa/interactive-frontend-development/tree/master/lecture_1/webpack.config.js#L13)
+defines `devtool: "inline-source-map"` which instructs Webpack to add a link to
+the source code definitions to the end of app.js.  This link is call a _source
+map_.
 
 A _source map_ is a file which maps the transformed source (app.js) to the
 original source (multiple files in src.js). In the current case, a _source map_
