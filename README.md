@@ -14,6 +14,8 @@ example code.
 * Lecture 2 - Introduction to React
   * [Introduction to React slides](https://urmastalimaa.github.io/interactive-frontend-development/slides/react_intro.html)
   * [Introduction to React book chapter](https://urmastalimaa.github.io/interactive-frontend-development/book/lecture_2/)
+* Lecture 3 - Expanding on React, testing components
+  * [Expanding on React slides](https://urmastalimaa.github.io/interactive-frontend-development/slides/react_2.html)
 
 ## Concepts and techniques
 The course will concentrate on declarative programming and extensive testing.
