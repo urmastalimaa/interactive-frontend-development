@@ -425,7 +425,7 @@ explored as part of homework
 [https://developer.mozilla.org/en-US/docs/Web](https://developer.mozilla.org/en-US/docs/Web)
 
 * `document.querySelector(cssSelector)`
-  * Accepts CSS Selectors http://www.w3schools.com/cssref/css_selectors.asp
+  * Accepts [CSS Selectors](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors)
   * Returns first match or `null`
 * `document.querySelectorAll(cssSelector)`
 * `document.createElement(tagName)`
