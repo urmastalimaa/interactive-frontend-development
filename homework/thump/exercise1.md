@@ -1,5 +1,11 @@
 # Homework 1 - The Human Metronome Project
 
+* Example code from lecture 1 can be used as a basis.
+* Make sure you understand what each piece that you do use is doing and pick
+  only the part that are necessary to fulfill these requirements.
+* Read through **all the requirements** carefully, there are a lot of them
+* Ask any questions on message-board
+
 ## Configure initial project and specify dependencies
 
 * Create *index.html* 

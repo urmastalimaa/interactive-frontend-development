@@ -500,6 +500,13 @@ Only assume NodeJS v10.15.3 is available locally and nothing else
 Feel free to use tools other than described (provided they are installed with
 `yarn install`), but don’t expect full support or less-strict grading if you do.
 
+???
+
+* It is not necessary to go through the requirements list fully.
+* Just stress that it is important to read through **all** the requirements
+* It is okay to combine lecture code, but you must understand it and pick only
+  the necessary parts
+
 ---
 
 # Homework

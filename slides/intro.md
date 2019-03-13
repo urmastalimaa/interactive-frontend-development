@@ -13,6 +13,15 @@ class: middle, center
 
 Presenter display slide notes
 
+Pre-lecture checklist
+
+* Switching between mirroring and non-mirroring works
+* Unrelated tabs and windows closed or minimized
+* Do not disturb mode **ON**
+* Slides cloned, one has presenters mode on
+* Dependencies installed and scripts are working for lecture example code
+* Terminal(s) open with code and window to run scripts
+
 ---
 
 # History
