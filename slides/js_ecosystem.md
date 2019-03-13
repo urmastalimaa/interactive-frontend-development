@@ -248,11 +248,23 @@ JavaScript runs in the browser, no native module system
 	* `export default Foo;`
 	* `import Foo from './Foo';`
 
+???
+
+In lecture ignore this slide, go straight to example
+
 ---
 
 # Example
 
 [Building and modules using Webpack](https://github.com/urmastalimaa/interactive-frontend-development/blob/master/lecture_1/building.md#webpack)
+
+???
+
+Go over this example relatively fast
+
+* Execute `yarn build`
+* Open `index.html` to demonstrate application working
+* Show `app.js` that modules are resolved in the final build
 
 ---
 
@@ -283,6 +295,12 @@ Examples of languages that transpile to JavaScript (ES5):
 
 [Building - Babel](https://github.com/urmastalimaa/interactive-frontend-development/blob/master/lecture_1/building.md#babel)
 
+???
+
+* Show babel config in webpack.config.js
+* Show `class` definitions in final build with and without `IE10` in the
+  browser list to demonstrate transpiling.
+
 ---
 
 # Live reload
@@ -300,6 +318,14 @@ Examples of languages that transpile to JavaScript (ES5):
 # Example continued
 
 [Building - Webpack Dev Server](https://github.com/urmastalimaa/interactive-frontend-development/blob/master/lecture_1/building.md#refreshing-whenever-source-files-change)
+
+???
+
+This example should stress the importance of having a fast development loop
+
+* Exectute `yarn start`
+* Change some visible part of the app (e.g title) to show reloading
+* Comment that this is highly more productive than manually building and reloading
 
 ---
 
@@ -319,6 +345,10 @@ Source maps need to be configured in the build tool.
 ???
 
 Go straight to the example, leave descriptions for those not attending the lecture.
+
+* Jump to source in the console logs to demonstrate source maps in effect
+* Set a breakpoint in the source map and show that you can also debug through
+the source map even though the final build is different
 
 ---
 
@@ -344,6 +374,11 @@ Go straight to the example, leave descriptions for those not attending the lectu
 
 Go straight to the example, leave descriptions for those not attending the lecture.
 
+* execute `yarn lint`
+* fix the failures and show why they matter
+* stress that it is important to lint continuously
+  * e.g through a `prestart` hook
+
 ---
 
 # Unit tests
@@ -366,24 +401,47 @@ Go straight to the example, leave descriptions for those not attending the lectu
   * [Mocha](https://mochajs.org/) is simple and easy to start with
 * There are also a variety of assertion libraries which simplify checking test results
 	* [Chai](https://chaijs.com/) is pretty popular and integrates well with Mocha.
-* [Unit testing code example](https://github.com/urmastalimaa/interactive-frontend-development/blob/master/lecture_1/unit_tests.md)
+
+---
+
+# Example
+
+[Unit testing code example](https://github.com/urmastalimaa/interactive-frontend-development/blob/master/lecture_1/unit_tests.md)
 
 ???
 
 Go straight to the example, leave descriptions for those not attending the lecture.
 
+* Don't describe mocha & chai too much, say that the interfaces should be
+explored as part of homework
+* Stress that tests must also run continuously
+* Always execute tests before packaging the homework for submission
+* Code that isn't tested will assuredly break unexpectedly
+
 ---
 
 # DOM manipulation
 
+[https://developer.mozilla.org/en-US/docs/Web](https://developer.mozilla.org/en-US/docs/Web)
+
 * `document.querySelector(cssSelector)`
-  * Accepts CSS Selectors http://www.w3schools.com/cssref/css_selectors.asp
+  * Accepts [CSS Selectors](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors)
   * Returns first match or `null`
 * `document.querySelectorAll(cssSelector)`
 * `document.createElement(tagName)`
 * `Element.appendChild(otherElement)`
 * `Element.innerHTML = htmlString`
 * `Element.onclick = myFunction;`
+
+???
+
+Don't stay on this slide too much
+
+* Say that the exploring the exact details of these functions and interfaces
+  are part of homework
+* This is only necessary to perform homework 1
+* A little exercise in reading documentation and combining lecture example code
+  to build something on their own
 
 ---
 
@@ -405,6 +463,12 @@ myDiv.onclick = function(){
 * DOM can only be manipulated when it has been parsed (_DOM is ready_)
 * [Running your code at the right time](https://www.kirupa.com/html5/running_your_code_at_the_right_time.htm)
 * `<script src="..." defer=true>` is the simplest option to **defer** JavaScript execution until DOM is ready
+
+???
+
+Skim through here, just a quick comment on that the HTML file is loaded
+sequentally and it is important to wait until the whole document is evaluated
+before trying to change it
 
 ---
 
@@ -435,6 +499,13 @@ Only assume NodeJS v10.15.3 is available locally and nothing else
 
 Feel free to use tools other than described (provided they are installed with
 `yarn install`), but don’t expect full support or less-strict grading if you do.
+
+???
+
+* It is not necessary to go through the requirements list fully.
+* Just stress that it is important to read through **all** the requirements
+* It is okay to combine lecture code, but you must understand it and pick only
+  the necessary parts
 
 ---
 
