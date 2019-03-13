@@ -14,7 +14,9 @@
   * Set a *title* (_The Human Metronome Project_) to the document
 *  button
   * Create a button using `Document.createElement` which displays _milliseconds
-    differing from a full second at the time of the click)_ in index.js.
+    differing from a full second at the time of the click_ in index.js.
+    * e.g when user clicks the button at `15 April 12:04:55.038`, the button
+      should display `038`
   * The button must also display the number of clicks so far after the time difference.
   * Define a class `Metronome` with methods `createTimeDiff` and `getCount`. Put the class in a separate source file.
   * Add at least 2 unit tests for `Metronome`.
