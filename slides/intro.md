@@ -204,3 +204,14 @@ Reading other's code daily for 7 years has taught a lot.
 * Sign up, **subscribe** and post questions and answers
 * Best way to learn is to help others
 * urmas.talimaa@gmail.com if message-board absolutely cannot be used
+
+---
+
+# Materials
+
+* All materials including slides are available through the [course repository](https://github.com/urmastalimaa/interactive-frontend-development)
+* The materials can be read in book format (links in top-level README.md) or
+  through the GitHub interface
+* There are _a lot of_ blogs and guides online
+  * Blog quality varies wildly
+  * Official documentation is best
