@@ -12,7 +12,7 @@
   * Must include one JavaScript file (e.g /public/app.js) in document *head*
   * The JavaScript file must be executed after *DOM* has loaded
   * Set a *title* (_The Human Metronome Project_) to the document
-*  button
+* button
   * Create a button using `Document.createElement` which displays _milliseconds
     differing from a full second at the time of the click_ in index.js.
     * e.g when user clicks the button at `15 April 12:04:55.038`, the button
