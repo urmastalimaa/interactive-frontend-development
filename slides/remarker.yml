@@ -5,6 +5,6 @@ cssFiles: ['remarker.css']
 livereload: true
 livereloadPort: 35729
 remarkConfig:
-  highlightStyle: monokai
+  highlightStyle: darcula
   highlightLanguage: remark
   highlightLines: true
