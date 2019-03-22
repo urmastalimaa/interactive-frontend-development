@@ -701,3 +701,7 @@ Don’t include node_modules/ or .git/, .hg/, .svn/, make sure that your zipped
 file size is reasonable. You can use/modify/extend [this
 script](https://gist.github.com/urmastalimaa/70edc0728cb711234f42) (usage:
 `node zipHomework.js`) to automate zipping.
+
+---
+
+.full-image[![Homework-2-result](assets/homework-2-result.gif)]
