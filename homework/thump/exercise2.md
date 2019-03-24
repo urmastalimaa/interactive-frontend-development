@@ -4,6 +4,15 @@
 
 ## Build a Metronome game in React
 
+* Do not use react bootstrappers (e.g _create-react-app_)
+  * In this context they take away the opportunity to learn
+* Do not keep homework 1 solution in your submission
+  * It is in your version control history, just delete it
+* Put components into different modules (files) 
+  * It is easier for yourself as well as others to read
+* Do not put application logic into React
+  * React is a view library
+
 ### Game setup
 
 * Create an user input for player name
