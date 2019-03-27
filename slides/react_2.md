@@ -403,3 +403,7 @@ expect(onClick).to.have.been.calledWith('foo'); // sinon-chai
 * React tests are the focal point of this homework, they make up most of the
   grade
 * **Only submit what is yours**
+
+---
+
+.full-image[![Homework-3-result](assets/homework-3-result.gif)]
