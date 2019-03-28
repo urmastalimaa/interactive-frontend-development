@@ -52,7 +52,7 @@ for how _sinon_ and _enzyme_ integration is set up.
   includes examples on how to test collection-like components.
 * [`CommentFormTest`](https://github.com/urmastalimaa/interactive-frontend-development/tree/master/lecture_3/test/CommentFormTest.js)
   includes examples on how to test form components.
-* [`AppTest`](https://github.com/urmastalimaa/interactive-frontend-development/tree/master/lecture_3/test/containers/AppTest.js)
+* [`AppTest`](https://github.com/urmastalimaa/interactive-frontend-development/tree/master/lecture_3/test/AppTest.js)
   leverages shallow rendering to test logic inside container components.
 
 ## Debugging tests in NodeJS
