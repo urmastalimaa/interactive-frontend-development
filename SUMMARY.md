@@ -10,3 +10,7 @@
   * [State in React](./lecture_2/src/state_example/README.md)
   * [Pure function components](./lecture_2/src/pure_function_example/README.md)
   * [User input](./lecture_2/src/user_input_example/README.md)
+* [Lecture 3 - Expanding on React](./lecture_3/README.md)
+  * [Debugging](./lecture_3/src/debugging/README.md)
+  * [Types of components](./lecture_3/src/types_of_components/README.md)
+  * [Testing React components](./lecture_3/test/README.md)
