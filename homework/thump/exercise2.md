@@ -10,8 +10,6 @@
   * It is in your version control history, just delete it
 * Put components into different modules (files) 
   * It is easier for yourself as well as others to read
-* Do not put application logic into React
-  * React is a view library
 
 ### Game setup
 
