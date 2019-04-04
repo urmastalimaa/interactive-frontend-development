@@ -398,6 +398,7 @@ expect(onClick).to.have.been.calledWith('foo'); // sinon-chai
 # Homework
 
 [Requirements](https://github.com/urmastalimaa/interactive-frontend-development/blob/master/homework/thump/exercise3.md)
+
 * Deadline 07/04/2019 23:59
 * Submit zipped file to https://courses.cs.ut.ee/2019/react/Main/Submit
 * React tests are the focal point of this homework, they make up most of the
