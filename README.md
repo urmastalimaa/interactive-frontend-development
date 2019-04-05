@@ -17,6 +17,9 @@ example code.
 * Lecture 3 - Expanding on React, testing components
   * [Expanding on React slides](https://urmastalimaa.github.io/interactive-frontend-development/slides/react_2.html)
   * [Expanding on React book chapter](https://urmastalimaa.github.io/interactive-frontend-development/book/lecture_3/)
+* Lecture 4 - State management with Redux
+  * [Expanding on React slides](https://urmastalimaa.github.io/interactive-frontend-development/slides/redux.html)
+  * [Expanding on React book chapter](https://urmastalimaa.github.io/interactive-frontend-development/book/lecture_4/)
 
 ## Concepts and techniques
 The course will concentrate on declarative programming and extensive testing.
