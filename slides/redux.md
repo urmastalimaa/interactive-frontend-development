@@ -166,7 +166,7 @@ layer (works best with declarative view layers)
 
 ---
 
-.right-image[![Flux diagram](assets/flux-diagram.png)]
+.full-image[![Flux diagram](assets/flux-diagram.png)]
 
 From https://blog.krawaller.se/posts/react-js-architecture-flux-vs-reflux/
 
