@@ -17,6 +17,13 @@ describe('postComment', () => {
     let store;
     let fetch;
 
+    const waitForPromiseToSettle = (fn) => {
+      // Promises by design resolve/reject on the *next event loop*.
+      // We can delay execution of assertion code also by *one event loop* by
+      // delaying it by 0 using setTimeout.
+      setTimeout(fn, 0);
+    };
+
     beforeEach(() => {
       const initialState = {};
       store = createMockStore(initialState);
@@ -44,31 +51,39 @@ describe('postComment', () => {
       expect(firstCommentId).not.to.eql(secondCommentId);
     });
 
-    it('dispatches comment post failed when fetch fails', () => {
+    it('dispatches comment post failed when fetch fails', (done) => {
       fetch.returns(Promise.reject(new Error({error: 'error'})));
 
-      return store.dispatch(postComment({author: 'author', text: 'text'}, fetch))
-        .catch(() => {
-          expect(store.getActions()).to.deep.contain({
-            type: POST_COMMENT_FAILED,
-            payload: {localId: getLastLocalCommentId(), error: 'error'}
-          });
+      store.dispatch(postComment({author: 'author', text: 'text'}, fetch));
+
+      waitForPromiseToSettle(() => {
+        expect(store.getActions()).to.deep.contain({
+          type: POST_COMMENT_FAILED,
+          payload: {localId: getLastLocalCommentId(), error: 'Service unreachable'}
         });
+
+        // done must be used as the test run asynchronously
+        // otherwise the test would run to completion before our assertions run
+        done();
+      });
     });
 
-    it('dispatches comment post succeeded when fetch succeeds', () => {
+    it('dispatches comment post succeeded when fetch succeeds', (done) => {
       fetch.returns(Promise.resolve({
         ok: true,
         json: () => Promise.resolve({id: 'comment-id'})
       }));
 
-      return store.dispatch(postComment({author: 'author', text: 'text'}, fetch))
-        .then(() => {
-          expect(store.getActions()).to.deep.contain({
-            type: POST_COMMENT_SUCCEEDED,
-            payload: {localId: getLastLocalCommentId(), id: 'comment-id'}
-          });
+      store.dispatch(postComment({author: 'author', text: 'text'}, fetch));
+
+      waitForPromiseToSettle(() => {
+        expect(store.getActions()).to.deep.contain({
+          type: POST_COMMENT_SUCCEEDED,
+          payload: {localId: getLastLocalCommentId(), id: 'comment-id'}
         });
+
+        done();
+      });
     });
   });
 });
