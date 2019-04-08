@@ -12,19 +12,19 @@ global.sinon = sinon;
 chai.use(chaiEnzyme());
 chai.use(sinonChai);
 
-require('babel-register')({
+require('@babel/register')({
   babelrc: false,
   presets: [
     [
-      'env',
+      '@babel/env',
       {
         'modules': 'commonjs',
-        'targets': {'node': '8.9'}
+        'targets': {'node': '10.15'}
       }
     ],
-    ['react']
+    ['@babel/preset-react']
   ],
-  plugins: ['transform-object-rest-spread']
+  plugins: ['@babel/plugin-proposal-object-rest-spread']
 });
 
 

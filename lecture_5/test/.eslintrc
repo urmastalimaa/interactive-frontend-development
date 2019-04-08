@@ -11,8 +11,7 @@
   },
   "globals": {
     "expect": true,
-    "sinon": true,
-    "Promise": true
+    "sinon": true
   },
   "plugins": ["react", "import"],
   "extends": [
@@ -22,9 +21,16 @@
     "plugin:import/errors",
     "plugin:import/warnings"
   ],
-  rules: {
+  "rules": {
     "max-len": ["error", 120],
     "require-jsdoc": "off",
-    "comma-dangle": "off"
+    "comma-dangle": "off",
+    "indent": [2, 2],
+    "react/jsx-indent": [2, 2]
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
   }
 }

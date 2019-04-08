@@ -8,23 +8,25 @@
   "env": {
     "browser": true
   },
-  "plugins": [
-    "react",
-    "react-redux",
-    "import"
-  ],
+  "plugins": ["react", "import"],
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended",
-    "plugin:react-redux/recommended",
     "google",
     "plugin:import/errors",
     "plugin:import/warnings"
   ],
-  rules: {
+  "rules": {
     "max-len": ["error", 120],
     "require-jsdoc": "off",
     "comma-dangle": "off",
+    "indent": [2, 2],
+    "react/jsx-indent": [2, 2],
     "react-redux/prefer-separate-component-file": "off"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
   }
 }
