@@ -11,7 +11,8 @@
   },
   "globals": {
     "expect": true,
-    "sinon": true
+    "sinon": true,
+    "Promise": true
   },
   "plugins": ["react", "import"],
   "extends": [

@@ -7,10 +7,10 @@ import Comment from '../../../src/async_process_basics/components/Comment';
 describe('CommentList', () => {
   it('renders no Comment components without comments', () => {
     expect(shallow(
-        <CommentList
-          comments={[]}
-          onRequestComments={sinon.stub()}
-          fetchState={{inFlight: false}} />
+      <CommentList
+        comments={[]}
+        onRequestComments={sinon.stub()}
+        fetchState={{inFlight: false}} />
     )).to.not.contain.descendants(Comment);
   });
 
