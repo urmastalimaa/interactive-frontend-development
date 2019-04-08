@@ -29,17 +29,21 @@ clarity and explicity of Redux.
 
 ### CommentServerMiddleware
 
-In this example [CommentListContainer](./containers/CommentListContainer.js)
-and [CommentFormContainer](./containers/CommentFormContainer.js) have been
-changed to simply express the desire to perform an action, the containers no
-longer directly call functions that make asynchronous calls. This means that
-the React/Redux containers do not call functions tied to any particular Server
-interface.
+In this example
+[CommentListContainer](https://github.com/urmastalimaa/interactive-frontend-development/lecture_5/src/containers/CommentListContainer.js)
+and
+[CommentFormContainer](https://github.com/urmastalimaa/interactive-frontend-development/lecture_5/src/containers/CommentFormContainer.js)
+have been changed to simply express the desire to perform an action, the
+containers no longer directly call functions that make asynchronous calls. This
+means that the React/Redux containers do not call functions tied to any
+particular Server interface.
 
-Instead [CommentServerMiddleware](./middlewares/CommentServerMiddleware.js) has
-been added that listens for actions that should fire requests to the server. It
-then initiates the request and dispatches success/failure actions accordingly.
+Instead
+[CommentServerMiddleware](https://github.com/urmastalimaa/interactive-frontend-development/lecture_5/src/middlewares/CommentServerMiddleware.js)
+has been added that listens for actions that should fire requests to the
+server. It then initiates the request and dispatches success/failure actions
+accordingly.
 
 The middleware can track in-flight requests, reuse or cancel them when
-appropriate. The middleware can also hold other state related to the backend
+appropriate. The middleware can also hold other state related to the back-end
 server.
