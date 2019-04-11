@@ -1,4 +1,4 @@
-name: react_intro
+name: react_2
 class: middle, center
 
 # Interactive Front-end Development

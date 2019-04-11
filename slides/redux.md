@@ -1,4 +1,4 @@
-name: react_intro
+name: redux
 class: middle, center
 
 # Interactive Front-end Development
