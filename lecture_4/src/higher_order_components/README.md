@@ -18,7 +18,7 @@ functions as a result.
 enhanced React components. This is a standard pattern which is present in most
 contexts that deal with composable objects.
 
-Check out [HigherOrderComponentsExample](https://github.com/urmastalimaa/interactive-frontend-development/lecture_4/src/higher_order_components/HigherOrderComponentsExample.js).
+Check out [HigherOrderComponentsExample](https://github.com/urmastalimaa/interactive-frontend-development/blob/master/lecture_4/src/higher_order_components/HigherOrderComponentsExample.js).
 
 ## Higher-Order Components vs Hooks
 
