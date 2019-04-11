@@ -21,7 +21,7 @@ All application state is captured in a single JavaScript object. That object is
 stored in Redux store. The only way to modify that object (and therefore
 application state) is to dispatch actions. 
 
-[Example store](https://github.com/urmastalimaa/interactive-frontend-development/lecture_4/src/redux_introduction/ReduxExample.js#L20)
+[Example store](https://github.com/urmastalimaa/interactive-frontend-development/blob/master/lecture_4/src/redux_introduction/ReduxExample.js#L20)
 
 ### Actions
 
@@ -32,7 +32,7 @@ change the application state.
 
 [Flux standard format](https://github.com/acdlite/flux-standard-action) is used for actions.
 
-[Example actions](https://github.com/urmastalimaa/interactive-frontend-development/lecture_4/src/redux_introduction/ReduxExample.js#L26)
+[Example actions](https://github.com/urmastalimaa/interactive-frontend-development/blob/master/lecture_4/src/redux_introduction/ReduxExample.js#L26)
 
 ### Reducers
 
@@ -44,6 +44,6 @@ A reducer usually switches over the action type to handle different types of
 actions differently. If a reducer encounters an unknown action, it must return
 the state as it is.
 
-[Example reducer](https://github.com/urmastalimaa/interactive-frontend-development/lecture_4/src/redux_introduction/ReduxExample.js#L5)
+[Example reducer](https://github.com/urmastalimaa/interactive-frontend-development/blob/master/lecture_4/src/redux_introduction/ReduxExample.js#L5)
 
 [Learn more about redux](https://redux.js.org)
