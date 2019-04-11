@@ -11,7 +11,7 @@ Open _Redux combine reducers example_ subpage.
 ## New dependencies
 
 * [eslint-plugin-react-redux](https://github.com/DianaSuvorova/eslint-plugin-react-redux)
-  has been added to [package.json](https://github.com/urmastalimaa/interactive-frontend-development/lecture_4/package.json#L26)
+  has been added to [package.json](https://github.com/urmastalimaa/interactive-frontend-development/blob/master/lecture_4/package.json#L26)
 
 ## New functionality
 

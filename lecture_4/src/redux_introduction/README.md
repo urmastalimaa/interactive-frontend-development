@@ -10,7 +10,7 @@ Open _Redux introduction_ subpage.
 
 ## New dependencies
 
-* [Redux](https://github.com/reactjs/redux) has been added to [package.json](https://github.com/urmastalimaa/interactive-frontend-development/lecture_4/package.json#L50)
+* [Redux](https://github.com/reactjs/redux) has been added to [package.json](https://github.com/urmastalimaa/interactive-frontend-development/blob/master/lecture_4/package.json#L50)
 
 ## Redux
 

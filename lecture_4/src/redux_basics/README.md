@@ -13,7 +13,7 @@ Open _Redux basics example_ subpage.
 ## New dependencies
 
 * [React-Redux](https://github.com/reactjs/react-redux) has been added to
-  [package.json](https://github.com/urmastalimaa/interactive-frontend-development/lecture_4/package.json#L49)
+  [package.json](https://github.com/urmastalimaa/interactive-frontend-development/blob/master/lecture_4/package.json#L49)
 
 ## React with Redux
 
