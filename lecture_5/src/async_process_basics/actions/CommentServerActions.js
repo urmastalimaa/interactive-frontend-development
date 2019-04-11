@@ -41,7 +41,7 @@ export const postComment = ({author, text, localId}, fetch = window.fetch) => {
         );
       }
     }).catch((error) => {
-      dispatch(dispatch(postCommentFailed({localId, error: 'Service unreachable'})));
+      dispatch(postCommentFailed({localId, error: 'Service unreachable'}));
     });
   };
 };
