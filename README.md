@@ -20,6 +20,9 @@ example code.
 * Lecture 4 - State management with Redux
   * [Expanding on React slides](https://urmastalimaa.github.io/interactive-frontend-development/slides/redux.html)
   * [Expanding on React book chapter](https://urmastalimaa.github.io/interactive-frontend-development/book/lecture_4/)
+* Lecture 5 - Redux middlewares and asynchronous processes
+  * [Async Redux slides](https://urmastalimaa.github.io/interactive-frontend-development/slides/redux_async.html)
+  * [Async Redux book chapter](https://urmastalimaa.github.io/interactive-frontend-development/book/lecture_5/)
 
 ## Concepts and techniques
 The course will concentrate on declarative programming and extensive testing.
