@@ -1,0 +1,32 @@
+{
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "env": {
+    "browser": true
+  },
+  "plugins": ["react", "import"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "google",
+    "plugin:import/errors",
+    "plugin:import/warnings"
+  ],
+  "rules": {
+    "max-len": ["error", 120],
+    "require-jsdoc": "off",
+    "comma-dangle": "off",
+    "indent": [2, 2],
+    "react/jsx-indent": [2, 2],
+    "react-redux/prefer-separate-component-file": "off"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
+}
