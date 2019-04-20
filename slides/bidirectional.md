@@ -392,12 +392,18 @@ If anything fails, the maintained object is inconsistent **until user refreshes*
 # Homework
               
 .left-half[
-* [Requirements](https://github.com/urmastalimaa/interactive-frontend-development/blob/master/homework/thump/exercise6.md)
-* React - Redux are all about simple, reusable components. Make good use of that.
-* Tests are an inseparable part of your homework! Write them first (or at least together with each piece of code).
+  * [Requirements](https://github.com/urmastalimaa/interactive-frontend-development/blob/master/homework/thump/exercise6.md)
+  * React - Redux are all about simple, reusable components. Make good use of that.
+  * Tests are an inseparable part of your homework! Write them first (or at least together with each piece of code).
 ]
 
 .right-half[![I find your lack of testing disturbing](assets/lack-of-testing.jpg)]
+
+---
+
+# Homework
+
+.full-image[![Homework 6 result](assets/homework-6-result.png)]
 
 ---
 
