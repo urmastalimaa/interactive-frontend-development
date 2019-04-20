@@ -16,5 +16,3 @@ to achieve it.
 ## Websocket guarantees
 
 * What message delivery guarantees do WebSockets provide?
-
-[_Back_](../README.md)

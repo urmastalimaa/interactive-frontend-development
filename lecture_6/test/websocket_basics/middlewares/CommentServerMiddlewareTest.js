@@ -24,7 +24,7 @@ describe('postComment', () => {
     });
 
     it('dispatches comment post failed when fetch fails', () => {
-      fetch.returns(Promise.reject({error: 'error'}));
+      fetch.returns(Promise.reject(new Error({error: 'error'})));
       const localId = 'local-id';
 
       return store.dispatch(postComment({author: 'author', text: 'text', localId}, fetch))

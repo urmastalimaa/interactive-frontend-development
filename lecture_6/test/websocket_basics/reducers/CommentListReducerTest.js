@@ -1,6 +1,5 @@
-import reducer,
-  {filterComments}
-from '../../../src/websocket_basics/reducers/CommentListReducer';
+import reducer, {filterComments}
+  from '../../../src/websocket_basics/reducers/CommentListReducer';
 import {
   getCommentsRequested,
   getCommentsSucceeded,

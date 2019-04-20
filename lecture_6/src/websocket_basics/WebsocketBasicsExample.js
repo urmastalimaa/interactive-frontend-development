@@ -16,7 +16,7 @@ export const start = () => {
   // https://redux.js.org/api-reference/applymiddleware#tips for more information.
   const composeStoreEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-  let store = createStore(
+  const store = createStore(
     reducer,
     composeStoreEnhancers(
       applyMiddleware(
@@ -59,7 +59,7 @@ export const start = () => {
 
   ReactDOM.render(
     <Provider store={store}>
-    <App />
+      <App />
     </Provider>,
     document.getElementById('root')
   );

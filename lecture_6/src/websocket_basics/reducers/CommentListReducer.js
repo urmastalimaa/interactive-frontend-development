@@ -14,53 +14,53 @@ const initialState = {
 
 const commentReducer = (state = initialState, action) => {
   switch (action.type) {
-    case GET_COMMENTS_REQUESTED: {
-      return {...state,
-        fetchState: {inFlight: true}
-      };
-    }
-    case GET_COMMENTS_SUCCEEDED: {
-      return {...state,
-        fetchState: {inFlight: false},
-        comments: action.payload
-      };
-    }
-    case GET_COMMENTS_FAILED: {
-      return {...state,
-        fetchState: {inFlight: false, error: action.payload},
-      };
-    }
-    case POST_COMMENT_REQUESTED: {
-      return {...state,
-        comments: state.comments.concat({
-          id: action.payload.localId,
-          inFlight: true,
-          author: action.payload.author,
-          text: action.payload.text
-        })
-      };
-    }
-    case POST_COMMENT_SUCCEEDED: {
-      return {...state,
-        comments: state.comments.map((comment) => {
-          if (comment.id === action.payload.localId) {
-            return {...comment, id: action.payload.id, inFlight: false};
-          } else {
-            return comment;
-          }
-        })
-      };
-    }
-    case POST_COMMENT_FAILED: {
-      return {...state,
-        comments: state.comments.filter((comment) =>
-          comment.id !== action.payload.localId
-        )
-      };
-    }
+  case GET_COMMENTS_REQUESTED: {
+    return {...state,
+      fetchState: {inFlight: true}
+    };
+  }
+  case GET_COMMENTS_SUCCEEDED: {
+    return {...state,
+      fetchState: {inFlight: false},
+      comments: action.payload
+    };
+  }
+  case GET_COMMENTS_FAILED: {
+    return {...state,
+      fetchState: {inFlight: false, error: action.payload},
+    };
+  }
+  case POST_COMMENT_REQUESTED: {
+    return {...state,
+      comments: state.comments.concat({
+        id: action.payload.localId,
+        inFlight: true,
+        author: action.payload.author,
+        text: action.payload.text
+      })
+    };
+  }
+  case POST_COMMENT_SUCCEEDED: {
+    return {...state,
+      comments: state.comments.map((comment) => {
+        if (comment.id === action.payload.localId) {
+          return {...comment, id: action.payload.id, inFlight: false};
+        } else {
+          return comment;
+        }
+      })
+    };
+  }
+  case POST_COMMENT_FAILED: {
+    return {...state,
+      comments: state.comments.filter((comment) =>
+        comment.id !== action.payload.localId
+      )
+    };
+  }
 
-    default:
-      return state;
+  default:
+    return state;
   }
 };
 

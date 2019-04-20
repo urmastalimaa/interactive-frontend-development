@@ -46,13 +46,14 @@ well be put into a middleware.
 Connection to the server is usually initiated through an user interaction (same
 goes for disconnection).
 
+For illustration purposes, the client disconnects and reconnects after every 3
+received `ping` messages.
+
 ### Reducers
 
-[WebSocketReducer](./reducers/WebSocketReducer.js) simply
-stores the connection state and ping count.
+[WebSocketReducer](./reducers/WebSocketReducer.js) simply stores the connection
+state and ping count.
 
 ### Components
 
 No user interface changes are given in this example.
-
-[_Back_](../../README.md)
