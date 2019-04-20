@@ -23,6 +23,9 @@ example code.
 * Lecture 5 - Redux middlewares and asynchronous processes
   * [Async Redux slides](https://urmastalimaa.github.io/interactive-frontend-development/slides/redux_async.html)
   * [Async Redux book chapter](https://urmastalimaa.github.io/interactive-frontend-development/book/lecture_5/)
+* Lecture 6 - Bidirectional communication with servers
+  * [Bidirectional communication slides](https://urmastalimaa.github.io/interactive-frontend-development/slides/bidirectional.html)
+  * [Bidirectional communication book chapter](https://urmastalimaa.github.io/interactive-frontend-development/book/lecture_6/)
 
 ## Concepts and techniques
 The course will concentrate on declarative programming and extensive testing.

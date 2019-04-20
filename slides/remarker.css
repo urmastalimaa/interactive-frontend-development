@@ -68,3 +68,13 @@ a {
   color: #9099a1;
   text-decoration: none;
 }
+
+.left-half {
+  width: 50%;
+  float: left;
+}
+
+.right-half {
+  width: 50%;
+  float: right;
+}
