@@ -21,5 +21,3 @@ guides](http://redux.js.org/).
 * How to separate user interactions from requests to a server?
 
 [Asynchronous process with middleware](./src/async_process_with_middleware/README.md)
-
-[_Back_](../README.md)
