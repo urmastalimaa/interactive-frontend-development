@@ -68,7 +68,7 @@ fetching and posting comments.
 ### Actions
 
 There are 6 _simple_, synchronous action creators in the [actions
-file](https://github.com/urmastalimaa/interactive-frontend-development/blob/master/lecture_5/async_process_basics/src/actions/index.js)
+file](https://github.com/urmastalimaa/interactive-frontend-development/blob/master/lecture_5/src/async_process_basics/actions/index.js)
 representing the different results of the two asynchronous processes. There are
 two asynchronous action creators for posting a comment and fetching all
 comments in
