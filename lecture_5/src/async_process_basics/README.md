@@ -45,13 +45,13 @@ needs to be capture by our application.
 ### Components
 
 Comments can now be fetched from a server. This request is asynchronous.
-[CommentList](https://github.com/urmastalimaa/interactive-frontend-development/blob/master/lecture_5/src/components/CommentList.js#L20-36)
+[CommentList](https://github.com/urmastalimaa/interactive-frontend-development/blob/master/lecture_5/src/async_process_basics/components/CommentList.js#L20-L36)
 has been changed to accomodate three different stages of the request:
 in-flight, success and error.
 
 Submitting Comments is also asynchronous. Every comment itself can also be
 in-flight.
-[Comment](https://github.com/urmastalimaa/interactive-frontend-development/blob/master/lecture_5/src/components/Comment.js)
+[Comment](https://github.com/urmastalimaa/interactive-frontend-development/blob/master/lecture_5/src/async_process_basics/components/Comment.js)
 has been changed accordingly.
 
 ### Containers
@@ -61,18 +61,18 @@ components.
 
 ### Reducers
 
-[CommentListReducer](https://github.com/urmastalimaa/interactive-frontend-development/blob/master/lecture_5/src/reducers/CommentListReducer.js)
+[CommentListReducer](https://github.com/urmastalimaa/interactive-frontend-development/blob/master/lecture_5/src/async_process_basics/reducers/CommentListReducer.js)
 has been changed to handle 6 actions. 3 different possible results for both
 fetching and posting comments.
 
 ### Actions
 
 There are 6 _simple_, synchronous action creators in the [actions
-file](https://github.com/urmastalimaa/interactive-frontend-development/blob/master/lecture_5/src/actions/index.js)
+file](https://github.com/urmastalimaa/interactive-frontend-development/blob/master/lecture_5/async_process_basics/src/actions/index.js)
 representing the different results of the two asynchronous processes. There are
 two asynchronous action creators for posting a comment and fetching all
 comments in
-[CommentServerActions](https://github.com/urmastalimaa/interactive-frontend-development/blob/master/lecture_5/src/actions/CommentServerActions.js).
+[CommentServerActions](https://github.com/urmastalimaa/interactive-frontend-development/blob/master/lecture_5/src/async_process_basics/actions/CommentServerActions.js).
 The asynchronous action creators make use of a [`fetch`
 API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) which supports
 making requests to remote servers.

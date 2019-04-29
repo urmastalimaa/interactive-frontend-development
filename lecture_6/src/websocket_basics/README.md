@@ -51,7 +51,7 @@ received `ping` messages.
 
 ### Reducers
 
-[WebSocketReducer](./reducers/WebSocketReducer.js) simply stores the connection
+[WebSocketReducer](https://github.com/urmastalimaa/interactive-frontend-development/blob/master/lecture_6/src/websocket_basics/reducers/WebSocketReducer.js) simply stores the connection
 state and ping count.
 
 ### Components

@@ -30,16 +30,16 @@ clarity and explicity of Redux.
 ### CommentServerMiddleware
 
 In this example
-[CommentListContainer](https://github.com/urmastalimaa/interactive-frontend-development/blob/master/lecture_5/src/containers/CommentListContainer.js)
+[CommentListContainer](https://github.com/urmastalimaa/interactive-frontend-development/blob/master/lecture_5/src/async_process_with_middleware/containers/CommentListContainer.js)
 and
-[CommentFormContainer](https://github.com/urmastalimaa/interactive-frontend-development/blob/master/lecture_5/src/containers/CommentFormContainer.js)
+[CommentFormContainer](https://github.com/urmastalimaa/interactive-frontend-development/blob/master/lecture_5/src/async_process_with_middleware/containers/CommentFormContainer.js)
 have been changed to simply express the desire to perform an action, the
 containers no longer directly call functions that make asynchronous calls. This
 means that the React/Redux containers do not call functions tied to any
 particular Server interface.
 
 Instead
-[CommentServerMiddleware](https://github.com/urmastalimaa/interactive-frontend-development/blob/master/lecture_5/src/middlewares/CommentServerMiddleware.js)
+[CommentServerMiddleware](https://github.com/urmastalimaa/interactive-frontend-development/blob/master/lecture_5/src/async_process_with_middleware/middlewares/CommentServerMiddleware.js)
 has been added that listens for actions that should fire requests to the
 server. It then initiates the request and dispatches success/failure actions
 accordingly.
