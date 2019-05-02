@@ -26,6 +26,9 @@ example code.
 * Lecture 6 - Bidirectional communication with servers
   * [Bidirectional communication slides](https://urmastalimaa.github.io/interactive-frontend-development/slides/bidirectional.html)
   * [Bidirectional communication book chapter](https://urmastalimaa.github.io/interactive-frontend-development/book/lecture_6/)
+* Lecture 7 - Routes & Optimizations
+  * [Routes&Optimizations slides](https://urmastalimaa.github.io/interactive-frontend-development/slides/routes_and_optimizations.html)
+  * [Routes&Optimizations book chapter](https://urmastalimaa.github.io/interactive-frontend-development/book/lecture_7/)
 
 ## Concepts and techniques
 The course will concentrate on declarative programming and extensive testing.
