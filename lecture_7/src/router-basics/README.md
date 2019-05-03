@@ -30,7 +30,7 @@ declarative links and routing.
 All routes and links must be enclosed in a `Router` component which provides
 _context_ to children similary to redux `Provider`.
 
-`Link` elements render anchors (<a>) to URLs which navigate without triggering
+`Link` elements render anchors `<a>` to URLs which navigate without triggering
 a page refresh. Links use the DOM history API to achieve this.
 
 `Route` elements map URLs to components and provide URL parameters (if any) to those components.
