@@ -24,3 +24,7 @@
   * [Asynchronous processes using middleware](./lecture_5/src/async_process_with_middleware/README.md)
 * [Lecture 6 - Bidirectional communication with servers](./lecture_6/README.md)
   * [WebSockets](./lecture_6/src/websocket_basics/README.md)
+* [Lecture 7 - Routes and optimizations](./lecture_7/README.md)
+  * [React Router](./lecture_7/src/router-basics/README.md)
+  * [React Router connected with Redux](./lecture_7/src/connected-react-router/README.md)
+  * [React-Redux optimizations](./lecture_7/src/redux-selector-cache/README.md)
