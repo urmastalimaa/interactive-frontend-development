@@ -302,4 +302,6 @@ Simplest method cache
 
 # Homework
 
-GIF will be added here by Friday 5 2019
+<video width="560" height="420" autoplay controls>
+    <source src="/assets/Homework7-result.mp4" type="video/mp4">
+</video>
