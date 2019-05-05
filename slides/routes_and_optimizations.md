@@ -303,5 +303,5 @@ Simplest method cache
 # Homework
 
 <video width="560" height="420" autoplay controls>
-    <source src="slides/assets/Homework7-result.mp4" type="video/mp4">
+    <source src="assets/Homework7-result.mp4" type="video/mp4">
 </video>
