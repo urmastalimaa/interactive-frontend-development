@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-for SLIDE in intro js_ecosystem react_intro react_2 redux redux_async bidirectional routes_and_optimizations
+for SLIDE in intro js_ecosystem react_intro react_2 redux redux_async bidirectional routes_and_optimizations react_visual_testing redux_addons outro
 do
   echo "Building $SLIDE"
   ./node_modules/.bin/remarker build -s $SLIDE.md

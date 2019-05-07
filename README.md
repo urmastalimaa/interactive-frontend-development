@@ -34,6 +34,7 @@ example code.
   * [React visual testing slides](https://urmastalimaa.github.io/interactive-frontend-development/slides/react_visual_testing.html)
   * [Redux add-ons](https://urmastalimaa.github.io/interactive-frontend-development/slides/redux_addons.html)
   * [Outro & Exam](https://urmastalimaa.github.io/interactive-frontend-development/slides/outro.html)
+  * [React visual testing book chapter](https://urmastalimaa.github.io/interactive-frontend-development/book/lecture_8/)
 
 ## Concepts and techniques
 The course will concentrate on declarative programming and extensive testing.
