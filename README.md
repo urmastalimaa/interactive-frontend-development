@@ -30,6 +30,11 @@ example code.
   * [Routes&Optimizations slides](https://urmastalimaa.github.io/interactive-frontend-development/slides/routes_and_optimizations.html)
   * [Routes&Optimizations book chapter](https://urmastalimaa.github.io/interactive-frontend-development/book/lecture_7/)
 
+* Lecture 8 - Visual testing & Redux add-ons
+  * [React visual testing slides](https://urmastalimaa.github.io/interactive-frontend-development/slides/react_visual_testing.html)
+  * [Redux add-ons](https://urmastalimaa.github.io/interactive-frontend-development/slides/redux_addons.html)
+  * [Outro & Exam](https://urmastalimaa.github.io/interactive-frontend-development/slides/outro.html)
+
 ## Concepts and techniques
 The course will concentrate on declarative programming and extensive testing.
 

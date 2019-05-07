@@ -28,3 +28,5 @@
   * [React Router](./lecture_7/src/router-basics/README.md)
   * [React Router connected with Redux](./lecture_7/src/connected-react-router/README.md)
   * [React-Redux optimizations](./lecture_7/src/redux-selector-cache/README.md)
+* [Lecture 8 - React visual testing](./lecture_8/README.md)
+  * [React visual testing](./lecture_8/README-storybook.md)
