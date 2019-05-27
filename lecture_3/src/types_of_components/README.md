@@ -38,6 +38,7 @@ anything about how things look.
 
 ## Controlled forms
 
+[Official documentation on Controlled components](https://reactjs.org/docs/forms.html#controlled-components)
 [`ControlledCommentForm`](https://github.com/urmastalimaa/interactive-frontend-development/tree/master/lecture_3/src/types_of_components/ControlledCommentForm.js)
 syncs the state of its HTML inputs with React component state. The `value` of
 inputs is linked to `state` and whenever an input changes, `state` is updated.
@@ -47,6 +48,7 @@ This is the preferred way to implement forms.
 
 ## Uncontrolled forms
 
+[Official documentation on Uncontrolled components](https://reactjs.org/docs/uncontrolled-components.html)
 [`UncontrolledCommentForm`](https://github.com/urmastalimaa/interactive-frontend-development/tree/master/lecture_3/src/types_of_components/UncontrolledCommentForm.js)
 does not control the state of its inputs. Instead it uses `ref` callback to
 save a reference to the raw DOM input to a component instance variable. It is
