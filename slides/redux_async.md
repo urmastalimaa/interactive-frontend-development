@@ -187,7 +187,7 @@ If there is no existing functionality to support our use case, let's create it
 * Redux allows _middleware functions_, which will be executed before actions are dispatched to reducers
 * We’ll further investigate _middleware functions_ later
 * [Redux Thunk Middleware](https://github.com/gaearon/redux-thunk)
-* [Redux official guide is again, great](https://redux.js.org/docs/advanced/AsyncActions)
+* [Redux official guide is again, great](https://redux.js.org/advanced/async-actions)
 
 ---
 
