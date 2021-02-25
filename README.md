@@ -10,7 +10,7 @@ example code.
 * Lecture 1 - Introduction to the JavaScript ecosystem
   * [Course intro slides](https://urmastalimaa.github.io/interactive-frontend-development/slides/intro.html)
   * [JavaScript ecosystem slides](https://urmastalimaa.github.io/interactive-frontend-development/slides/js_ecosystem.html)
-  * [JavaScript ecosystem book chapter](https://urmastalimaa.github.io/interactive-frontend-development/book/lecture_1/)
+  * [Lecture 1](./lecture_1/)
 
 ## Concepts and techniques
 The course will concentrate on declarative programming and extensive testing.

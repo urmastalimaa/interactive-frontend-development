@@ -5,8 +5,6 @@ set -euo pipefail
 git checkout gh-pages
 git merge master --no-edit
 
-./build_book
-
 cd slides
 ./build-all
 cd ../
@@ -15,7 +13,6 @@ git add .
 git commit -m "Update pages"
 git push
 
-rm -r ./book
 rm ./slides/*.html
 
 git checkout master

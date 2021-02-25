@@ -1,7 +1,0 @@
-#!/bin/bash
-
-set -euo pipefail
-
-rm -rf ./_book/ ./book/
-gitbook build --no-timing
-mv _book book

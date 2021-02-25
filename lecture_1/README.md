@@ -12,6 +12,14 @@ homeworks.
 It is not necessary to understand all lecture 1 concepts in depth immediately.
 If something creates confusion later, lecture 1 can be revisited.
 
+## Pre-requisites
+
+* Install NodeJS v14.16 or later https://nodejs.org/en/download/
+* Install Yarn package manager 
+   ```shell
+   npm install -g yarn
+   ```
+
 ## Building
 * Where and using what can JavaScript libraries be downloaded? How can they be used in your application?
 * When are JavaScript files loaded and executed?
@@ -20,7 +28,7 @@ If something creates confusion later, lecture 1 can be revisited.
 * What is transpilation? How does it differ from compilation?
 * What are source maps?
 
-[Building with NPM, Yarn, Webpack, Babel](./building.md)
+[Building with NPM, Yarn, Rollup and Babel](./building.md)
 
 ## Linting
 * What automated tools are there to ensure JavaScript quality?

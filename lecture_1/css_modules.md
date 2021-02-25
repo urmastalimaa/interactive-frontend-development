@@ -4,8 +4,8 @@
 
 ```
 yarn install
-yarn build
-open public/index.html
+yarn build:watch
+open localhost:10001
 ```
 
 #### Expected behaviour
@@ -28,15 +28,17 @@ CSS modules.
 CSS modules, similarly to modules in JavaScript, cannot be resolved by the web
 browser runtime. The modules must be resolved by the build tool.
 
-There are various ways to include CSS modules in Webpack build process. A very
+There are various ways to include CSS modules into a build process. A very
 basic example is given in this example.
 
 ### Explanation
 
-[_webpack.config.js_](https://github.com/urmastalimaa/interactive-frontend-development/tree/master/lecture_1/webpack.config.js)
-specifies two loaders for `.css` files: 'style-loader' and 'css-loader'. The
-first ones allows `import`-ing a CSS file in a JavaScript file and the latter
-one allows using CSS imports.  There are other ways to output CSS with Webpack,
-but importing the CSS file in the [top-level JavaScript
-file](https://github.com/urmastalimaa/interactive-frontend-development/tree/master/lecture_1/src/index.js)
-suffices for this course.
+[_rollup.config.js_](https://github.com/urmastalimaa/interactive-frontend-development/tree/master/lecture_1/rollup.config.js)
+uses [`postcss`][postcss] to process CSS files. Most notably, it uses the
+`postcss-import` PostCSS plugin to allow `import`-ing one CSS file in another.
+
+There are other methods to define and output CSS e.g. [css-in-js][css-in-js],
+but the given example suffices for this course.
+
+[postcss]: https://github.com/postcss/postcss
+[css-in-js]: https://cssinjs.org

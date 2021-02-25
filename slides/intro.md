@@ -5,7 +5,7 @@ class: middle, center
 # Interactive Front-end Development
 
 ## Urmas Talimaa
-## _Glia Inc (formerly SaleMove)_
+## _Glia Inc_
 
 ???
 
@@ -24,57 +24,56 @@ Pre-lecture checklist
 
 ---
 
-# History
+# About the course
 
+* Elective course intended to provide practical experience
 * Started in spring 2016 by
   * Urmas Talimaa (Glia)
-  * Stenver Jerkku (currently at eAgronom)
-* Spring 2017-2018 by Urmas Talimaa
-* This year Urmas Talimaa and maybe help from someone else
+  * Stenver Jerkku (eAgronom)
+* Continued by Urmas Talimaa
 
 ???
 
-Three years of experience is not much, but it is something.
-
 ---
 
-# About
+# About the course
 
 * Student feedback says that the course is difficult
 * Extensive **individual** programming homework
 * Listeners are welcome, but their homework will not be reviewed
-  * I just don't have the time
 
-If you are not up to writing **code by youself** for 8 hours a week for 7 weeks
-straight, please give someone else a chance to register.
+You will need to write at least 1000 lines of code, **by yourself** to complete
+homework. If this is not what you signed up for, there is still a option to
+de-register.
 
 ---
 
-# Who am I?
+# About me
 
 * Lead Developer at Glia
 * Functional programming enthusiast
-* Play Dungeons and Dragons weekly
-* Love boardgames and nature
+* Avid runner
+* Deadpan humour
 
 .right-image[![Urmas Talimaa](assets/urmas.jpg)]
 
 ---
 
-# Teaching assistant Älli
+# My dog/teaching assistant Älli
 
 .full-image[![Älli](assets/TA-Alli.jpg)]
 
-She will be grading the homework, so all direct all complaints to her.
+Direct all complaints concerning grades to her
 
 ---
 
-# Glia
+# About Glia
 
 * Software company based in Tartu, Tallinn & New York
-* Functional programming, Elixir, React+Redux
+* https://www.glia.com/
+* Functional programming on Ruby, Elixir and React
 * Creating the future of on-line Customer Experience
-* Hiring passionate people https://www.glia.com/careers
+* Hiring passionate people https://glia.breezy.hr/
 
 ---
 
@@ -92,16 +91,18 @@ She will be grading the homework, so all direct all complaints to her.
 * Testing, testing, testing
 --
 
-* Application state management using Redux
-* Dealing with cross-cutting concerns using middleware
+* Application state management
+* Cross-cutting concerns
 * Integration with external APIs
 * Asynchronous code
+
+The latter parts of the course are subject to change
 
 ---
 
 # Course overview
 
-* Understanding principles over hacking things together
+* Working from principles over hacking things together
 * A lot of (unit) testing which will be graded
 * Functional programming
 * Composition of simple ideas
@@ -115,9 +116,10 @@ composition are powerful, simple and flexible.
 
 # Course overview
 
-* Discussed ideas are not specific to the browser nor JavaScript
+* Discussed topics are not specific to the browser nor JavaScript
+  * Many functional programming patterns are similar
 * For better or for worse, the Web is the most popular and accessible platform
-* This necessitates some diving into the Web as a platform
+* This necessitates learning some JavaScript and the DOM (Document Object Model)
 
 ---
 
@@ -126,11 +128,7 @@ composition are powerful, simple and flexible.
 A lot of work!
 
 * 3 EAP = 78 hours
-* 1 homework every week
-* Good Friday week skipped
-  * No lecture on April 19
-  * No homework that week
-* Final exam May 17
+* 1 homework ~every week
 
 ---
 
@@ -141,7 +139,7 @@ A lot of work!
 * First one given out today
 * ~8 hours spent on each homework
 * Hard deadline 23:59 the next Sunday (10 days)
-  * Miss deadline = 10 points gone
+  * Miss deadline = 10 points gone from final grade
 * Catch-up application published Monday morning
 
 ???
@@ -155,72 +153,65 @@ solution one week from failing the whole course.
 # Homework
 
 * No hand holding!
-* Message-board for support
-  * I am one man, need your help answering questions
+* Slack workspace #help-homework for support
+  * There is one of me, please help each other as well
 * A lot of reading and figuring things out from zero
 * Straight to cold water!
+* Practical project lead experience
 
 ---
 
-# Homework
-
-* Have something to show off in the end
-* Buzzwords for resume
-
 ## Tips
 
-* Stick to the deadline every week
+* Start early, homework simply cannot be accepted after deadline
 * Code style matters!
+  * This includes putting effort variable naming
 * What cannot be understood, cannot be graded
 
 ---
 
 # Homework
 
-* I've had to deal with plagiarism **every year**
-* I am **much better** at detecting plagiarism than you are trying to hide it
-* It is not worth getting plagiarism on your record for an elective course
+* I've been reading and reviewing code for a long time
+* I will be reading and reviewing homework from each one of you
+* It is easy for me to detect when code was pieced together from multiple sources
+* I've had to deal with **plagiarism** **every year**
+* If you plagiarize homework, you will get an F for the whole course and a note of plagiarism on your university record
 
-???
-
-Reading other's code daily for 7 years has taught a lot.
+I am here to teach as a guest lecturer and have zero patience for plagiarism.
+There are easier ways to score 3 EAPs.
 
 ---
 
-# Homework
+# Homework - what can I use?
 
 * Code from previous years of this course - **NO**
 * Code from other students - **NO**
 * Code that you found anywhere from the internet - **NO**
   * Only okay if it is a small snippet and properly attributed
-* Getting a 0 for one homework and basing your next one on the catch-up
-  application - **YES**
+* Basing your homework on the last week's catch-up application - **YES**
 
 ---
 
 # Exam
 
 * 30 points, multiple choice
-* Will be simple if you attended all the lectures
+* Will be relatively simple if you attended all the lectures
 * Exam result not required for final grade
 * 51 points total = passed
 
 ---
 
-# Communication
+# Course info
 
-* Use message-board! https://www.quicktopic.com/52/H/Ys4Z7NJ6s4K4
-* Sign up, **subscribe** and post questions and answers
-* Best way to learn is to help others
-* urmas.talimaa@gmail.com if message-board absolutely cannot be used
+Everything is linked to on https://courses.cs.ut.ee/2021/react
 
 ---
 
 # Materials
 
 * All materials including slides are available through the [course repository](https://github.com/urmastalimaa/interactive-frontend-development)
-* The materials can be read in book format (links in top-level README.md) or
-  through the GitHub interface
-* There are _a lot of_ blogs and guides online
-  * Blog quality varies wildly
-  * Official documentation is best
+* The materials can be read in a book-like format through the GitHub interface
+* There are _a lot of_ blogs and guides online on this topic, but
+  * blog quality varies wildly,
+  * official documentation is mostly best

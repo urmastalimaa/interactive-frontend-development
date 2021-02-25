@@ -4,7 +4,7 @@ class: middle, center
 # Interactive Front-end Development
 
 ## Urmas Talimaa
-## _Glia Inc (formerly SaleMove)_
+## _Glia Inc_
 
 ???
 
@@ -17,8 +17,8 @@ Presenter display slide notes
 # Why build a JavaScript browser application?
 
 
-* You probably don't need a JavaScript application for your web page
-* Seriously, don't do this to yourself and your users
+* You _probably_ don't need a JavaScript application for your web page
+* _Seriously_, don't do this to yourself and your users
 * Just use HTML and CSS
 * Add minimal JavaScript when necessary (with fallbacks when JS disabled)
 
@@ -36,7 +36,7 @@ Presenter display slide notes
 
 ???
 
-Obviously not **real time**, but _soft_ real time
+Obviously not **real-real time**, but _soft_ real time
 
 ---
 
@@ -44,7 +44,6 @@ Obviously not **real time**, but _soft_ real time
 
 * Your blog
 * Your company's website
-* Advertisement for a product
 * Standard e-commerce site
 * ...
 
@@ -55,7 +54,7 @@ Obviously not **real time**, but _soft_ real time
 * Portal for playing chess
 * Text editor 
 * Anything that needs offline processing
-* Anything that is extremely chatty
+* Anything that is extremely _chatty_
 
 ---
 
@@ -64,7 +63,7 @@ Obviously not **real time**, but _soft_ real time
 [_ECMAScript_ (ES)](https://en.wikipedia.org/wiki/ECMAScript) is a _versioned
 language specification_ e.g ES5, ES6 ES7
 
-_JavaScript_ is a _programming language_ (conforms to _ECMAScript_ spec)
+_JavaScript_ is a _programming language_ which conforms to _ECMAScript_ spec
 
 ???
 
@@ -86,25 +85,9 @@ There are other languages that conform to different _ECMAScript_ versions:
 
 # Definitions
 
-Different run-times for JavaScript
-
-* _SpiderMonkey_ (Firefox)
-* _V8_ (Chrome, Node.JS, MongoDB)
-* _Chakra_ (Edge)
-
-
-???
-
-From now on we'll be talking mostly about JavaScript and different EcmaScript
-versions to understand what syntax is available to us and why.
-
----
-
-# Definitions
-
 [Document Object Model
 (DOM)](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model)
-is an interface for programming HTML documents (also XML and SVG)
+is an interface for programming HTML documents (including XML and SVG)
 
 Can be used to interact with the document rendered in a web browser
 
@@ -112,11 +95,14 @@ Can be used to interact with the document rendered in a web browser
 
 # JavaScript Tooling
 
-* Has historically changed extremely (too) fast
-* Has become a bit more standardized in the last years
-* [https://hackernoon.com/a-map-to-modern-javascript-development-2017-16d9eb86309c](https://hackernoon.com/a-map-to-modern-javascript-development-2017-16d9eb86309c)
-* [https://github.com/addyosmani/es6-tools](https://github.com/addyosmani/es6-tools)
-* We will choose one and stick with it
+* Has historically changed extremely fast
+* Has stablized a bit
+* We'll be using Rollup and Babel for our tool-chain
+
+??? 
+
+Webpack not properly working on last NodeJS LTS version (v14.16) forced me to
+switch from Webpack to Rollup.
 
 ---
 
@@ -129,7 +115,7 @@ that invokes a **transpiler** to transform source code to ES5-compliant JavaScri
 and then calls a **module bundler** that gathers modules into one or more
 JavaScript files that can be loaded in a browser.
 
-JavaScript files are _during development_ served by a **development asset
+JavaScript files are served _during development_ by a **development asset
 server** which might also be providing **live reloading**.
 
 User opens a browser and loads a HTML document and executes JavaScript.
@@ -154,10 +140,9 @@ _Up to about half of the size of the Internet_
 
 * In the beginning, JavaScript engines were limited to browsers
 * NodeJS - run JavaScript everywhere!
-* Everything that can be written in JavaScript will be (not that this is a good idea)
-* NodeOS, PDFkit, Remote control for car, Online games, Collaborative drawing, etc
-* Quality of libraries varies wildly (leaning towards dumpster level)
-* No DOM as there is no HTML document
+* Everything that can be written in JavaScript will be, not that this is a good idea
+* Quality of libraries varies wildly (leaning towards dumpster fire level)
+* NodeJS has no DOM as there is no HTML document
 * `node app.js` // Evaluate app.js in NodeJS
 
 ---
@@ -165,7 +150,7 @@ _Up to about half of the size of the Internet_
 # NodeJS, JS in the backend
 
 * [https://nodejs.org/en/download/](https://nodejs.org/en/download/)
-* Grab version 10.15.3 or later
+* Grab version 14.16.0 or later
 * Will be used for building and testing our application and example code
 
 ---
@@ -184,13 +169,12 @@ _Up to about half of the size of the Internet_
 
 # JavaScript Tooling - Yarn
 
-* Specify manifest and install libraries
+* Specify a manifest of settings and dependencies
 * Specify an [allowed version range](https://github.com/npm/node-semver) for each library
 * Versions (of most libraries) (try to) adhere to [semantic versioning](https://semver.org)
 * Split production/development dependencies
-* Project local packages are installed into `./node_modules` folder
+* Packages are installed into `./node_modules` folder
 * Exact versions are listed in [yarn.lock](https://yarnpkg.com/en/docs/yarn-lock)
-* Can also install global packages to be used across system
 
 ---
 
@@ -201,29 +185,28 @@ _Up to about half of the size of the Internet_
 * `yarn install` - Install all packages described in package.json
 * `yarn add react` - Install react package and mark it as dependency in package.json
 * `yarn add mocha --dev` - Install mocha package and mark it as devDependency in package.json.
-* `yarn global add webpack` - Install webpack package globally - can be used from anywhere in the system
 
 ---
 
-# ECMAScript 6 or ECMAScript 2015
+# ECMAScript 6 a.k.a. ECMAScript 2015
 
 * “New” javascript standard
 * [Browser compatibility](https://kangax.github.io/compat-table/es6/) varies, can be used with a _transpiler_
 * [https://github.com/lukehoban/es6features](https://github.com/lukehoban/es6features)
 
-JavaScript in general has become fluid, different browser versions supporting
+JavaScript has become fluid with different browser versions supporting
 different features/syntax.
 
 ---
 
-# ECMAScript 6 or ECMAScript 2015
+# ECMAScript 6 a.k.a. ECMAScript 2015
 
 * [Classes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes)  
 	`class Foo extends Bar {..}`
 * [Template literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)  
   `Hello ${name}`
 * [Destructuring](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)  
-	`var {op, lhs, rhs} = getASTNode()`
+	`const {op, lhs, rhs} = getASTNode()`
 * [`let`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let) - block scoped variable
 * [`const`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const) - **immutable** variables
 * **modules**
@@ -233,7 +216,7 @@ different features/syntax.
 
 # JavaScript Tooling - Modules
 
-JavaScript runs in the browser, no native module system
+JavaScript runs in the browser which (thus far) has no native module system
 
 [ES6 defines module syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import)
 
@@ -256,7 +239,7 @@ In lecture ignore this slide, go straight to example
 
 # Example
 
-[Building and modules using Webpack](https://github.com/urmastalimaa/interactive-frontend-development/blob/master/lecture_1/building.md#webpack)
+[Building and modules](https://github.com/urmastalimaa/interactive-frontend-development/blob/master/lecture_1/building.md#rollup)
 
 ???
 
@@ -297,7 +280,7 @@ Examples of languages that transpile to JavaScript (ES5):
 
 ???
 
-* Show babel config in webpack.config.js
+* Show babel config in rollup.config.js and babel.config.json
 * Show `class` definitions in final build with and without `IE10` in the
   browser list to demonstrate transpiling.
 
@@ -307,7 +290,6 @@ Examples of languages that transpile to JavaScript (ES5):
 
 * Every time you need to change JS, you need to recompile
 * Most build tools offer some sort of auto-reload mechanism
-* Webpack dev server - [https://webpack.js.org/configuration/dev-server/](https://webpack.js.org/configuration/dev-server/)
 
 ---
 
@@ -317,13 +299,13 @@ Examples of languages that transpile to JavaScript (ES5):
 
 # Example continued
 
-[Building - Webpack Dev Server](https://github.com/urmastalimaa/interactive-frontend-development/blob/master/lecture_1/building.md#refreshing-whenever-source-files-change)
+[Building and refreshing on changes](https://github.com/urmastalimaa/interactive-frontend-development/blob/master/lecture_1/building.md#refreshing-whenever-source-files-change)
 
 ???
 
 This example should stress the importance of having a fast development loop
 
-* Exectute `yarn start`
+* Exectute `yarn build:watch`
 * Change some visible part of the app (e.g title) to show reloading
 * Comment that this is highly more productive than manually building and reloading
 
@@ -480,8 +462,8 @@ before trying to change it
 
 ```json
 	"scripts": {
-		"test": "mocha ./test/",
-		"start": "webpack-dev-server --open --config webpack.config.js"
+    "build": "rollup --config rollup.config.js",
+    "my-other-task": "..."
 	}
 ```
 
@@ -489,13 +471,13 @@ before trying to change it
 
 # Homework
 
-[Requirements](https://github.com/urmastalimaa/interactive-frontend-development/blob/master/homework/thump/exercise1.md)
+TODO
 
-Deadline 24/03/2019 23:59
+Deadline 07/03/2021 23:59
 
 **Only submit what is yours**
 
-Only assume NodeJS v10.15.3 is available locally and nothing else
+Only assume NodeJS v14.16 is available locally and nothing else.
 
 Feel free to use tools other than described (provided they are installed with
 `yarn install`), but don’t expect full support or less-strict grading if you do.
@@ -513,10 +495,10 @@ Feel free to use tools other than described (provided they are installed with
 
 If you need to provide further information, include it in README.md.
 
-Submit zipped file to [https://courses.cs.ut.ee/2019/react/Main/Submit](https://courses.cs.ut.ee/2019/react/Main/Submit)
+Submit zipped file to [https://courses.cs.ut.ee/2021/react/Main/Submit](https://courses.cs.ut.ee/2021/react/Main/Submit)
 
 Don’t include node_modules or .git/, .hg/, .svn/, make sure that your zipped
-file size is reasonable
+file size is reasonable.
 
 You can use/modify/extend [this script](https://gist.github.com/urmastalimaa/70edc0728cb711234f42) (usage: `node zipHomework.js`) to automate creating a zip file without specific folders.
 
