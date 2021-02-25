@@ -1,4 +1,0 @@
---require test/TestHelper.js
---recursive
---reporter spec
---ui bdd
