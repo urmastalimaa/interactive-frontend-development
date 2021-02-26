@@ -96,10 +96,10 @@ Can be used to interact with the document rendered in a web browser
 # JavaScript Tooling
 
 * Has historically changed extremely fast
-* Has stablized a bit
+* Has stabilized a bit
 * We'll be using Rollup and Babel for our tool-chain
 
-??? 
+???
 
 Webpack not properly working on last NodeJS LTS version (v14.16) forced me to
 switch from Webpack to Rollup.
@@ -169,6 +169,10 @@ _Up to about half of the size of the Internet_
 
 # JavaScript Tooling - Yarn
 
+```shell
+npm install -g yarn
+```
+
 * Specify a manifest of settings and dependencies
 * Specify an [allowed version range](https://github.com/npm/node-semver) for each library
 * Versions (of most libraries) (try to) adhere to [semantic versioning](https://semver.org)
@@ -202,11 +206,22 @@ different features/syntax.
 # ECMAScript 6 a.k.a. ECMAScript 2015
 
 * [Classes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes)  
-	`class Foo extends Bar {..}`
+```
+class Foo extends Bar {..}
+```
 * [Template literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)  
-  `Hello ${name}`
+```
+`Hello ${name}`
+```
 * [Destructuring](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)  
-	`const {op, lhs, rhs} = getASTNode()`
+```
+const {op, lhs, rhs} = getASTNode()
+```
+
+---
+
+# ECMAScript 6 a.k.a. ECMAScript 2015
+
 * [`let`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let) - block scoped variable
 * [`const`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const) - **immutable** variables
 * **modules**
@@ -409,11 +424,12 @@ explored as part of homework
 * `document.querySelector(cssSelector)`
   * Accepts [CSS Selectors](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors)
   * Returns first match or `null`
-* `document.querySelectorAll(cssSelector)`
-* `document.createElement(tagName)`
-* `Element.appendChild(otherElement)`
-* `Element.innerHTML = htmlString`
+* `document.createElement(tagName);`
+* `Element.appendChild(otherElement);`
+* `Element.className = myCSSClassName;`
+* `Element.innerHTML = myHtmlString`
 * `Element.onclick = myFunction;`
+* `Element.onkeyup = myFunction;`
 
 ???
 
@@ -461,17 +477,19 @@ before trying to change it
 * Define “scripts” for repeated actions in `package.json`
 
 ```json
+{
 	"scripts": {
-    "build": "rollup --config rollup.config.js",
-    "my-other-task": "..."
+      "build": "rollup --config rollup.config.js",
+      "my-other-task": "..."
 	}
+}
 ```
 
 ---
 
 # Homework
 
-TODO
+[Requirements](https://github.com/urmastalimaa/interactive-frontend-development/blob/master/homework/mathemagician/exercise1.md)
 
 Deadline 07/03/2021 23:59
 
@@ -479,8 +497,7 @@ Deadline 07/03/2021 23:59
 
 Only assume NodeJS v14.16 is available locally and nothing else.
 
-Feel free to use tools other than described (provided they are installed with
-`yarn install`), but don’t expect full support or less-strict grading if you do.
+You can use additional tools, provided they are installed with `yarn install`, unless specified otherwise in requirements.
 
 ???
 
@@ -506,4 +523,7 @@ You can use/modify/extend [this script](https://gist.github.com/urmastalimaa/70e
 
 # Homework result
 
-.full-image[![Homework-1-result](assets/homework-1-result.gif)]
+ <video width="100%" height="50%" controls>
+  <source src="assets/homework-mathemagician-1-result.m4v" type="video/mp4">
+  Your browser does not support the video tag.
+</video> 
