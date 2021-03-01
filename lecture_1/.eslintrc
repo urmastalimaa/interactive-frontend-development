@@ -3,6 +3,7 @@
   "env": {
     "browser": true
   },
+  "ignorePatterns": ["public/"],
   "plugins": ["import"],
   "extends": [
     "eslint:recommended",

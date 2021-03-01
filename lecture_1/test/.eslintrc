@@ -1,8 +1,11 @@
 {
   "env": {
     "mocha": true,
-    "globals": {
-      "expect": true
-    }
+  },
+  "globals": {
+    "expect": true
+  },
+  rules: {
+    "no-console": "off"
   }
 }
