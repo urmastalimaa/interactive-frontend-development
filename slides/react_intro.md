@@ -4,7 +4,7 @@ class: middle, center
 # Interactive Front-end Development
 
 ## Urmas Talimaa
-## _Glia Inc (formerly SaleMove)_
+## _Glia Inc_
 
 ???
 
@@ -458,7 +458,7 @@ reason.
 ---
 
 ```jsx
-import React, {Component} from 'react';   
+import {Component} from 'react';   
 
 class OneClickButton extends Component {
   constructor(props) { 
@@ -690,11 +690,13 @@ Excellent tutorials, examples and API documentation
 
 # Homework
 
+TODO
+
 [Requirements](https://github.com/urmastalimaa/interactive-frontend-development/blob/master/homework/thump/exercise2.md)
 
 **Only submit what is yours**
 
-Deadline 31/03/2019 23:59
+XXX Deadline 31/03/2019 23:59
 
 Unit tests for **React components only** are **not** mandatory
 
@@ -704,7 +706,7 @@ Unit tests for **React components only** are **not** mandatory
 
 If you need to provide further information, include it in README.md.
 
-Submit zipped file to https://courses.cs.ut.ee/2019/react/Main/Submit
+Submit zipped file to https://courses.cs.ut.ee/2021/react/Main/Submit
 
 Don’t include node_modules/ or .git/, .hg/, .svn/, make sure that your zipped
 file size is reasonable. You can use/modify/extend [this
@@ -713,4 +715,5 @@ script](https://gist.github.com/urmastalimaa/70edc0728cb711234f42) (usage:
 
 ---
 
-.full-image[![Homework-2-result](assets/homework-2-result.gif)]
+TODO
+XXX .full-image[![Homework-2-result](assets/homework-2-result.gif)]
