@@ -30,7 +30,7 @@
     "build": "rollup --config rollup.config.js",
     "build:watch": "rollup --config rollup.config.js --watch",
     "lint": "eslint src/",
-    "prestart": "eslint --ignore-pattern LintFail.js src/",
+    "pretest": "eslint --ignore-pattern LintFail.js src/",
     "test": "mocha",
     "test:watch": "mocha --watch"
   }

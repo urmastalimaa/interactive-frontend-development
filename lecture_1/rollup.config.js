@@ -9,14 +9,14 @@ const outputFolder = 'public';
 const watching = process.env.ROLLUP_WATCH === 'true';
 
 export default {
-	input: 'src/index.js',
-	output: {
-		file: `${outputFolder}/app.js`,
-		format: 'iife',
-		sourcemap: true
-	},
-	plugins: [
-		resolve(),
+  input: 'src/index.js',
+  output: {
+    file: `${outputFolder}/app.js`,
+    format: 'iife',
+    sourcemap: true
+  },
+  plugins: [
+    resolve(),
     babel({babelHelpers: 'bundled'}),
     postcss({plugins: [postCssImport]})
   ].concat(watching ? [
