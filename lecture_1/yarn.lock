@@ -1299,9 +1299,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"IDF-lecture-1@workspace:.":
+"@urmastalimaa/interactive-frontend-development-js-ecosystem@workspace:.":
   version: 0.0.0-use.local
-  resolution: "IDF-lecture-1@workspace:."
+  resolution: "@urmastalimaa/interactive-frontend-development-js-ecosystem@workspace:."
   dependencies:
     "@babel/core": ^7.13.1
     "@babel/eslint-parser": ^7.13.4
