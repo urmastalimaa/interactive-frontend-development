@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import TypesOfComponents from './types_of_components/App';
+import PathToHooks from './path_to_hooks/App';
 import DebuggingApp from './debugging/App';
 
-let currentApp = <TypesOfComponents />;
+let currentApp = <PathToHooks />;
 if (document.location.search.match(/progress=debugging/)) {
   currentApp = <DebuggingApp />;
 }

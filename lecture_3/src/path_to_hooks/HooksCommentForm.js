@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 
 // Here we define a custom hook that simplifies tracking the value of a single
 // input. It's a very thin wrapper around `useState`. All custom hooks should
-// follow the naming convention of `setXXX`.
+// follow the naming convention of `useXXX`.
 const useInputState = (initialValue) => {
   const [val, setVal] = useState(initialValue);
-  const handleInputChange = (event) => setVal(event.target.value);
-  return [val, handleInputChange, setVal];
+  const setValueFromEventTarget = (event) => setVal(event.target.value);
+  return [val, setValueFromEventTarget, setVal];
 };
 
 // This is functionally equivalent to the ControlledCommentForm.
@@ -26,12 +26,12 @@ let HooksCommentForm = (props, ref) => {
   const [author, setAuthor] = useState('');
   const onAuthorChange = (event) => setAuthor(event.target.value);
 
-  const [text, onTextChange, setText] = useInputState('');
+  const [text, setTextFromEventTarget, setText] = useInputState('');
 
   const submit = () => {
     // If multiple calls to state hooks need to be done at the same time,
     // consider consolidating those into one state item. This is not done here
-    // to demonstrate multiple `useState` calls.
+    // to demonstrate multiple different `useState` calls.
     setAuthor('');
     setText('');
     props.onSubmit({author, text});
@@ -54,9 +54,11 @@ let HooksCommentForm = (props, ref) => {
   }));
 
   return (
-    <div className='comment-form'>
+    <div className='comment-form' title='Hooks form'>
       <h3>Controlled form with hooks</h3>
+      <label htmlFor="hooks-form-author-input">Author</label>
       <input
+        id="hooks-form-author-input"
         ref={authorInput}
         name="author"
         type="text"
@@ -64,12 +66,14 @@ let HooksCommentForm = (props, ref) => {
         value={author}
         onChange={onAuthorChange}
       />
+      <label htmlFor="hooks-form-text-input">Text</label>
       <input
+        id="hooks-form-text-input"
         name="text"
         type="text"
         placeholder="Say something..."
         value={text}
-        onChange={onTextChange}
+        onChange={setTextFromEventTarget}
       />
       <button type='submit' onClick={submit}>
         {props.text}

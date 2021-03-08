@@ -1,9 +1,9 @@
-const chai = require('chai');
-global.expect = chai.expect;
-
 module.exports = {
   require: [
-    '@babel/register'
+    '@babel/register',
+    'global-jsdom/register',
+    'test/UseSinonChai.js',
+    'test/Cleanup.js'
   ],
   recursive: true
 };

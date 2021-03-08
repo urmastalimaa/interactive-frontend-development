@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import CommentList from '../types_of_components/CommentList';
-import CommentForm from '../types_of_components/ControlledCommentForm';
+import CommentList from '../path_to_hooks/CommentList';
+import CommentForm from '../path_to_hooks/ControlledCommentForm';
 
 class App extends Component {
   constructor(props) {

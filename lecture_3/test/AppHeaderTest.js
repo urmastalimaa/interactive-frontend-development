@@ -1,12 +1,10 @@
-import React from 'react';
-import {shallow} from 'enzyme';
-
-import AppHeader from '../src/types_of_components/AppHeader';
+import {render} from '@testing-library/react';
+import AppHeader from '../src/path_to_hooks/AppHeader';
 
 describe('AppHeader', () => {
   it('renders', () => {
-    // App Header component has no logic or control flow. There isn't much
-    // point to test the exact markup that it outputs.
-    expect(shallow(<AppHeader />)).to.exist;
+    // AppHeader component has no logic or control flow.
+    // A simple smoke test suffices.
+    render(<AppHeader />);
   });
 });

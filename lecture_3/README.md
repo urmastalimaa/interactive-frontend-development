@@ -10,7 +10,7 @@ Lecture 3 describes how to build and test React applications.
 
 [Debugging](./src/debugging/README.md)
 
-## Types of React components
+## Path to hooks
 
 * Presentational components
 * Forms
@@ -19,10 +19,11 @@ Lecture 3 describes how to build and test React applications.
 * Domain state vs local component state
 * What are React hooks?
   * `useState` hook
+  * `useReducer` hook
   * `useRef` hook
   * `useImperativeHandle` hook
 
-[Types of components](./src/types_of_components/README.md)
+[Path to hooks](./src/path_to_hooks/README.md)
 
 ## Testing
 

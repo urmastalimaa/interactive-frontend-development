@@ -22,6 +22,7 @@
     "require-jsdoc": "off",
     "comma-dangle": "off",
     "no-console": 2,
+    "quotes": "off",
     "react/react-in-jsx-scope": "off",
     "indent": [2, 2],
     "react/jsx-indent": [2, 2]

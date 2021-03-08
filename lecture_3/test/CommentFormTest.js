@@ -1,57 +1,59 @@
-import React from 'react';
-import {shallow} from 'enzyme';
+import {expect} from 'chai';
+import sinon from 'sinon';
+import {render, screen} from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
-import CommentForm from '../src/types_of_components/ControlledCommentForm';
+import CommentForm from '../src/path_to_hooks/ControlledCommentForm';
 
 describe('CommentForm', () => {
-  it('renders', () => {
-    expect(shallow(
-      <CommentForm onSubmit={sinon.stub()} text='text' />
-    )).to.exist;
-  });
+  // This test has both good and bad examples.
+  //
+  // Bad practice is to assert presence of exact markup.
+  //
+  // Better practice is to assert presence of text and of elements with a
+  // "role". A "role" here is an implicit ARIA role which generally maps to
+  // what kind of content a user sees (or hears when vision is impaired!) on the page.
+  //
+  // See https://www.w3.org/TR/html-aria/#docconformance for how HTML elements map to roles.
+  // Do not underestimate the importance of accessibility!
+  it('has an h3, two text boxes and a button', () => {
+    const rendering = render(<CommentForm onSubmit={sinon.stub()} text='button-text' />);
 
-  // This test is arguably dubious. A Comment form in general could output
-  // slightly different markup. Should such a form fail unit tests?
-  // Debatable.
-  it('has an h3, two inputs and a button', () => {
-    const form = shallow(<CommentForm onSubmit={sinon.stub()} text='text' />);
+    // Bad
+    expect(rendering.container.innerHTML).to.contain('<h3>Controlled form</h3>');
+    // Better
+    screen.getByRole('heading', {name: 'Controlled form'});
 
-    expect(form).to.contain(<h3>Controlled form</h3>);
-
-    // The two following assertions test the behaviour.
-    // The first one is more readable and provides much better error messages
-    // should the test fail.
-    expect(form).to.have.exactly(2).descendants('input');
-    expect(form.find('input').length).to.eq(2);
-
-    expect(form).to.have.exactly(1).descendants('button');
-    expect(form).to.contain.text('text');
+    // Also good
+    expect(screen.getAllByRole('textbox')).to.have.length(2);
+    screen.queryByRole('button', {name: 'button-text'});
   });
 
   // Testing callbacks and the arguments that callbacks receive is generally
   // very useful.
-  it('calls submit with author and text when submit button clicked', () => {
+  it('calls onSubmit with author and text when submit button clicked', () => {
     const onSubmit = sinon.stub();
-    const form = shallow(<CommentForm onSubmit={onSubmit} text='text' />);
+    render(<CommentForm onSubmit={onSubmit} text='text' />);
 
-    form.setState({author: 'author', text: 'text'});
+    // Using @testing-library query methods and avoiding using .querySelector directly
+    // forces us towards having an application with good accessibility.
+    userEvent.type(screen.getByRole('textbox', {name: 'Author'}), 'foo');
+    userEvent.type(screen.getByRole('textbox', {name: 'Text'}), 'bar');
+    userEvent.click(screen.getByRole('button'));
 
-    form.find('button').simulate('click');
-    // simulate('click') in shallow rendering is equivalent to
-    //   const button = form.find('button');
-    //   button.props().onClick({target: button});
-    // The simulated event will not propagate to parent elements.
-
-    expect(onSubmit).to.have.been.calledWith({author: 'author', text: 'text'});
+    expect(onSubmit).to.have.been.calledWith({author: 'foo', text: 'bar'});
   });
 
   // Testing any other behaviour that a component has is also useful
-  it('clears state when submit button clicked', () => {
-    const form = shallow(<CommentForm onSubmit={sinon.stub()} text='text' />);
+  it('clears inputs after submit', () => {
+    render(<CommentForm onSubmit={sinon.stub()} text='text' />);
 
-    form.setState({author: 'author', text: 'text'});
-    form.find('button').simulate('click');
-    expect(form.state()).to.eql({author: '', text: ''});
+    userEvent.type(screen.getByRole('textbox', {name: 'Author'}), 'foo');
+    userEvent.type(screen.getByRole('textbox', {name: 'Text'}), 'bar');
+    userEvent.click(screen.getByRole('button'));
+
+    expect(screen.getByRole('textbox', {name: 'Author'})).to.have.property('value', '');
+    expect(screen.getByRole('textbox', {name: 'Text'})).to.have.property('value', '');
   });
 });
 

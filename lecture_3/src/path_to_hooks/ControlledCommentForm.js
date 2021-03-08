@@ -42,9 +42,11 @@ class CommentForm extends Component {
     // reference is taken for allowing focusing the input.
     const props = this.props;
     return (
-      <div className='comment-form'>
+      <div className='comment-form' title='Controlled form'>
         <h3>Controlled form</h3>
+        <label htmlFor="controlled-form-author-input">Author</label>
         <input
+          id="controlled-form-author-input"
           ref={this.authorInput}
           name="author"
           type="text"
@@ -52,7 +54,9 @@ class CommentForm extends Component {
           value={this.state.author}
           onChange={this.handleInputChange}
         />
+        <label htmlFor="controlled-form-text-input">Text</label>
         <input
+          id="controlled-form-text-input"
           name="text"
           type="text"
           placeholder="Say something..."

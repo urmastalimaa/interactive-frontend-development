@@ -31,15 +31,19 @@ class CommentForm extends Component {
   render() {
     const props = this.props;
     return (
-      <div className='comment-form'>
+      <div className='comment-form' title='Uncontrolled form'>
         <h3>Uncontrolled form</h3>
+        <label htmlFor="uncontrolled-form-author-input">Author</label>
         <input
-          ref={this.authorInput}
+          id="uncontrolled-form-author-input"
+          ef={this.authorInput}
           name="author"
           type="text"
           placeholder="Your name"
         />
+        <label htmlFor="uncontrolled-form-text-input">Text</label>
         <input
+          id="uncontrolled-form-text-input"
           ref={this.textInput}
           name="text"
           type="text"
