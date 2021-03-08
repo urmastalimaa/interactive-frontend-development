@@ -170,7 +170,7 @@ Differences usually come from
 * Template engine / support
 * Data-flow
 * State management
-* Composition of views/controllers (means of composition)
+* Means of composition
 
 ---
 
@@ -249,7 +249,7 @@ The solutions are usually rather complex
 
 Problem:
 
->> * Templates often do not work as well as we’d want
+>> * Templates often do not work very well
 
 Solution:
 
@@ -401,7 +401,7 @@ But,
 * `props` are immutable.
 * `props` can have default values and be passed from parent component.
 * If parent changes props of a child, child is fully re-rendered
-  * Old child instance is thrown away
+  * Old child instance is thrown away (under-the-hood optimizations may occur)
   * Child does not need to worry about partial updates
 * A child component can never instruct its parent to change (one-way data flow)
 
@@ -424,18 +424,16 @@ State management is the hardest thing to get right in an interactive application
 
 # State management
 
-* All the state in an application is usually linked in some way
-* Components which have/handle application state are less reusable
-* Breaking up state management logic into different models/controllers needs a good
-reason.
-  * Managing state of one button/field in multiple places makes reasoning about the element state very hard
-* Managing overlapping slices of state all across the application is a maintenance nightmare.
+* Stateless components are very easy to reuse and understand
+* Components with complex state are very hard to reuse and understand
+* One unit of state should be managed in a single place
+* Managing overlapping state in various places across an application is a maintenance nightmare
 
 ---
 
 # React - isolate state mutations
 
-* Each React component can have state.
+* Each React component can have state
 * State can only be changed by the very component that defines it
   * No surprise updates to state!
   * 
@@ -466,6 +464,7 @@ class OneClickButton extends Component {
     this.state = {
       buttonClickedAtLeastOnce = false; 
     }
+    this.setButtonToClicked = this.setButtonToClicked.bind(this);
   } 
 
   setButtonToClicked(event) {
@@ -481,11 +480,10 @@ class OneClickButton extends Component {
       : "Clicked"; 
 
     return 
-      <button onClick={this.setButtonToClicked.bind(this)}>
+      <button onClick={this.setButtonToClicked}>
         {text}
       </button>;
-  } 
-}
+  }}
 ```
 
 ???
@@ -499,9 +497,9 @@ Data flows up
 * Identify components that depend on shared state
 * Identify a common parent of those components
 * Either the common parent or a component higher up should own the state
-  * Components should have only state that they are fully responsible of
+  * Components should only have state that they are fully responsible for
   * A component dealing with very particular state is not reusable
-  * General application state should be pushed to root component
+  * General application state should be pushed "up", to a root component
 
 ---
 
@@ -690,13 +688,11 @@ Excellent tutorials, examples and API documentation
 
 # Homework
 
-TODO
-
-[Requirements](https://github.com/urmastalimaa/interactive-frontend-development/blob/master/homework/thump/exercise2.md)
+[Requirements](https://github.com/urmastalimaa/interactive-frontend-development/blob/master/homework/mathemagician/exercise2.md)
 
 **Only submit what is yours**
 
-XXX Deadline 31/03/2019 23:59
+Deadline 21/03/2019 23:59
 
 Unit tests for **React components only** are **not** mandatory
 
@@ -715,5 +711,8 @@ script](https://gist.github.com/urmastalimaa/70edc0728cb711234f42) (usage:
 
 ---
 
-TODO
-XXX .full-image[![Homework-2-result](assets/homework-2-result.gif)]
+
+<video width="100%" height="50%" controls>
+  <source src="assets/homework-mathemagician-2-result.m4v" type="video/mp4">
+  Your browser does not support the video tag.
+</video> 
