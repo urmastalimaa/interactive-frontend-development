@@ -523,7 +523,7 @@ You can use/modify/extend [this script](https://gist.github.com/urmastalimaa/70e
 
 # Homework result
 
- <video width="100%" height="50%" controls>
+<video width="100%" height="50%" controls>
   <source src="assets/homework-mathemagician-1-result.m4v" type="video/mp4">
   Your browser does not support the video tag.
 </video> 
