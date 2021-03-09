@@ -692,7 +692,7 @@ Excellent tutorials, examples and API documentation
 
 **Only submit what is yours**
 
-Deadline 21/03/2019 23:59
+Deadline 21/03/2021 23:59
 
 Unit tests for **React components only** are **not** mandatory
 
@@ -710,7 +710,6 @@ script](https://gist.github.com/urmastalimaa/70edc0728cb711234f42) (usage:
 `node zipHomework.js`) to automate zipping.
 
 ---
-
 
 <video width="100%" height="50%" controls>
   <source src="assets/homework-mathemagician-2-result.m4v" type="video/mp4">
