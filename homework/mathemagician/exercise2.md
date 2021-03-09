@@ -23,7 +23,6 @@ Additionally:
 * Create a button `START`
   * Number of rounds must be within bounds
   * Game starts after clicking the button
-  * _1 bonus point: Pressing "Enter" key also starts the Game. External libraries not allowed, logic must remain in a React component._
 
 ### Game
 
