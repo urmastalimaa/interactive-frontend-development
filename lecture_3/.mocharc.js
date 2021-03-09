@@ -1,9 +1,9 @@
 module.exports = {
   require: [
-    '@babel/register',
-    'global-jsdom/register',
-    'test/UseSinonChai.js',
-    'test/Cleanup.js'
+    "@babel/register",
+    "global-jsdom/register",
+    "test/UseSinonChai.js",
+    "test/Cleanup.js",
   ],
-  recursive: true
+  recursive: true,
 };

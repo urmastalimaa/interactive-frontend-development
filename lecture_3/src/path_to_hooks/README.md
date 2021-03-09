@@ -14,15 +14,15 @@ All components that can be, are implemented as pure function components.
 
 ### View components
 
-* [`AppHeader`](./AppHeader.js) is a simple pure function component
-* [`Comment`](./Comment.js) is a simple pure function component 
-* [`CommentList`](./CommentList.js) is a pure function component, renders a list of `Comments`.
+- [`AppHeader`](./AppHeader.js) is a simple pure function component
+- [`Comment`](./Comment.js) is a simple pure function component
+- [`CommentList`](./CommentList.js) is a pure function component, renders a list of `Comments`.
 
 CommentForm components have local state, but contain no application logic.
 
-* [`ControlledCommentForm`](./ControlledCommentForm.js)
-* [`UncontrolledCommentForm`](./UncontrolledCommentForm.js)
-* [`HooksCommentForm`](./HooksCommentForm.js)
+- [`ControlledCommentForm`](./ControlledCommentForm.js)
+- [`UncontrolledCommentForm`](./UncontrolledCommentForm.js)
+- [`HooksCommentForm`](./HooksCommentForm.js)
 
 ### Capturing application logic
 
@@ -31,7 +31,7 @@ React components are however not well-suited for implementing application
 logic. Application logic can be implemented in pure functions and hooks can act
 as the glue that ties application logic to the view components.
 
-* [App](./App.js)
+- [App](./App.js)
 
 ## Controlled forms
 

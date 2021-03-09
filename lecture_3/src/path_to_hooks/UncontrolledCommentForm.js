@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import PropTypes from 'prop-types';
+import { Component, createRef } from "react";
+import PropTypes from "prop-types";
 
 // Example of uncontrolled form
 class CommentForm extends Component {
@@ -7,8 +7,8 @@ class CommentForm extends Component {
     super(props);
     this.onSubmit = this.onSubmit.bind(this);
     this.focus = this.focus.bind(this);
-    this.authorInput = React.createRef();
-    this.textInput = React.createRef();
+    this.authorInput = createRef();
+    this.textInput = createRef();
   }
 
   focus() {
@@ -22,16 +22,16 @@ class CommentForm extends Component {
 
     // Clear inputs by directly manipulating DOM because the values are not
     // synced with this component state.
-    this.authorInput.current.value = '';
-    this.textInput.current.value = '';
+    this.authorInput.current.value = "";
+    this.textInput.current.value = "";
 
-    this.props.onSubmit({author, text});
+    this.props.onSubmit({ author, text });
   }
 
   render() {
     const props = this.props;
     return (
-      <div className='comment-form' title='Uncontrolled form'>
+      <div className="comment-form" title="Uncontrolled form">
         <h3>Uncontrolled form</h3>
         <label htmlFor="uncontrolled-form-author-input">Author</label>
         <input
@@ -49,7 +49,7 @@ class CommentForm extends Component {
           type="text"
           placeholder="Say something..."
         />
-        <button type='submit' onClick={this.onSubmit}>
+        <button type="submit" onClick={this.onSubmit}>
           {props.text}
         </button>
       </div>
@@ -59,7 +59,7 @@ class CommentForm extends Component {
 
 CommentForm.propTypes = {
   onSubmit: PropTypes.func.isRequired,
-  text: PropTypes.string
+  text: PropTypes.string,
 };
 
 export default CommentForm;

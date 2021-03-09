@@ -1598,6 +1598,7 @@ __metadata:
     chai: ^4.3.0
     eslint: ^7.20.0
     eslint-config-google: ^0.14.0
+    eslint-config-prettier: ^8.1.0
     eslint-plugin-import: ^2.22.1
     eslint-plugin-react: ^7.22.0
     global-jsdom: ^8.0.0
@@ -1605,6 +1606,7 @@ __metadata:
     mocha: ^8.3.0
     postcss: ^8.2.6
     postcss-import: ^14.0.0
+    prettier: ^2.2.1
     prop-types: ^15.7.2
     react: ^17.0.1
     react-dom: ^17.0.1
@@ -2976,6 +2978,17 @@ __metadata:
   peerDependencies:
     eslint: ">=5.16.0"
   checksum: b1cb79fc4ac675b18dfc65e8772a3349c380c65ea99eb45b32ebb9f0885526605f5bce624e1fffcfbb8c0edf12c007c355b57191790f4eac3f5833350c207558
+  languageName: node
+  linkType: hard
+
+"eslint-config-prettier@npm:^8.1.0":
+  version: 8.1.0
+  resolution: "eslint-config-prettier@npm:8.1.0"
+  peerDependencies:
+    eslint: ">=7.0.0"
+  bin:
+    eslint-config-prettier: bin/cli.js
+  checksum: 409d3a071f8228d4c958a6a9be9d5ec2b357ce21b7b6cbb137096cade2c31f008a0a3c3533dee8979c0cd944f220a959710b30fd86f8b96f0ef1f4f557d740b3
   languageName: node
   linkType: hard
 
@@ -5801,6 +5814,15 @@ fsevents@~2.3.1:
   version: 1.1.2
   resolution: "prelude-ls@npm:1.1.2"
   checksum: 189c969c92151b0de7a6e5d2ae0c4e50bbec5675cdd9fee3b7509d9d74b6416787ee36a8c12a07e8afb01454a8185b695b3395912484fa118e071fea45223b9b
+  languageName: node
+  linkType: hard
+
+"prettier@npm:^2.2.1":
+  version: 2.2.1
+  resolution: "prettier@npm:2.2.1"
+  bin:
+    prettier: bin-prettier.js
+  checksum: 92c6c9f4b87eba1f28466edee57dd18c80d00b858edda77d46d1950d20e6e302b68ee255fc91133ba931e63c4577b5ae30da194d9626a8f3c0177778b91bf056
   languageName: node
   linkType: hard
 

@@ -1,33 +1,33 @@
-import {expect} from 'chai';
-import {render, screen, within} from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
-import {App} from '../src/path_to_hooks/App';
+import { expect } from "chai";
+import { render, screen, within } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
+import { App } from "../src/path_to_hooks/App";
 
-describe('App', () => {
-  it('renders heading', () => {
+describe("App", () => {
+  it("renders heading", () => {
     render(<App />);
-    screen.getByRole('heading', {name: 'Comment App'});
+    screen.getByRole("heading", { name: "Comment App" });
   });
 
-  it('renders 3 comment forms', () => {
+  it("renders 3 comment forms", () => {
     render(<App />);
-    expect(screen.getAllByRole('textbox')).to.have.length(3*2);
+    expect(screen.getAllByRole("textbox")).to.have.length(3 * 2);
   });
 
   // Application logic should be tested. It is however much more convenient to
   // test individual functions directly rather than through React.
-  it('adds new comment to list when submitted from form', () => {
+  it("adds new comment to list when submitted from form", () => {
     render(<App />);
 
-    const form = within(screen.getByTitle('Hooks form'));
+    const form = within(screen.getByTitle("Hooks form"));
 
-    userEvent.type(form.getByRole('textbox', {name: 'Author'}), 'my-author');
-    userEvent.type(form.getByRole('textbox', {name: 'Text'}), 'my-comment');
-    userEvent.click(form.getByRole('button'));
+    userEvent.type(form.getByRole("textbox", { name: "Author" }), "my-author");
+    userEvent.type(form.getByRole("textbox", { name: "Text" }), "my-comment");
+    userEvent.click(form.getByRole("button"));
 
-    const list = within(screen.getByTitle('Comment list'));
+    const list = within(screen.getByTitle("Comment list"));
 
-    list.getByText('my-author said:');
-    list.getByText('my-comment');
+    list.getByText("my-author said:");
+    list.getByText("my-comment");
   });
 });

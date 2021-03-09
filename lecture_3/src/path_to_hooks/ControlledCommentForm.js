@@ -1,13 +1,13 @@
-import React, {Component} from 'react';
-import PropTypes from 'prop-types';
+import { Component, createRef } from "react";
+import PropTypes from "prop-types";
 
 // Example of controlled form
 class CommentForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      author: '',
-      text: ''
+      author: "",
+      text: "",
     };
     this.handleInputChange = this.handleInputChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
@@ -15,7 +15,7 @@ class CommentForm extends Component {
     // Refs allow accessing the underlying DOM elements tied to React elements.
     // This is usually only necessary for creating side-effects, such as
     // focusing inputs which do not map well to React's functional nature.
-    this.authorInput = React.createRef();
+    this.authorInput = createRef();
   }
 
   focus() {
@@ -27,14 +27,14 @@ class CommentForm extends Component {
     // Update state, matching state key with input name.
     const name = event.target.name;
     const value = event.target.value;
-    this.setState({[name]: value});
+    this.setState({ [name]: value });
   }
 
   onSubmit() {
     // Get author, text values from React state.
     this.props.onSubmit(this.state);
     // Clear React state
-    this.setState({author: '', text: ''});
+    this.setState({ author: "", text: "" });
   }
 
   render() {
@@ -42,7 +42,7 @@ class CommentForm extends Component {
     // reference is taken for allowing focusing the input.
     const props = this.props;
     return (
-      <div className='comment-form' title='Controlled form'>
+      <div className="comment-form" title="Controlled form">
         <h3>Controlled form</h3>
         <label htmlFor="controlled-form-author-input">Author</label>
         <input
@@ -63,7 +63,7 @@ class CommentForm extends Component {
           value={this.state.text}
           onChange={this.handleInputChange}
         />
-        <button type='submit' onClick={this.onSubmit}>
+        <button type="submit" onClick={this.onSubmit}>
           {props.text}
         </button>
       </div>
@@ -73,7 +73,7 @@ class CommentForm extends Component {
 
 CommentForm.propTypes = {
   onSubmit: PropTypes.func.isRequired,
-  text: PropTypes.string
+  text: PropTypes.string,
 };
 
 export default CommentForm;

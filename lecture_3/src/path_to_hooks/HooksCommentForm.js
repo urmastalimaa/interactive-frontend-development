@@ -1,5 +1,5 @@
-import React, {useState, useRef, forwardRef, useImperativeHandle} from 'react';
-import PropTypes from 'prop-types';
+import { useState, useRef, forwardRef, useImperativeHandle } from "react";
+import PropTypes from "prop-types";
 
 // Here we define a custom hook that simplifies tracking the value of a single
 // input. It's a very thin wrapper around `useState`. All custom hooks should
@@ -23,18 +23,18 @@ let HooksCommentForm = (props, ref) => {
   // by `someFunc` and `y` will be assigned the second value of the array.
   //
   // https://reactjs.org/docs/hooks-reference.html#usestate
-  const [author, setAuthor] = useState('');
+  const [author, setAuthor] = useState("");
   const onAuthorChange = (event) => setAuthor(event.target.value);
 
-  const [text, setTextFromEventTarget, setText] = useInputState('');
+  const [text, setTextFromEventTarget, setText] = useInputState("");
 
   const submit = () => {
     // If multiple calls to state hooks need to be done at the same time,
     // consider consolidating those into one state item. This is not done here
     // to demonstrate multiple different `useState` calls.
-    setAuthor('');
-    setText('');
-    props.onSubmit({author, text});
+    setAuthor("");
+    setText("");
+    props.onSubmit({ author, text });
   };
 
   // Refs can also be used via hooks in functional components.
@@ -50,11 +50,11 @@ let HooksCommentForm = (props, ref) => {
   useImperativeHandle(ref, () => ({
     focus: () => {
       authorInput.current.focus();
-    }
+    },
   }));
 
   return (
-    <div className='comment-form' title='Hooks form'>
+    <div className="comment-form" title="Hooks form">
       <h3>Controlled form with hooks</h3>
       <label htmlFor="hooks-form-author-input">Author</label>
       <input
@@ -75,7 +75,7 @@ let HooksCommentForm = (props, ref) => {
         value={text}
         onChange={setTextFromEventTarget}
       />
-      <button type='submit' onClick={submit}>
+      <button type="submit" onClick={submit}>
         {props.text}
       </button>
     </div>
@@ -93,7 +93,7 @@ HooksCommentForm = forwardRef(HooksCommentForm);
 
 HooksCommentForm.propTypes = {
   onSubmit: PropTypes.func.isRequired,
-  text: PropTypes.string
+  text: PropTypes.string,
 };
 
 export default HooksCommentForm;
