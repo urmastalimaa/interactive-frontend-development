@@ -1,7 +1,6 @@
 import { useState, useRef, forwardRef, useImperativeHandle } from "react";
 import PropTypes from "prop-types";
 
-
 // This is functionally equivalent to the ControlledCommentForm.
 // The style is however much different.
 // It uses declarative, functional style over class and instance-based style.
