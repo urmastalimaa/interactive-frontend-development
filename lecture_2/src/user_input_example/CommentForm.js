@@ -1,5 +1,5 @@
-import {Component} from 'react';
-import PropTypes from 'prop-types';
+import { Component } from "react";
+import PropTypes from "prop-types";
 
 /*
   There are two different input fields rendered in `CommentForm`.
@@ -17,23 +17,23 @@ class CommentForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      author: '',
-      text: 'unchangeable text'
+      author: "",
+      text: "unchangeable text",
     };
     this.onSubmit = this.onSubmit.bind(this);
   }
 
   handleAuthorChange(event) {
-    this.setState({author: event.target.value});
+    this.setState({ author: event.target.value });
   }
 
   onSubmit() {
-    this.props.onSubmit({author: this.state.author, text: this.state.text});
+    this.props.onSubmit({ author: this.state.author, text: this.state.text });
   }
 
   render() {
     return (
-      <div className='comment-form'>
+      <div className="comment-form">
         <input
           type="text"
           placeholder="Say something..."
@@ -45,7 +45,7 @@ class CommentForm extends Component {
           value={this.state.author}
           onChange={this.handleAuthorChange.bind(this)}
         />
-        <button className='comment-form' onClick={this.onSubmit}>
+        <button className="comment-form" onClick={this.onSubmit}>
           Submit comment
         </button>
       </div>

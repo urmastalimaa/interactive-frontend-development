@@ -1,4 +1,4 @@
-import {Component} from 'react';
+import { Component } from "react";
 
 /*
   Has `onSubmit` and `text` props. `onSubmit` is a callback function, it will
@@ -15,12 +15,12 @@ import {Component} from 'react';
 class CommentForm extends Component {
   render() {
     return (
-      <button className='comment-form' onClick={this.props.onSubmit}>
+      <button className="comment-form" onClick={this.props.onSubmit}>
         {this.props.text}
       </button>
     );
   }
 }
-CommentForm.defaultProps = {text: 'Submit a comment'};
+CommentForm.defaultProps = { text: "Submit a comment" };
 
 export default CommentForm;

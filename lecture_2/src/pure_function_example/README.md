@@ -10,7 +10,7 @@ Open _Pure function example_ subpage.
 
 ## New dependencies
 
-* [React prop types
+- [React prop types
   validation](https://github.com/urmastalimaa/interactive-frontend-development/tree/master/lecture_2/package.json#L43)
 
 ## Pure function components
@@ -25,13 +25,13 @@ return a React node (JSX).
 
 ## Components in the example
 
-* [`App`](https://github.com/urmastalimaa/interactive-frontend-development/tree/master/lecture_2/src/pure_function_example/App.js)
+- [`App`](https://github.com/urmastalimaa/interactive-frontend-development/tree/master/lecture_2/src/pure_function_example/App.js)
   has been reverted to not increase amount of comments at an interval.
-* [`Comment`](https://github.com/urmastalimaa/interactive-frontend-development/tree/master/lecture_2/src/pure_function_example/Comment.js)
+- [`Comment`](https://github.com/urmastalimaa/interactive-frontend-development/tree/master/lecture_2/src/pure_function_example/Comment.js)
   has been implemented as a _pure function component_.
-* [`CommentForm`](https://github.com/urmastalimaa/interactive-frontend-development/tree/master/lecture_2/src/pure_function_example/CommentForm.js)
+- [`CommentForm`](https://github.com/urmastalimaa/interactive-frontend-development/tree/master/lecture_2/src/pure_function_example/CommentForm.js)
   has been implemented as a _pure function component_.
-* [`CommentList`](https://github.com/urmastalimaa/interactive-frontend-development/tree/master/lecture_2/src/pure_function_example/CommentList.js)
+- [`CommentList`](https://github.com/urmastalimaa/interactive-frontend-development/tree/master/lecture_2/src/pure_function_example/CommentList.js)
   has been implemented as a _pure function component_.
 
 ## Prop validation

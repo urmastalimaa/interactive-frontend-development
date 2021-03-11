@@ -1,11 +1,9 @@
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 const Comment = (props) => {
   return (
     <div className="comment">
-      <h2 className="comment-author">
-        {props.author}
-      </h2>
+      <h2 className="comment-author">{props.author}</h2>
       {props.children}
     </div>
   );

@@ -10,23 +10,23 @@ Open _Props example_ subpage.
 
 ## New dependencies
 
-* [React and bindings for the
+- [React and bindings for the
   browser](https://github.com/urmastalimaa/interactive-frontend-development/tree/master/lecture_2/package.json#L44-L45)
-* [React preset for babel
+- [React preset for babel
   (transpilation)](https://github.com/urmastalimaa/interactive-frontend-development/tree/master/lecture_2/package.json#L14)
-* [React plugin for eslint
+- [React plugin for eslint
   (linting)](https://github.com/urmastalimaa/interactive-frontend-development/tree/master/lecture_2/package.json#L24)
 
 ## Changes to build chain
 
-* Allow importing from node_modules in [rollup configuration](https://github.com/urmastalimaa/interactive-frontend-development/tree/master/lecture_2/rollup.config.js#L25-L32)
-* Allow parsing JSX and enable react integration in [babel configuration](https://github.com/urmastalimaa/interactive-frontend-development/tree/master/lecture_2/babel.config.json)
-* Allow parsing JSX and enable react plugin in [eslint configuration](https://github.com/urmastalimaa/interactive-frontend-development/tree/master/lecture_2/.eslintrc)
+- Allow importing from node_modules in [rollup configuration](https://github.com/urmastalimaa/interactive-frontend-development/tree/master/lecture_2/rollup.config.js#L25-L32)
+- Allow parsing JSX and enable react integration in [babel configuration](https://github.com/urmastalimaa/interactive-frontend-development/tree/master/lecture_2/babel.config.json)
+- Allow parsing JSX and enable react plugin in [eslint configuration](https://github.com/urmastalimaa/interactive-frontend-development/tree/master/lecture_2/.eslintrc)
 
 ## React views
 
 [React][react] is a library for building views in a declarative and composable
-manner. 
+manner.
 
 Parent view components can include a number of child components. Parent
 components can pass data to child components through _props_ - short for
@@ -61,13 +61,13 @@ of the class must return a React node.
 
 ## Components in the example
 
-* [`App`](https://github.com/urmastalimaa/interactive-frontend-development/tree/master/lecture_2/src/props_example/App.js)
+- [`App`](https://github.com/urmastalimaa/interactive-frontend-development/tree/master/lecture_2/src/props_example/App.js)
   contains all the other components.
-* [`CommentList`](https://github.com/urmastalimaa/interactive-frontend-development/tree/master/lecture_2/src/props_example/CommentList.js)
+- [`CommentList`](https://github.com/urmastalimaa/interactive-frontend-development/tree/master/lecture_2/src/props_example/CommentList.js)
   contains two `Comments`.
-* [`CommentForm`](https://github.com/urmastalimaa/interactive-frontend-development/tree/master/lecture_2/src/props_example/CommentForm.js)
+- [`CommentForm`](https://github.com/urmastalimaa/interactive-frontend-development/tree/master/lecture_2/src/props_example/CommentForm.js)
   has a button that simulates form submission when clicked.
-* [`Comment`](https://github.com/urmastalimaa/interactive-frontend-development/tree/master/lecture_2/src/props_example/Comment.js)
+- [`Comment`](https://github.com/urmastalimaa/interactive-frontend-development/tree/master/lecture_2/src/props_example/Comment.js)
   renders a Comment, author header and text in a `div`.
 
 ## Props and rendering

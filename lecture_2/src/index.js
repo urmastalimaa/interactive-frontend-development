@@ -1,11 +1,11 @@
-import ReactDOM from 'react-dom';
+import ReactDOM from "react-dom";
 
-import '../css/index.css';
+import "../css/index.css";
 
-import PropsApp from './props_example/App';
-import StateApp from './state_example/App';
-import PureFunctionApp from './pure_function_example/App';
-import UserInputApp from './user_input_example/App';
+import PropsApp from "./props_example/App";
+import StateApp from "./state_example/App";
+import PureFunctionApp from "./pure_function_example/App";
+import UserInputApp from "./user_input_example/App";
 
 let currentApp = <PropsApp />;
 if (document.location.search.match(/progress=state/)) {
@@ -16,4 +16,4 @@ if (document.location.search.match(/progress=state/)) {
   currentApp = <UserInputApp />;
 }
 
-ReactDOM.render(currentApp, document.getElementById('root'));
+ReactDOM.render(currentApp, document.getElementById("root"));

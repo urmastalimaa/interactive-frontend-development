@@ -1,5 +1,5 @@
-import {Component} from 'react';
-import Comment from '../props_example/Comment';
+import { Component } from "react";
+import Comment from "../props_example/Comment";
 
 /*
   CommentList has been updated to receive `comments` as props.
@@ -19,11 +19,7 @@ class CommentList extends Component {
         </Comment>
       );
     });
-    return (
-      <div className="comment-list">
-        {commentElements}
-      </div>
-    );
+    return <div className="comment-list">{commentElements}</div>;
   }
 }
 

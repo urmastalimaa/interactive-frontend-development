@@ -1,10 +1,10 @@
-import {Component} from 'react';
+import { Component } from "react";
 
-import CommentList from './CommentList';
-import CommentForm from './CommentForm';
+import CommentList from "./CommentList";
+import CommentForm from "./CommentForm";
 
 const onSubmit = () => {
-  console.log('posting comment!'); // eslint-disable-line no-console
+  console.log("posting comment!"); // eslint-disable-line no-console
 };
 
 /*
@@ -15,7 +15,7 @@ const onSubmit = () => {
 class App extends Component {
   render() {
     return (
-      <div className='app'>
+      <div className="app">
         <h1>Comments</h1>
         <CommentList />
         <CommentForm onSubmit={onSubmit} />
