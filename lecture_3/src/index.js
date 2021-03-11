@@ -1,4 +1,3 @@
-import React from "react";
 import ReactDOM from "react-dom";
 import PathToHooks from "./path_to_hooks/App";
 import DebuggingApp from "./debugging/App";

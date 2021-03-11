@@ -1,14 +1,6 @@
 import { useState, useRef, forwardRef, useImperativeHandle } from "react";
 import PropTypes from "prop-types";
 
-// Here we define a custom hook that simplifies tracking the value of a single
-// input. It's a very thin wrapper around `useState`. All custom hooks should
-// follow the naming convention of `useXXX`.
-const useInputState = (initialValue) => {
-  const [val, setVal] = useState(initialValue);
-  const setValueFromEventTarget = (event) => setVal(event.target.value);
-  return [val, setValueFromEventTarget, setVal];
-};
 
 // This is functionally equivalent to the ControlledCommentForm.
 // The style is however much different.
@@ -26,7 +18,8 @@ let HooksCommentForm = (props, ref) => {
   const [author, setAuthor] = useState("");
   const onAuthorChange = (event) => setAuthor(event.target.value);
 
-  const [text, setTextFromEventTarget, setText] = useInputState("");
+  const [text, setText] = useState("");
+  const onTextChange = (event) => setText(event.target.value);
 
   const submit = () => {
     // If multiple calls to state hooks need to be done at the same time,
@@ -73,7 +66,7 @@ let HooksCommentForm = (props, ref) => {
         type="text"
         placeholder="Say something..."
         value={text}
-        onChange={setTextFromEventTarget}
+        onChange={onTextChange}
       />
       <button type="submit" onClick={submit}>
         {props.text}
