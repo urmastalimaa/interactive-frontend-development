@@ -1,9 +1,7 @@
-const chai = require('chai');
+const chai = require("chai");
 global.expect = chai.expect;
 
 module.exports = {
-  require: [
-    '@babel/register'
-  ],
-  recursive: true
+  require: ["@babel/register"],
+  recursive: true,
 };

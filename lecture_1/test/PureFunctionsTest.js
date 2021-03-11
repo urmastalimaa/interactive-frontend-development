@@ -1,35 +1,37 @@
-import {merge, associate} from '../src/PureFunctions';
+import { merge, associate } from "../src/PureFunctions";
 
-describe('merge', () => {
-  it('has properties from both object', () => {
-    expect(merge({a: 'foo'}, {b: 'bar'})).to.eql({
-      a: 'foo', b: 'bar'
+describe("merge", () => {
+  it("has properties from both object", () => {
+    expect(merge({ a: "foo" }, { b: "bar" })).to.eql({
+      a: "foo",
+      b: "bar",
     });
   });
 
-  it('overwrites properties from first object with properties from second', () => {
-    expect(merge({a: 'foo'}, {a: 'bar'})).to.eql({
-      a: 'bar'
+  it("overwrites properties from first object with properties from second", () => {
+    expect(merge({ a: "foo" }, { a: "bar" })).to.eql({
+      a: "bar",
     });
   });
 });
 
-describe('associate', () => {
+describe("associate", () => {
   let baseObj;
   beforeEach(() => {
-    console.log('Running beforeEach');
-    baseObj = {a: 'foo'};
+    console.log("Running beforeEach");
+    baseObj = { a: "foo" };
   });
 
-  it('adds property to object', () => {
-    expect(associate('b', 'bar', baseObj)).to.eql({
-      a: 'foo', b: 'bar'
+  it("adds property to object", () => {
+    expect(associate("b", "bar", baseObj)).to.eql({
+      a: "foo",
+      b: "bar",
     });
   });
 
-  it('overwrites existing property on object', () => {
-    expect(associate('a', 'bar', baseObj)).to.eql({
-      a: 'bar'
+  it("overwrites existing property on object", () => {
+    expect(associate("a", "bar", baseObj)).to.eql({
+      a: "bar",
     });
   });
 });
