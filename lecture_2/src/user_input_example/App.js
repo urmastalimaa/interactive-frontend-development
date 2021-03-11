@@ -1,20 +1,20 @@
-import { Component } from "react";
+import {Component} from 'react';
 
-import CommentList from "../pure_function_example/CommentList";
-import CommentForm from "./CommentForm";
+import CommentList from '../pure_function_example/CommentList';
+import CommentForm from './CommentForm';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
       comments: [
-        { author: "React Reactson", text: "This is one comment", id: 1 },
-        { author: "Java Scriptson", text: "This is another comment", id: 2 },
+        {author: 'React Reactson', text: 'This is one comment', id: 1},
+        {author: 'Java Scriptson', text: 'This is another comment', id: 2},
       ],
     };
   }
 
-  handleCommentSubmit({ author, text }) {
+  handleCommentSubmit({author, text}) {
     const lastComment = this.state.comments[this.state.comments.length - 1];
     this.setState({
       comments: this.state.comments.concat({

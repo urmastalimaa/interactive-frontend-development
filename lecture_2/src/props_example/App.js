@@ -1,10 +1,10 @@
-import { Component } from "react";
+import {Component} from 'react';
 
-import CommentList from "./CommentList";
-import CommentForm from "./CommentForm";
+import CommentList from './CommentList';
+import CommentForm from './CommentForm';
 
 const onSubmit = () => {
-  console.log("posting comment!"); // eslint-disable-line no-console
+  console.log('posting comment!'); // eslint-disable-line no-console
 };
 
 /*

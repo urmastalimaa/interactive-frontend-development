@@ -1,4 +1,4 @@
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 
 /*
   Has `onSubmit` and `text` props. `onSubmit` is a callback function, it will
@@ -23,6 +23,6 @@ CommentForm.propTypes = {
   onSubmit: PropTypes.func.isRequired,
   text: PropTypes.string,
 };
-CommentForm.defaultProps = { text: "Submit a comment" };
+CommentForm.defaultProps = {text: 'Submit a comment'};
 
 export default CommentForm;

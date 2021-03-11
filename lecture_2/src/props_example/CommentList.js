@@ -1,5 +1,5 @@
-import { Component } from "react";
-import Comment from "./Comment";
+import {Component} from 'react';
+import Comment from './Comment';
 
 /*
   Passes `author` prop to multiple `Comment`s. Also passes an inline text

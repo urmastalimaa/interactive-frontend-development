@@ -1,5 +1,5 @@
-import PropTypes from "prop-types";
-import Comment from "./Comment";
+import PropTypes from 'prop-types';
+import Comment from './Comment';
 
 /*
   CommentList has been updated to receive `comments` as props.
@@ -23,11 +23,11 @@ const CommentList = (props) => {
 
 CommentList.propTypes = {
   comments: PropTypes.arrayOf(
-    PropTypes.shape({
-      author: PropTypes.string,
-      id: PropTypes.number,
-      text: PropTypes.string,
-    })
+      PropTypes.shape({
+        author: PropTypes.string,
+        id: PropTypes.number,
+        text: PropTypes.string,
+      })
   ).isRequired,
 };
 

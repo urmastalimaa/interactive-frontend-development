@@ -1,6 +1,6 @@
-import { Component } from "react";
+import {Component} from 'react';
 
-import CommentList from "./CommentList";
+import CommentList from './CommentList';
 
 /*
   `App` component now has state: inserted comments.
@@ -16,19 +16,19 @@ import CommentList from "./CommentList";
 class App extends Component {
   constructor(props) {
     super(props); // every component must call superclass constructor with props
-    this.state = { comments: [] };
+    this.state = {comments: []};
 
     let id = 1;
     setInterval(() => {
       this.setState({
         comments: this.state.comments.concat([
           {
-            author: "React Reactson",
+            author: 'React Reactson',
             text: `This is one comment ${id}`,
             id: id,
           },
           {
-            author: "Java Scriptson",
+            author: 'Java Scriptson',
             text: `This is another comment ${id + 1}`,
             id: id + 1,
           },
@@ -39,7 +39,7 @@ class App extends Component {
   }
 
   onSubmit() {
-    console.log("posting comment!"); // eslint-disable-line no-console
+    console.log('posting comment!'); // eslint-disable-line no-console
   }
 
   render() {

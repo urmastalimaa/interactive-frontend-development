@@ -1,4 +1,4 @@
-import { Component } from "react";
+import {Component} from 'react';
 
 /*
   Has `onSubmit` and `text` props. `onSubmit` is a callback function, it will
@@ -21,6 +21,6 @@ class CommentForm extends Component {
     );
   }
 }
-CommentForm.defaultProps = { text: "Submit a comment" };
+CommentForm.defaultProps = {text: 'Submit a comment'};
 
 export default CommentForm;

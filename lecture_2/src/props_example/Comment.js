@@ -1,4 +1,4 @@
-import { Component } from "react";
+import {Component} from 'react';
 
 /*
   Has `author` and `children` props. `children` is a special prop that has

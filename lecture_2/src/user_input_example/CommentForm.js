@@ -1,5 +1,5 @@
-import { Component } from "react";
-import PropTypes from "prop-types";
+import {Component} from 'react';
+import PropTypes from 'prop-types';
 
 /*
   There are two different input fields rendered in `CommentForm`.
@@ -17,18 +17,18 @@ class CommentForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      author: "",
-      text: "unchangeable text",
+      author: '',
+      text: 'unchangeable text',
     };
     this.onSubmit = this.onSubmit.bind(this);
   }
 
   handleAuthorChange(event) {
-    this.setState({ author: event.target.value });
+    this.setState({author: event.target.value});
   }
 
   onSubmit() {
-    this.props.onSubmit({ author: this.state.author, text: this.state.text });
+    this.props.onSubmit({author: this.state.author, text: this.state.text});
   }
 
   render() {
