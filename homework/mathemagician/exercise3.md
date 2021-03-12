@@ -16,8 +16,8 @@ This homework adds to homework 2 functionality.
   * Game now continues when an incorrect answer is given
 * Show round history during game
   * Display expressions with the "blank" filled with given answers
-  * Each expression with a correct answer given in 1 second or less has green text colour
-  * Each expression with a correct answer given in more than 1 second has orange text colour
+  * Each expression with a correct answer given in 3 second or less has green text colour
+  * Each expression with a correct answer given in more than 3 second has orange text colour
   * Each expression with an incorrect answer has red text colour
 * Game Over screen
   * Keep the round history visible in game over screen
