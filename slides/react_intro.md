@@ -231,7 +231,7 @@ In practice
 Composing templates can be problematic
 
 * How to pass data to a nested template from a controller?
-* How does a controller receive input (e.g from text fields) from a nested template?
+* How does a controller receive input (e.g. from text fields) from a nested template?
 
 The solutions are usually rather complex
 
@@ -240,7 +240,7 @@ The solutions are usually rather complex
 # Control flow in templates
 
 * Reinvents JavaScript concepts (scope, context, control flow)
-  * Sometimes through custom template-directives e.g ng-repeat
+  * Sometimes through custom template-directives e.g. ng-repeat
 * HTML - HyperText Markup Language, not a programming language
 
 ---
@@ -284,7 +284,7 @@ back when JavaScript is disabled is not too much of an issue here.
 * Optional in React (recommended in this course).
 * By far the most controversial part of React.
 * _Looks like_ HTML, but is a representation of HTML in JavaScript.
-* Transpiled to JavaScript (e.g by a babel plugin)
+* Transpiled to JavaScript (e.g. by a babel plugin)
 
 _Reminder_
 
@@ -355,7 +355,7 @@ Goals:
 * Getting data from JavaScript to HTML
 
   `Controller -> View`
-* Getting data from HTML (e.g inputs) to JavaScript
+* Getting data from HTML (e.g. inputs) to JavaScript
 
   `View -> Controller`
 
@@ -395,11 +395,11 @@ But,
 
 ---
 
-# React - one way data flow, explicit updates
+# React - unidirectional data flow
 
-* React components have props.
-* `props` are immutable.
-* `props` can have default values and be passed from parent component.
+* React components have props
+* `props` are immutable
+* `props` are passed from parent component
 * If parent changes props of a child, child is fully re-rendered
   * Old child instance is thrown away (under-the-hood optimizations may occur)
   * Child does not need to worry about partial updates
@@ -490,6 +490,9 @@ class OneClickButton extends Component {
 
 Data flows up
 
+You'll almost never want to keep a sentence, such as "Click me" in state
+as that is purely a rendering concern.
+
 ---
 
 # Where to hold state?
@@ -540,7 +543,7 @@ Isn’t re-rendering everything whenever a smallest thing changes slow?
   ```js
     element.innerHTML = "...";
   ```
-* Re-rendering DOM elements causes flickering and loses DOM state (e.g _focus_).
+* Re-rendering DOM elements causes flickering and loses DOM state (e.g. _focus_).
 * _Virtual DOM_ - a virtual representation of the real DOM in JavaScript
 
 ---
@@ -563,7 +566,7 @@ On every update
 
 * All DOM operations done on **virtual** DOM
 * **Real** DOM changed in batches
-* Automatic event (e.g _click_) delegation
+* Automatic event (e.g. _click_) delegation
 * Seamless user experience when re-rendering all the time
 
 ???
