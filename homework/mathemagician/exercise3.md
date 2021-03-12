@@ -27,8 +27,7 @@ This homework adds to homework 2 functionality.
 
 * At least 7 React components must be used
 * Maximally 1 class-based component can be used
-  * All others must be converted to functional components, with hooks if required.
-* `useReducer` hook must be used at least once
+  * All others must be converted to functional components, with hooks as necessary.
 * Only have state in components that need it
 * All component props must be validated
 
