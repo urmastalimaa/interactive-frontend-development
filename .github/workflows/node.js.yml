@@ -18,4 +18,8 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: 14.6
+    - name: setup git config
+      run: |
+        git config user.name "GitHub Actions Bot"
+        git config user.email "<>"
     - run: ./build_course
