@@ -10,7 +10,7 @@ open localhost:10001
 
 #### Expected behaviour
 
-* A title in the center of a greenish background is seen on the page
+- A title in the center of a greenish background is seen on the page
 
 ## CSS
 
@@ -20,7 +20,7 @@ visually: the color and font of text, alignment of different sections etc.
 This course will not focus on how to build maintainable CSS.
 
 However as with JavaScript files an important part of any source code is the
-ability to split it into manageable chunks.  This can be achieved in CSS via
+ability to split it into manageable chunks. This can be achieved in CSS via
 CSS modules.
 
 ### CSS modules

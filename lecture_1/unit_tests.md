@@ -9,7 +9,7 @@ yarn test
 
 #### Expected behaviour
 
-* 4 passing tests
+- 4 passing tests
 
 ## Explanation
 
@@ -30,7 +30,7 @@ It uses _babel_ to transform source files into ES5 that can be interpreted by
 NodeJS. NodeJS does not support ES6 modules and we don't want to change our
 source files to be able to run tests from the command line. Thus a different
 babel configuration is used to both resolve modules and to transpile source
-code for a desired NodeJS version. 
+code for a desired NodeJS version.
 
 ### Chai
 
@@ -58,10 +58,9 @@ for convenience.
 ES6 defines spread syntax for arrays `[...myArray, newElem]`, but does not do
 so for objects. Object.assign can be used to create a new object with an
 additional property (`Object.assign({}, myObj, {newKey: newValue})`, but it is
-rather verbose for such a common  operation. 
+rather verbose for such a common operation.
 
-[@babel/plugin-proposal-object-rest-spread][2] babel plugin enables `{...myObj, newKey:
-newValue}` syntax.
+[@babel/plugin-proposal-object-rest-spread][2] babel plugin enables `{...myObj, newKey: newValue}` syntax.
 
 [0]: https://mochajs.org/
 [1]: http://chaijs.com/

@@ -4,7 +4,7 @@ class: middle, center
 # Interactive Front-end Development
 
 ## Urmas Talimaa
-## _Glia Inc (formerly SaleMove)_
+## _Glia Inc_
 
 ???
 
@@ -170,7 +170,7 @@ Differences usually come from
 * Template engine / support
 * Data-flow
 * State management
-* Composition of views/controllers (means of composition)
+* Means of composition
 
 ---
 
@@ -231,7 +231,7 @@ In practice
 Composing templates can be problematic
 
 * How to pass data to a nested template from a controller?
-* How does a controller receive input (e.g from text fields) from a nested template?
+* How does a controller receive input (e.g. from text fields) from a nested template?
 
 The solutions are usually rather complex
 
@@ -240,7 +240,7 @@ The solutions are usually rather complex
 # Control flow in templates
 
 * Reinvents JavaScript concepts (scope, context, control flow)
-  * Sometimes through custom template-directives e.g ng-repeat
+  * Sometimes through custom template-directives e.g. ng-repeat
 * HTML - HyperText Markup Language, not a programming language
 
 ---
@@ -249,7 +249,7 @@ The solutions are usually rather complex
 
 Problem:
 
->> * Templates often do not work as well as we’d want
+>> * Templates often do not work very well
 
 Solution:
 
@@ -284,7 +284,7 @@ back when JavaScript is disabled is not too much of an issue here.
 * Optional in React (recommended in this course).
 * By far the most controversial part of React.
 * _Looks like_ HTML, but is a representation of HTML in JavaScript.
-* Transpiled to JavaScript (e.g by a babel plugin)
+* Transpiled to JavaScript (e.g. by a babel plugin)
 
 _Reminder_
 
@@ -355,7 +355,7 @@ Goals:
 * Getting data from JavaScript to HTML
 
   `Controller -> View`
-* Getting data from HTML (e.g inputs) to JavaScript
+* Getting data from HTML (e.g. inputs) to JavaScript
 
   `View -> Controller`
 
@@ -395,13 +395,13 @@ But,
 
 ---
 
-# React - one way data flow, explicit updates
+# React - unidirectional data flow
 
-* React components have props.
-* `props` are immutable.
-* `props` can have default values and be passed from parent component.
+* React components have props
+* `props` are immutable
+* `props` are passed from parent component
 * If parent changes props of a child, child is fully re-rendered
-  * Old child instance is thrown away
+  * Old child instance is thrown away (under-the-hood optimizations may occur)
   * Child does not need to worry about partial updates
 * A child component can never instruct its parent to change (one-way data flow)
 
@@ -424,18 +424,16 @@ State management is the hardest thing to get right in an interactive application
 
 # State management
 
-* All the state in an application is usually linked in some way
-* Components which have/handle application state are less reusable
-* Breaking up state management logic into different models/controllers needs a good
-reason.
-  * Managing state of one button/field in multiple places makes reasoning about the element state very hard
-* Managing overlapping slices of state all across the application is a maintenance nightmare.
+* Stateless components are very easy to reuse and understand
+* Components with complex state are very hard to reuse and understand
+* One unit of state should be managed in a single place
+* Managing overlapping state in various places across an application is a maintenance nightmare
 
 ---
 
 # React - isolate state mutations
 
-* Each React component can have state.
+* Each React component can have state
 * State can only be changed by the very component that defines it
   * No surprise updates to state!
   * 
@@ -458,7 +456,7 @@ reason.
 ---
 
 ```jsx
-import React, {Component} from 'react';   
+import {Component} from 'react';   
 
 class OneClickButton extends Component {
   constructor(props) { 
@@ -466,6 +464,7 @@ class OneClickButton extends Component {
     this.state = {
       buttonClickedAtLeastOnce = false; 
     }
+    this.setButtonToClicked = this.setButtonToClicked.bind(this);
   } 
 
   setButtonToClicked(event) {
@@ -481,16 +480,18 @@ class OneClickButton extends Component {
       : "Clicked"; 
 
     return 
-      <button onClick={this.setButtonToClicked.bind(this)}>
+      <button onClick={this.setButtonToClicked}>
         {text}
       </button>;
-  } 
-}
+  }}
 ```
 
 ???
 
 Data flows up
+
+You'll almost never want to keep a sentence, such as "Click me" in state
+as that is purely a rendering concern.
 
 ---
 
@@ -499,9 +500,9 @@ Data flows up
 * Identify components that depend on shared state
 * Identify a common parent of those components
 * Either the common parent or a component higher up should own the state
-  * Components should have only state that they are fully responsible of
+  * Components should only have state that they are fully responsible for
   * A component dealing with very particular state is not reusable
-  * General application state should be pushed to root component
+  * General application state should be pushed "up", to a root component
 
 ---
 
@@ -542,7 +543,7 @@ Isn’t re-rendering everything whenever a smallest thing changes slow?
   ```js
     element.innerHTML = "...";
   ```
-* Re-rendering DOM elements causes flickering and loses DOM state (e.g _focus_).
+* Re-rendering DOM elements causes flickering and loses DOM state (e.g. _focus_).
 * _Virtual DOM_ - a virtual representation of the real DOM in JavaScript
 
 ---
@@ -565,7 +566,7 @@ On every update
 
 * All DOM operations done on **virtual** DOM
 * **Real** DOM changed in batches
-* Automatic event (e.g _click_) delegation
+* Automatic event (e.g. _click_) delegation
 * Seamless user experience when re-rendering all the time
 
 ???
@@ -690,11 +691,11 @@ Excellent tutorials, examples and API documentation
 
 # Homework
 
-[Requirements](https://github.com/urmastalimaa/interactive-frontend-development/blob/master/homework/thump/exercise2.md)
+[Requirements](https://github.com/urmastalimaa/interactive-frontend-development/blob/master/homework/mathemagician/exercise2.md)
 
 **Only submit what is yours**
 
-Deadline 31/03/2019 23:59
+Deadline 21/03/2021 23:59
 
 Unit tests for **React components only** are **not** mandatory
 
@@ -704,7 +705,7 @@ Unit tests for **React components only** are **not** mandatory
 
 If you need to provide further information, include it in README.md.
 
-Submit zipped file to https://courses.cs.ut.ee/2019/react/Main/Submit
+Submit zipped file to https://courses.cs.ut.ee/2021/react/Main/Submit
 
 Don’t include node_modules/ or .git/, .hg/, .svn/, make sure that your zipped
 file size is reasonable. You can use/modify/extend [this
@@ -713,4 +714,7 @@ script](https://gist.github.com/urmastalimaa/70edc0728cb711234f42) (usage:
 
 ---
 
-.full-image[![Homework-2-result](assets/homework-2-result.gif)]
+<video width="100%" height="50%" controls>
+  <source src="assets/homework-mathemagician-2-result.m4v" type="video/mp4">
+  Your browser does not support the video tag.
+</video> 
