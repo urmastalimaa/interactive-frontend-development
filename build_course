@@ -10,7 +10,7 @@ cd slides
 cd ../
 
 git add .
-git commit -m "Update pages" --author "Urmas Talimaa <urmas@talimaa.eu>"
+git diff-index --quiet HEAD -- || git commit -m "Update pages" --author "Urmas Talimaa <urmas@talimaa.eu>"
 git push
 
 rm ./slides/*.html
