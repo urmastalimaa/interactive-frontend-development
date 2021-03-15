@@ -2,6 +2,8 @@
 
 set -euo pipefail
 
+yarn install
+
 for SLIDE in intro js_ecosystem react_intro react_2
 do
   echo "Building $SLIDE"
