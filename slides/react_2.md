@@ -87,7 +87,7 @@ In the end, it is all about state...
 
 * Receive input from users
 * Have **local** state concerning current form state
-* Feed data parent components
+* Feed data to parent components
 
 ---
 
@@ -104,10 +104,10 @@ In the end, it is all about state...
 
 * Let views just display data
 * Application logic containers should not handle UI concerns
-* But React components are not good places to host application logic
+* Alas, React components are not well suited to host application logic
   * Testing through UI is difficult and wasteful
   * Application logic should not concern itself with a specific view library
-* So what gives?
+* What gives?
 
 ???
 
@@ -134,7 +134,7 @@ As previously noted, React is mostly just a view library.
 # Controlled components
 
 * State is fully synced between React and DOM
-* Bind input value with Component state
+* Bind input value with component state
 * Change component state when input changes (onChange)
   
 ---
@@ -144,15 +144,14 @@ As previously noted, React is mostly just a view library.
 * React and DOM state not synced
 * Do not bind element value to React state
 * Get element value from DOM when required
-  > (e.g when a related button clicked)
+  > (e.g. when a submit button is clicked)
 
-
-* Uncontrolled components can be easier to integrate with non-React code.
-* Otherwise prefer controlled components to not have uncontrolled state.
+* Uncontrolled components can be simpler
+* Usually prefer controlled components to _capture_ all the state
  
 ---
 
-# React Two-way data binding
+# React inverse data flow
 
 [Code example](https://github.com/urmastalimaa/interactive-frontend-development/blob/master/lecture_3/src/path_to_hooks/README.md)
    
@@ -160,12 +159,12 @@ As previously noted, React is mostly just a view library.
 
 # Component lifecycle
 
-* In addition to render and constructor, React provides hooks that are executed at different points in Component lifecycle
+* In addition to render and constructor, React provides hooks that are executed at different points in component lifecycle
 * Allows integration with externals
-  * Create an external element when React component is mounted, e.g. using another library, framework!
+  * Create an external element when React component is mounted, e.g. using another library or framework
   * Update the external element when props or state change
   * Remote the external element from DOM when React component unmounted
-* Allows side effects (e.g network requests or DOM focus) when component mounted/unmounted or props change
+* Allows side effects (e.g network requests or DOM focus) when component is mounted/unmounted or props change
    
 ---
 
@@ -211,7 +210,7 @@ We can generalize using simple state reading and setting by
 
 ```js
 const useState = (instance, initialValue) => {
-  // Internal magic
+  // Internal bookkeeping to identify state key
   instance.__stateCounter = (instance.__stateCounter || 0) + 1;
   const key = instance.__stateCounter;
 
@@ -300,15 +299,17 @@ const MyInput = () => {
 
 # React hooks
 
-* All other hooks work similarly, targeting the "current instance"
-* Hooks must be called on the top-level as they generate an "ID" for the hook!
+* All other hooks work similarly, targeting the _current instance_
+* Hooks must be called on the top-level as they generate an _ID_ for the hook!
   * Calling any hook inside an `if` is a egregious bug!
 * Functional components using hooks:
-  * Greatly improve readability as the hooks repeat "standard" patterns
-  * Sacrifice readability for the uninitiated by being "magic"
+  * Greatly improve readability as the hooks repeat standard patterns
+  * Sacrifice readability for the uninitiated by being _magic_
   * Allow injecting application logic to the UI without needing class-based components
 
 ---
+
+# React hooks
 
 [Code example](https://github.com/urmastalimaa/interactive-frontend-development/blob/master/lecture_3/src/path_to_hooks/README.md)
     
@@ -428,7 +429,7 @@ const button = shallow(<button onClick={() => onClick('foo')} />);
 button.simulate('click');
 
 expect(onClick.calledWith('foo')).to.be.true // sinon + chai
-expect(onClick).to.have.been.calledWith('foo'); // sinon-chai
+expect(onClick).to.have.been.calledWith('foo'); // with sinon-chai
 ```
   
 ---
@@ -441,7 +442,7 @@ expect(onClick).to.have.been.calledWith('foo'); // sinon-chai
 
 # Homework
 
-[TODO](https://github.com/urmastalimaa/interactive-frontend-development/blob/master/homework/mathemagician/exercise3.md)
+[Requirements](https://github.com/urmastalimaa/interactive-frontend-development/blob/master/homework/mathemagician/exercise3.md)
 
 * Deadline 28/03/2021 23:59
 * Submit zipped file to https://courses.cs.ut.ee/2021/react/Main/Submit
@@ -449,8 +450,6 @@ expect(onClick).to.have.been.calledWith('foo'); // sinon-chai
 * **Only submit what is yours**
 
 ---
-
-TODO
 
 <video width="100%" height="50%" controls>
   <source src="assets/homework-mathemagician-3-result.m4v" type="video/mp4">
