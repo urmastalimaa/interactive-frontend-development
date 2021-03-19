@@ -441,7 +441,7 @@ expect(onClick).to.have.been.calledWith('foo'); // sinon-chai
 
 # Homework
 
-[TODO](https://github.com/urmastalimaa/interactive-frontend-development/blob/master/homework/mathemagician/exercise3.md)
+[Requirements](https://github.com/urmastalimaa/interactive-frontend-development/blob/master/homework/mathemagician/exercise3.md)
 
 * Deadline 28/03/2021 23:59
 * Submit zipped file to https://courses.cs.ut.ee/2021/react/Main/Submit
@@ -449,8 +449,6 @@ expect(onClick).to.have.been.calledWith('foo'); // sinon-chai
 * **Only submit what is yours**
 
 ---
-
-TODO
 
 <video width="100%" height="50%" controls>
   <source src="assets/homework-mathemagician-3-result.m4v" type="video/mp4">
