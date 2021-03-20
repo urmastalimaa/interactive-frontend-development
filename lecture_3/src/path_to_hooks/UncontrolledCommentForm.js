@@ -36,7 +36,7 @@ class CommentForm extends Component {
         <label htmlFor="uncontrolled-form-author-input">Author</label>
         <input
           id="uncontrolled-form-author-input"
-          ef={this.authorInput}
+          ref={this.authorInput}
           name="author"
           type="text"
           placeholder="Your name"
