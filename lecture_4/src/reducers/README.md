@@ -28,7 +28,7 @@ In the context of state management, a reducer is a pure function of
 
 ```
   state :: any
-  action :: ({type: string, ...})
+  action :: ({type: string, payload: any})
   reducer :: (state, action) -> state
 ```
 
