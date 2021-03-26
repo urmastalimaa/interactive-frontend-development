@@ -254,7 +254,7 @@ Reducers must always be pure functions. You should never:
 
 [Code example](https://github.com/urmastalimaa/interactive-frontend-development/blob/master/lecture_4/src/redux_introduction/README.md)
 
---- 
+---
 
 # Reducers in React
 
@@ -298,7 +298,7 @@ const [state, dispatch] = useReducer(reducer, initialArg, init);
 return <CommentForm onSubmit=`(commentAttributes) => dispatch(submitComment(commentAttributes))` />;
 ```
 
-* Import _action creator_ functions to encapsulate action names
+* Import _action creator_ functions to encapsulate action types
 * _action creator_ functions can have side effects
 
 ```
@@ -364,6 +364,8 @@ it("...", () => {
 * UI tests can only test main flows
 
 ---
+
+# Reducers testing example
 
 * [Code example](https://github.com/urmastalimaa/interactive-frontend-development/blob/master/lecture_4/test/CommentsTest.js)
  
