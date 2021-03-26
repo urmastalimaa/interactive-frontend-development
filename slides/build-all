@@ -4,7 +4,7 @@ set -euo pipefail
 
 yarn install
 
-for SLIDE in intro js_ecosystem react_intro react_2
+for SLIDE in intro js_ecosystem react_intro react_2 reducers
 do
   echo "Building $SLIDE"
   ./node_modules/.bin/remarker build -s $SLIDE.md
