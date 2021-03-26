@@ -18,6 +18,7 @@ example code.
   * [Slides](https://urmastalimaa.github.io/interactive-frontend-development/slides/react_2.html)
   * [Content](./lecture_3)
 * Lecture 4 - Reducers with React
+  * [Slides](https://urmastalimaa.github.io/interactive-frontend-development/slides/reducers.html)
   * [Content](./lecture_4)
 
 ## Concepts and techniques

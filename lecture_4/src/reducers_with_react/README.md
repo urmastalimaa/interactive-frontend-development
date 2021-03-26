@@ -15,14 +15,15 @@ Open _Reducers with React_ subpage.
 Component design is nearly unchanged from previous examples.
 
 - [`Comment`](./components/Comment.js) component now allows deleting a comment.
-  Deleting intent is through callbacks to [`App`](./components/App.js).
+  Deleting intent is propagated through callbacks to
+  [`App`](./components/App.js).
 - A new [`Filter`](./components/Filter.js) component has been added. The
   component is just a _controlled_ `<input>` element.
 
 ## Reducer usage
 
 [`App`](./components/App.js) component imports _action creator_ and _selector_
-functions from the application logic - [`Comments`](./Comments.js) module. It
+functions from the application logic module - [`Comments`](./Comments.js). It
 simply wires the functions together with component props.
 
 ## Reducer design

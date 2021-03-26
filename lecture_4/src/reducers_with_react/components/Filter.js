@@ -7,8 +7,9 @@ import PropTypes from "prop-types";
 const Filter = (props) => {
   return (
     <div className="filter">
-      <h3>Filter comments</h3>
+      <label htmlFor="text-input">Filter comments</label>
       <input
+        id="filter"
         name="filter"
         type="text"
         placeholder="type here to filter"
