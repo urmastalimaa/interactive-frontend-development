@@ -1,23 +1,70 @@
 # Lecture 5
 
-Lecture 5 introduces asynchronous processes in the context of a
-front-end applications using the Redux state management pattern.
+Lecture 5 explores asynchronous actions and more specifically, interactions
+with a remote server. Focus is on testability and maintainability and a few new
+tools from React's arsenal are put into use.
 
-The examples borrow heavily from [Redux official
-guides](http://redux.js.org/).
+The core ideas of reducer de-composition and middlewares borrow heavily from
+[Redux](http://redux.js.org/).
 
 ## Study goals
 
-## Asynchronous processes
+## Asynchronous actions
 
-* What are the states of an asynchronous process?
-* How to use asynchronous actions with Redux?
+- What three actions must be dispatched during an asynchronous process?
+- What is a Promise in JavaScript?
+- How to avoid leaking Promise handlers when the component is unmounted?
+- When to use local state and when to incorporate state in reducer state?
 
-[Asynchronous process basics](./src/async_process_basics/README.md)
+See [CommentListWithServer
+`server.getComments`](./src/cross_cutting_concerns/components/CommentListWithServer.js)
+and [CommentFormWithServer
+`server.postComment`](./src/cross_cutting_concerns/components/CommentFormWithServer.js)
+for answers.
 
-## Asynchronous processes with Redux middleware
+See how a component using asynchronous actions can be tested in
+[CommentFormWithServerTest](./test/CommentFormWithServerTest.js).
 
-* What are Redux middlewares?
-* How to separate user interactions from requests to a server?
+## `fetch` API
 
-[Asynchronous process with middleware](./src/async_process_with_middleware/README.md)
+- What can the `fetch` API be used for?
+- What does `fetch` return?
+- What is an "async" function JavaScript?
+- What does the `await` keyword do in JavaScript?
+
+See [Server API](./src/cross_cutting_concerns/ServerAPI.js) for answers.
+
+### Server simulation
+
+A toy server has been added to the project. The server has simulated latency
+and intermittently fails to retrieve comments to simulate problems that can
+occur in real environments. The server accepts comments under POST /comments
+with JSON content type. Comments can be fetched using GET /comments. Comments can be deleted using DELETE /comments/:comment_id.
+
+
+## Reducer composition
+
+- How can pure functions be de-composed?
+- What to pay attention to when de-composing reducers?
+
+See [Comments.js](./src/cross_cutting_concerns/Comments.js).
+
+## Custom react hooks
+
+- When and why to use custom React hooks?
+- How to name custom React hooks?
+
+See
+[UseServerBasedOnParams](./src/cross_cutting_concerns/hooks/UseServerBasedOnParams.js)
+for answers.
+
+## Dispatch middleware
+
+- What can be done from a dispatch middleware?
+- What is the interface of a dispatch middleware (a la Redux)?
+
+See
+[UseReducerWithMiddleware](./src/cross_cutting_concerns/hooks/UseReducerWithMiddleware.js),
+[App.js](./src/cross_cutting_concerns/components/App.js) and
+[LoggingMiddleware](./src/cross_cutting_concerns/LoggingMiddleware.js) for
+answers.

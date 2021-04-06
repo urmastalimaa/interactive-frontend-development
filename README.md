@@ -20,6 +20,8 @@ example code.
 * Lecture 4 - Reducers with React
   * [Slides](https://urmastalimaa.github.io/interactive-frontend-development/slides/reducers.html)
   * [Content](./lecture_4)
+* Lecture 5 - Asynchronous actions
+  * [Content](./lecture_5)
 
 ## Concepts and techniques
 The course will concentrate on declarative programming and extensive testing.
