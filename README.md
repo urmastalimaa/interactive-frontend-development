@@ -21,6 +21,7 @@ example code.
   * [Slides](https://urmastalimaa.github.io/interactive-frontend-development/slides/reducers.html)
   * [Content](./lecture_4)
 * Lecture 5 - Asynchronous actions
+  * [Slides](https://urmastalimaa.github.io/interactive-frontend-development/slides/asynchronous_actions.html)
   * [Content](./lecture_5)
 
 ## Concepts and techniques
