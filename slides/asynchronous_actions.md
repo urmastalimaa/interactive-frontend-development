@@ -227,6 +227,8 @@ useEffect(() => {
 
 # Code example
 
+* What kind of server to use is a cross-cutting concern. In React a "Context"
+  can be used for dependency injection.
 * [CommentListWithServer](https://github.com/urmastalimaa/interactive-frontend-development/blob/master/lecture_5/src/cross_cutting_concerns/components/CommentListWithServer.js)
 * [CommentFormWithServer](https://github.com/urmastalimaa/interactive-frontend-development/blob/master/lecture_5/src/cross_cutting_concerns/components/CommentFormWithServer.js)
 
