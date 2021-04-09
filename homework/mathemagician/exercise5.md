@@ -35,7 +35,8 @@ Make sure you use the same port in your client application!
   * Update game status and remaining skips based on the server response
   * Handle **both** requests succeeding and failing
 * Test React components showing in-flight and failed requests
-* Have at least one "integration-level" mocha test which goes through **two** full games with a fake server
+* Have at least one "integration-level" mocha test which goes through **two**
+  full games through the main React view component with a fake server
   * The server can respond with failure/success arbitrarily
 * Add a **dispatch middleware** which logs server latency for each request to the server
   * Remember that a dispatch middleware can "peek" into what actions are being dispatched
