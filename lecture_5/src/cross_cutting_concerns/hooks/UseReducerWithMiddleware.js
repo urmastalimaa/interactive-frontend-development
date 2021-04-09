@@ -53,7 +53,7 @@ const useReducerWithMiddleware = (
       lastStateRef.current = newState;
       return newState;
     },
-    []
+    [lastStateRef]
   );
 
   const [state, dispatch] = useReducer(
@@ -75,9 +75,9 @@ const useReducerWithMiddleware = (
          * Initialize the middleware with means to get state and the next
          * middleware/final dispatch.
          */
-        return middleware(middlewareInit)(acc, lastStateRef.current);
+        return middleware(middlewareInit)(acc);
       });
-  }, []);
+  }, [middlewares, dispatch, lastStateRef]);
   return [state, dispatchWithMiddlewares];
 };
 

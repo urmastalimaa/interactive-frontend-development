@@ -39,8 +39,13 @@ See [Server API](./src/cross_cutting_concerns/ServerAPI.js) for answers.
 A toy server has been added to the project. The server has simulated latency
 and intermittently fails to retrieve comments to simulate problems that can
 occur in real environments. The server accepts comments under POST /comments
-with JSON content type. Comments can be fetched using GET /comments. Comments can be deleted using DELETE /comments/:comment_id.
+with JSON content type. Comments can be fetched using GET /comments. Comments
+can be deleted using DELETE /comments/:comment_id.
 
+## React context
+
+- What is a "context" in React
+- When to use a "context" and when to pass props?
 
 ## Reducer composition
 

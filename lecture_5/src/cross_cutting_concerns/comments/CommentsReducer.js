@@ -76,6 +76,6 @@ export const filterComments = (state, filterText) => ({
   ...state,
   response: state.response.filter(
     (comment) =>
-    comment.author.match(filterText) || comment.text.match(filterText)
+      comment.author.match(filterText) || comment.text.match(filterText)
   ),
 });

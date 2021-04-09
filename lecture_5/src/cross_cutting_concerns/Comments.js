@@ -57,9 +57,9 @@ export const reducer = (state, action) => {
  * state slices. We can do so while retaining encapsulation by using selector
  * functions from the corresponding reducers.
  */
-export const filteredComments = ({filter, comments}) => {
+export const filteredComments = ({ filter, comments }) => {
   const filterValue = filterText(filter);
-  return filterValue.length == 0 ? comments : filterComments(comments, filter)
+  return filterValue.length == 0 ? comments : filterComments(comments, filter);
 };
 
 export const filter = (state) => filterText(state.filter);

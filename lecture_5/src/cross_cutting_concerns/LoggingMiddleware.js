@@ -1,4 +1,6 @@
 const LoggingMiddleware = ({ getStateBefore }) => {
+  // Initialization code if any goes here
+
   return (next) => {
     return (action) => {
       const stateBefore = getStateBefore();

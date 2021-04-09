@@ -23,7 +23,6 @@ const CommentFormWithServer = ({ dispatch }) => {
     error: null,
   });
 
-
   /*
    * When a handler is set to a promise using `then` or `catch`, that handler
    * is executed asynchronously outside of the life-cycle of the component,

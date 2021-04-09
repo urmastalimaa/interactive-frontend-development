@@ -27,23 +27,26 @@ const parse = async (fetchPromise) => {
 };
 
 const postComment = ({ author, text }) => {
-  return parse(fetch(SERVER_ADDRESS + "/comments", {
-    method: "POST",
-    headers: {
-      "content-type": "application/json",
-    },
-    body: JSON.stringify({ author, text }),
-  }));
+  return parse(
+    fetch(SERVER_ADDRESS + "/comments", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({ author, text }),
+    })
+  );
 };
 
 const deleteComment = ({ id }) => {
-  return parse(fetch(SERVER_ADDRESS + `/comments/${id}`, {
-    method: "DELETE",
-  }));
+  return parse(
+    fetch(SERVER_ADDRESS + `/comments/${id}`, {
+      method: "DELETE",
+    })
+  );
 };
 
-const getComments = () =>
-  parse(fetch(SERVER_ADDRESS + "/comments"));
+const getComments = () => parse(fetch(SERVER_ADDRESS + "/comments"));
 
 /*
  * @return {Object} Server API - {postComment, deleteComment, getComments}
