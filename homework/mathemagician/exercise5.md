@@ -6,6 +6,9 @@
 
 * Use [Game Lobby Server version 1.4.0](https://www.npmjs.com/package/game_lobby_server) to play games
 * You don’t have to write a server yourself
+  * Install it in your homework project via `yarn add game_lobby_server@1.4.0`
+  * Run it using `./node_modules/.bin/game_lobby_server --port=8081 --delay=500 --failure-percentage=30`
+  * You can change the server parameters while developing to test failure and delays
 * Expect server to run on http://localhost:8081
 * Read the project README to understand the request and response formats
 * Use the Browser network inspector to your advantage!
@@ -15,7 +18,7 @@
 
 I will run the Game Lobby Server using 
 ```sh
-./bin/server.js --delay=500 --port=8081 --failure-percentage=30
+./node_modules/.bin/game_lobby_server --port=8081 --delay=500 --failure-percentage=30
 ```
 Make sure you use the same port in your client application!
 
