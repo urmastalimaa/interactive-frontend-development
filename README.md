@@ -23,6 +23,9 @@ example code.
 * Lecture 5 - Asynchronous actions
   * [Slides](https://urmastalimaa.github.io/interactive-frontend-development/slides/asynchronous_actions.html)
   * [Content](./lecture_5)
+* Lecture 6 - Bidirectional communication with remote servers
+  * [Slides](https://urmastalimaa.github.io/interactive-frontend-development/slides/bidirectional.html)
+  * [Content](./lecture_6)
 
 ## Concepts and techniques
 The course will concentrate on declarative programming and extensive testing.
