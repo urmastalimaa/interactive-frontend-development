@@ -332,16 +332,20 @@ If anything fails, the maintained object is inconsistent **until user reconnects
 
 # Homework
 
+[Requirements](https://github.com/urmastalimaa/interactive-frontend-development/blob/master/homework/mathemagician/exercise6.md)
+
 * Deadline 25/04/2021 23:59
 * Submit zipped file to https://courses.cs.ut.ee/2021/react/Main/Submit
+* Tests will give significant points
 * **Only submit what is yours**
 
 ---
 
-# Homework
+<video width="100%" height="50%" controls>
+  <source src="assets/homework-mathemagician-6-result.m4v" type="video/mp4">
+  Your browser does not support the video tag.
+</video> 
 
-TODO
-              
 ---
 
 .full-image[![Joy of programming ... with Bob ross](assets/joy-of-programming.png)]
