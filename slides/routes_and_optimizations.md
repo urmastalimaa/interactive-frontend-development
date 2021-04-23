@@ -257,7 +257,7 @@ React hooks provide very simple caches
 # Object/Function cache
 
 * Missing any dependency in the dependencies list causes extremely hard-to-catch bugs!
-* `dispatch`/`setState` and similar are guaranteed "stable" across renders
+* `dispatch`/`setState` and similar functions from React are guaranteed "stable" across renders
 
 ---
 

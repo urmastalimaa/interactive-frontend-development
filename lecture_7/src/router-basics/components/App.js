@@ -1,7 +1,7 @@
 import React, { useReducer } from "react";
 import PropTypes from "prop-types";
 import AppHeader from "../components/AppHeader";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter, Route } from "react-router-dom";
 import {
   reducer,
   initializer,
@@ -98,12 +98,18 @@ const StateApp = () => {
 
 const App = () => {
   const server = useServerBasedOnParams();
+  /*
+   * Try to move components which do not depend on values from hooks outside of
+   * the component. In this case, neither `BrowserRouter` nor `ServerContext`
+   * depend on the state from `useReducer` and do not need to be re-rendered
+   * whenever state changes.
+   */
   return (
-    <Router>
+    <BrowserRouter>
       <ServerContext.Provider value={server}>
         <StateApp />
       </ServerContext.Provider>
-    </Router>
+    </BrowserRouter>
   );
 };
 
