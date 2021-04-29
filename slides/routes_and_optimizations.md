@@ -264,6 +264,6 @@ React hooks provide very simple caches
 # Homework
 
 * [Requirements](https://github.com/urmastalimaa/interactive-frontend-development/blob/master/homework/mathemagician/exercise7.md)
-* Deadline Sunday 09/05/2021 23:59
+* Deadline Sunday 16/05/2021 23:59
 * Submit zipped file to https://courses.cs.ut.ee/2021/react/Main/Submit
 * **Only submit what is yours**
