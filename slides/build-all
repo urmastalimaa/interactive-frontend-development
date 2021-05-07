@@ -3,8 +3,7 @@
 set -euo pipefail
 
 yarn install
-
-for SLIDE in intro js_ecosystem react_intro react_2 reducers asynchronous_actions routes_and_optimizations
+for SLIDE in intro js_ecosystem react_intro react_2 reducers asynchronous_actions routes_and_optimizations react_visual_testing outro
 do
   echo "Building $SLIDE"
   ./node_modules/.bin/remarker build -s $SLIDE.md
