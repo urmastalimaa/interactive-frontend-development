@@ -29,6 +29,10 @@ example code.
 * Lecture 7 - Routes and optimizations
   * [Slides](https://urmastalimaa.github.io/interactive-frontend-development/slides/routes_and_optimizations.html)
   * [Content](./lecture_7)
+* Lecture 8 - Storybook, and finally, Redux
+  * [Content](./lecture_8)
+  * [Slides](https://urmastalimaa.github.io/interactive-frontend-development/slides/react_visual_testing.html)
+  * [Outro slides](https://urmastalimaa.github.io/interactive-frontend-development/slides/outro.html)
 
 ## Concepts and techniques
 The course will concentrate on declarative programming and extensive testing.
