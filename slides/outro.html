@@ -146,96 +146,53 @@ maintainable application
  
 # Exam
 
-* TODO Details
-* Multiple choice questions
-* One/two written questions
-* All questions from slides + lecture chapters in course repository
-* 21.05 16:15 - Please try to make this one
-* 28.05 16:15 - Let me know if you absolutely need this timeslot
+* Unfortunately cannot have a in-person multiple choice exam
+* Zoom exam with a homework-like exercise
+* 21.05 16:15-18:00 - Please try to use this one, let me know if you absolutely
+  cannot make it.
+* 28.05 16:15-18:00 - Let me know if you absolutely need this timeslot
 
 ---
  
-# Sample exam questions
+# Exam
 
-Following sample question list is **not comprehensive**
-
-
-If you understand the **core concepts**, **principles** and **terminology** of
-the technologies/techniques discussed on the slides you will have little problem
-answering the questions
+* Start from existing project scaffold
+* Implement a bit of functionality
+* Only React usage is graded
+* Tests are not mandatory
 
 ---
  
-# Sample question
+# Exam
 
-What is a _transpiler_?
+* Very similar to the lecture "Comment" application
 
----
- 
-# Sample question
+Revise
 
-Identify/characterize a
+* React component design - passing props, conditional rendering
+* Callbacks
+* Links and history-API based routing
+* Don't have to use reducers if you don't want to, but need to ensure that you
+  are **not directly mutating** state or props
 
-* Pure function
-* Stateful function
-* Stateless function
-
----
- 
-# Sample question
-
-Characterize
-* State
-* Identity
-* Shared mutable state
 
 ---
  
-# Sample question
+# Exam
 
-Identify/write a pure function React component
- 
----
+Example ticket:
 
-# Sample question
-
-Identify/characterize a
-
-* reducer function
-* selector function
- 
----
-
-# Sample question
-
-Which of the following characterizes `fetch` / `WebSocket`?
-
----
- 
-# Sample question
-
-What is the `history` API in the context of web applications?
- 
----
-
-# Sample question
-
-How to pause JavaScript execution at a specific line in JavaScript in a web browser?
-
----
- 
-# Sample question
-
-Write a React component named `Names`, that when provided array of arbitrary
-names ({names: [‘foo’, ‘bar’]}) as props will output the following HTML
-equivalent 
-
-```html
-<ul id="names">
-  <li>foo</li> 
-  <li>bar</li>
-</ul>
-```
+* Given existing comments: `[{author: "X", text: "a"}, {author: "Y", text: "b"}, {author: "Z", text: "cab"}]`
+* Display a list of comments, showing the text and author for each one such
+  that the comments can be distinguished from one another and the author can be
+  distinguished from the text.
+  * Each comment is colored green when it contains the lower-case letter "b",
+    blue if it contains the upper-case letter "A" and orange otherwise.
+  * Display a button next to each comment "UPPERCASE", that when clicked, will
+    convert the comment text to upper-case. The comment colour must immediately
+    change when a new colouring rule would apply.
+* Show links at the top of the page, one directing to the comment list and the
+  other to a welcome page
 </textarea>
     <script src="remark.js"></script>
     
