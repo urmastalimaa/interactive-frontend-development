@@ -158,6 +158,11 @@ Example ticket:
 * Display a list of comments, showing the text and author for each one such
   that the comments can be distinguished from one another and the author can be
   distinguished from the text.
+
+---
+ 
+# Exam
+
   * Each comment is colored green when it contains the lower-case letter "b",
     blue if it contains the upper-case letter "A" and orange otherwise.
   * Display a button next to each comment "UPPERCASE", that when clicked, will
