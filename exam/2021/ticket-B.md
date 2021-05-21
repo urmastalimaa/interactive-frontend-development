@@ -19,7 +19,7 @@ The submission must be linted with the same configuration file as lecture 7: [..
 # Application requirements
 
 Create a React application given initial set of _prices_:
-```json
+```js
   [
     { id: 1, item: "Car", price: 5000},
     { id: 2, item: "Gum", price: 20},
