@@ -19,7 +19,7 @@ The submission must be linted with the same configuration file as lecture 7: [..
 # Application requirements
 
 Create a React application given initial set of _words_:
-```json
+```js
   [
     { id: 1, color: "blue", word: "Hey"},
     { id: 2, color: "blue", word: "Jude,"},
