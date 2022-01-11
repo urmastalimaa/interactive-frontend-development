@@ -62,7 +62,7 @@ This includes
   * coming up [with requirements](./homework/),
   * creating catch-up applications,
     * including the demo videos at the end of lecture slides,
-  * and adding functionality to [game lobby server](https://bitbucket.org/urmastalimaa/game_lobby_server/) 
+  * and adding functionality to [game lobby server](https://github.com/urmastalimaa/game_lobby_server) 
     when necessary.
 
 # Lectures
