@@ -1,6 +1,6 @@
 # Connect to [Game Lobby Server](https://www.npmjs.com/package/game_lobby_server) version 1.3.0 WebSocket API
 
-[WebSocket API documentation](https://bitbucket.org/urmastalimaa/game_lobby_server/src/v1.3.0/#markdown-header-websocket-api).
+[WebSocket API documentation](https://github.com/urmastalimaa/game_lobby_server/tree/v1.3.0#websocket-api).
 
 * Test all created presentational components (same rules as for previous homeworks)
 * Test all created reducers (same rules as for previous homeworks)

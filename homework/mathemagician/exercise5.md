@@ -14,7 +14,7 @@
 * Use the Browser network inspector to your advantage!
 * You need to only concern yourself with the HTTP API and _mathemagician_ game type
 
-[Endpoint definitions](https://bitbucket.org/urmastalimaa/game_lobby_server/src/v1.4.0/README.md).
+[Endpoint definitions](https://github.com/urmastalimaa/game_lobby_server/blob/v1.4.0/README.md).
 
 I will run the Game Lobby Server using 
 ```sh
