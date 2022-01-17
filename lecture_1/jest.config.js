@@ -4,9 +4,8 @@
  */
 
 module.exports = {
-
   // The pattern or patterns Jest uses to detect test files
-  testRegex: './test/.*.js$',
+  testRegex: "./test/.*.js$",
 
   // Automatically clear mock calls, instances and results before every test
   clearMocks: true,
@@ -15,5 +14,5 @@ module.exports = {
   collectCoverage: true,
 
   // The directory where Jest should output its coverage files
-  coverageDirectory: 'coverage'
+  coverageDirectory: "coverage",
 };
