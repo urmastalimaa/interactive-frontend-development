@@ -15,29 +15,19 @@ yarn test
 
 `yarn test` refers to the `test` script that is defined in
 [_package.json_](https://github.com/urmastalimaa/interactive-frontend-development/tree/master/lecture_1/package.json#L34).
-This is equivalent to running `./node_modules/.bin/mocha` from the command
+This is equivalent to running `./node_modules/.bin/jest` from the command
 line.
 
-### Mocha
+### Jest
 
-[Mocha][0] is a test-runner. It defines how tests are defined (`describe`,
-`beforeEach`, `it`), how they are run and what the output looks like.
+[Jest][0] is a JavaScript testing framework. It defines how tests are defined (`describe`,
+`beforeEach`, `test`), how they are run and what the output looks like.
 
-_mocha_ is configured in
-[.mocharc.js](https://github.com/urmastalimaa/interactive-frontend-development/tree/master/lecture_1/.mocharc.js).
+_jest_ can be configured in
+[jest.config.js](https://github.com/urmastalimaa/interactive-frontend-development/tree/master/lecture_1/jest.config.js).
 
-It uses _babel_ to transform source files into ES5 that can be interpreted by
-NodeJS. NodeJS does not support ES6 modules and we don't want to change our
-source files to be able to run tests from the command line. Thus a different
-babel configuration is used to both resolve modules and to transpile source
-code for a desired NodeJS version.
-
-### Chai
-
-[Chai][1] is an assertion library that allows testing for properties of objects
-or functions. _expect_ style assertions are made available through a global
-`expect` function in
-[_.mocharc.js_](https://github.com/urmastalimaa/interactive-frontend-development/tree/master/lecture_1/.mocharc.js).
+Jest allows you to check that values meet certain conditions.
+_expect_ function gives you access to various "matchers" that let you assert something about a value.
 
 ### Tests
 
@@ -48,7 +38,7 @@ common setup code.
 
 ### Continuous testing
 
-Mocha can be run in `watch` mode to run tests any time files change. This can
+Jest can be run in `watch` mode to run tests any time files change. This can
 be useful to get feedback faster. The `test:watch` script is defined in
 [package.json](https://github.com/urmastalimaa/interactive-frontend-development/tree/master/lecture_1/package.json)
 for convenience.
@@ -62,6 +52,5 @@ rather verbose for such a common operation.
 
 [@babel/plugin-proposal-object-rest-spread][2] babel plugin enables `{...myObj, newKey: newValue}` syntax.
 
-[0]: https://mochajs.org/
-[1]: http://chaijs.com/
+[0]: https://jestjs.io/
 [2]: https://babeljs.io/docs/plugins/transform-object-rest-spread/
