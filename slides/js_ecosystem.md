@@ -188,7 +188,7 @@ npm install -g yarn
 * `yarn --help` - See all commands
 * `yarn install` - Install all packages described in package.json
 * `yarn add react` - Install react package and mark it as dependency in package.json
-* `yarn add mocha --dev` - Install mocha package and mark it as devDependency in package.json.
+* `yarn add jest --dev` - Install jest package and mark it as devDependency in package.json.
 
 ---
 
@@ -395,9 +395,7 @@ Go straight to the example, leave descriptions for those not attending the lectu
   * Some run tests in an actual browser
   * Some run them in NodeJS
   * Different defaults and configuration options
-  * [Mocha](https://mochajs.org/) is simple and easy to start with
-* There are also a variety of assertion libraries which simplify checking test results
-	* [Chai](https://chaijs.com/) is pretty popular and integrates well with Mocha.
+  * [Jest](https://jestjs.io/) is simple and easy to start with. It contains a variety of assertion matchers which simplify checking test results
 
 ---
 
@@ -409,7 +407,7 @@ Go straight to the example, leave descriptions for those not attending the lectu
 
 Go straight to the example, leave descriptions for those not attending the lecture.
 
-* Don't describe mocha & chai too much, say that the interfaces should be
+* Don't describe jest too much, say that the interfaces should be
 explored as part of homework
 * Stress that tests must also run continuously
 * Always execute tests before packaging the homework for submission
