@@ -1,22 +1,21 @@
-import { expect } from "chai";
 import { render, screen, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { App } from "../src/path_to_hooks/App";
 
 describe("App", () => {
-  it("renders heading", () => {
+  test("renders heading", () => {
     render(<App />);
     screen.getByRole("heading", { name: "Comment App" });
   });
 
-  it("renders 3 comment forms", () => {
+  test("renders 3 comment forms", () => {
     render(<App />);
-    expect(screen.getAllByRole("textbox")).to.have.length(3 * 2);
+    expect(screen.getAllByRole("textbox")).toHaveLength(3 * 2);
   });
 
   // Application logic should be tested. It is however much more convenient to
   // test individual functions directly rather than through React.
-  it("adds new comment to list when submitted from form", () => {
+  test("adds new comment to list when submitted from form", () => {
     render(<App />);
 
     const form = within(screen.getByTitle("Hooks form"));
