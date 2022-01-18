@@ -421,9 +421,9 @@ documentation.
   
 ---
 
-# Debugging Mocha tests using Chrome Dev Tools
+# Debugging Jest tests using Chrome Dev Tools
 
-* `mocha --inspect-brk`
+* `node --inspect-brk node_modules/.bin/jest --runInBand`
 * Open chrome://inspect and select the device
 * Other integrations (including Visual Studio, WebStorm) [are
   available](https://nodejs.org/en/docs/guides/debugging-getting-started/#inspector-clients)
@@ -432,7 +432,7 @@ documentation.
    
 ---
 
-# Debugging Mocha tests
+# Debugging Jest tests
 
 [Code example](https://github.com/urmastalimaa/interactive-frontend-development/blob/master/lecture_3/test/README.md)
    
@@ -442,22 +442,20 @@ documentation.
 
 * How to use create callback functions and assert if and with what arguments
   they are called?
-* Use stubs/mocks 
-* [http://sinonjs.org/](http://sinonjs.org/)
-* Integrates with chai using [https://github.com/domenic/sinon-chai](https://github.com/domenic/sinon-chai)
+* Use stubs/mocks
+* [Jest mock functions](https://jestjs.io/docs/mock-functions)
     
 ---
 
 # Testing callbacks
 
 ```js
-const onClick = sinon.stub();
+const onClick = jest.fn();
 const button = shallow(<button onClick={() => onClick('foo')} />);
 
 button.simulate('click');
 
-expect(onClick.calledWith('foo')).to.be.true // sinon + chai
-expect(onClick).to.have.been.calledWith('foo'); // with sinon-chai
+expect(onClick).toHaveBeenCalledWith('foo');
 ```
   
 ---
