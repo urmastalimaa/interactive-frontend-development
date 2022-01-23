@@ -319,10 +319,10 @@ return <Comments comments=`filterComments(state)` />;
 ```js
 // As simple as can be
 
-it("...", () => {
+test("...", () => {
     const initialState = initializer();
     const state = reducer(initialState, myActionCreator(myPayload));
-    expect(mySelectorFunction(state)).to.eql(...);
+    expect(mySelectorFunction(state)).toEqual(...);
 });
 ```
 
