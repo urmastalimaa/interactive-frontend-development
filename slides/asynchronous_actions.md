@@ -236,9 +236,10 @@ useEffect(() => {
 
 # Testing asynchronous code
 
-* [https://mochajs.org/#asynchronous-code](https://mochajs.org/#asynchronous-code)
+* [https://jestjs.io/docs/asynchronous](https://jestjs.io/docs/asynchronous)
   * `done`
   * `return promise` 
+  * `.resolves`/`.rejects`
   * `async`/`await`
 * Avoid long timers by passing fake server APIs, configuring delays with parameters
 * `screen.findByXXX` returns a Promise in _@testing-library_
