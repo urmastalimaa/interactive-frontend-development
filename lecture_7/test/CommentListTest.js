@@ -1,11 +1,10 @@
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { expect } from "chai";
 import { MemoryRouter, Route } from "react-router";
 import CommentList from "../src/router-basics/components/CommentList";
 
 describe("CommentList", () => {
-  it("renders without comments", () => {
+  test("renders without comments", () => {
     render(
       <MemoryRouter>
         <CommentList comments={[]} />
@@ -13,10 +12,10 @@ describe("CommentList", () => {
     );
   });
 
-  it("renders Comment link for each comment", () => {
+  test("renders Comment link for each comment", () => {
     const comments = [
-      { id: 1, author: "a", text: "a-text" },
-      { id: 2, author: "b", text: "b-text" },
+      { id: "1", author: "a", text: "a-text" },
+      { id: "2", author: "b", text: "b-text" },
     ];
     render(
       <MemoryRouter>
@@ -28,7 +27,7 @@ describe("CommentList", () => {
     screen.getByText("Author: b");
   });
 
-  it("navigates to /comments/:commentId on clicking", () => {
+  test("navigates to /comments/:commentId on clicking", () => {
     let currentLocation;
     const comments = [
       { id: "some-comment-id", author: "a", text: "a-text" },
@@ -54,6 +53,6 @@ describe("CommentList", () => {
     );
 
     userEvent.click(screen.getByText("Author: a"));
-    expect(currentLocation.pathname).to.eql("/comments/some-comment-id");
+    expect(currentLocation.pathname).toEqual("/comments/some-comment-id");
   });
 });
