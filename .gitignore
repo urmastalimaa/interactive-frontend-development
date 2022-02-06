@@ -11,3 +11,8 @@ slides/node_modules
 !.yarn/versions
 */.yarn/*
 .pnp.*
+
+
+*/.DS_Store
+.DS_Store
+.idea
