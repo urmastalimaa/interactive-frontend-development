@@ -57,15 +57,11 @@ describe("App", () => {
     await screen.findByText("Connection: Disconnected");
 
     /*
-     * Default mocha test timeout is 2000 milliseconds and as the re-connection
-     * occurs after 2500 milliseconds, we must force the test timeout to be
-     * longer.
-     *
-     * But this is a **terrible idea**, because now our whole test suite is
-     * made longer by 2.5 seconds every time it runs.
+     * Default jest test timeout is 5 seconds, so the test will pass.
+     * However, as the re-connection occurs after 2500 milliseconds,
+     * our whole test suite is made longer by 2.5 seconds every time it runs.
      * What can be done to remedy this situation?
      */
-    jest.setTimeout(5000); // eslint-disable-line no-invalid-this
 
     // We must also increase the timeout for the `findBy` selector as default
     // timeout is 1000
