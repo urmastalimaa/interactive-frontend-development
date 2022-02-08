@@ -6,7 +6,7 @@
 * Read through all the requirements carefully
 * Ask any questions in the course Slack workspace
 
-## Configure initial project (1 / 10 points)
+## Configure initial project (2 / 10 points)
 
 * Create *index.html* 
   * Must include one JavaScript file (e.g /public/app.js) in document *head*
@@ -16,7 +16,7 @@
 * yarn install && yarn build:watch must serve your application on localhost:10001
 * yarn install && yarn test must lint your source files (including test/ folder) and run unit tests
 
-## Building (1 / 10 points)
+## Building (3 / 10 points)
 
 * Use Rollup as the build tool
   * Configure Rollup to output one JS file (e.g ./public/app.js)
@@ -32,12 +32,12 @@
   * Lint your tests! (Create a different _eslint_ configuration file for the _test/_ folder)
 * When localhost:10001 is open and any source file (not build configuration) is changed, the page should reload automatically.
 
-## Unit tests (4 / 10 points)
+## Unit tests (2 / 10 points)
 
 * Use _jest_ as a test runner and an assertion framework
 * ⚠️ Create at least 2 unit tests
 
-## The Weather Widget (4 / 10 points)
+## The Weather Widget (3 / 10 points)
 
 * Should contain city name of your choice. E.g., Tartu
 * Shoud contain a "Generate" button to update the following stats randomly:
