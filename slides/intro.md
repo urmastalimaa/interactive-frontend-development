@@ -1,15 +1,15 @@
 name: intro
 
-class: middle, center
+class: cols, middle, main
 
+.fifty.main-left[
 # Interactive Front-end Development
 
-## Urmas Talimaa
-## _Glia Inc_
+by Artem Halas and Stanislav Deviatykh
+]
+.fifty.main-right[.main-circle[].secondary-circle[]]
 
 ???
-
-<!-- Dummy notes to check presenter display  -->
 
 Presenter display slide notes
 
@@ -23,7 +23,6 @@ Pre-lecture checklist
 * Terminal(s) open with code and window to run scripts
 
 ---
-
 # About the course
 
 * Elective course intended to provide practical experience
@@ -31,11 +30,9 @@ Pre-lecture checklist
   * Urmas Talimaa (Glia)
   * Stenver Jerkku (eAgronom)
 * Continued by Urmas Talimaa
-
-???
+* Now continued by us
 
 ---
-
 # About the course
 
 * Student feedback says that the course is difficult
@@ -47,37 +44,41 @@ homework. If this is not what you signed up for, there is still a option to
 de-register.
 
 ---
+class: about-us
+# About us
 
-# About me
+.cols[
+.fifty[
+### Artem Halas
+- Software engineer in Pipedrive
+- Love cycling
 
-* Lead Developer at Glia
-* Functional programming enthusiast
-* Avid runner
-* Deadpan humour
+.full-image[![Artem Halas](assets/intro/artem_halas.png)]
+]
 
-.right-image[![Urmas Talimaa](assets/urmas.jpg)]
+.fifty[
+### Stanislav Deviatykh
+- Software engineer in Qminder
+- Love pixel art
 
----
-
-# My dog/teaching assistant Älli
-
-.full-image[![Älli](assets/TA-Alli.jpg)]
-
-Direct all complaints concerning grades to her
-
----
-
-# About Glia
-
-* Software company based in Tartu, Tallinn & New York
-* https://www.glia.com/
-* Functional programming on Ruby, Elixir and React
-* Creating the future of on-line Customer Experience
-* Hiring passionate people https://glia.breezy.hr/
+.full-image[![Stanislav Deviatykh](assets/intro/stanislav_deviatykh.jpg)]
+]
+]
 
 ---
 
-.full-image[![Glia in action](assets/glia-in-action.png)]
+# About Pipedrive
+- First CRM platform made for Salespeople
+- Estonian #5 Unicorn
+- 10 Offices in 8 countries
+- 900 + employees
+- Used by 95 000 Companies
+
+--
+# About Qminder
+- B2B SaaS queue management system
+- 100+ clients from 50+ countries
+- 80+ million visitors served
 
 ---
 
@@ -89,6 +90,7 @@ Direct all complaints concerning grades to her
 * UI components using React
 * Means of composition
 * Testing, testing, testing
+
 --
 
 * Application state management
@@ -106,11 +108,6 @@ The latter parts of the course are subject to change
 * A lot of (unit) testing which will be graded
 * Functional programming
 * Composition of simple ideas
-
-???
-
-Simple ideas can be composed to produce complex system if the means of
-composition are powerful, simple and flexible.
 
 ---
 
@@ -154,7 +151,7 @@ solution one week from failing the whole course.
 
 * No hand holding!
 * Slack workspace #help-homework for support
-  * There is one of me, please help each other as well
+  * You could help each other as well
 * A lot of reading and figuring things out from zero
 * Straight to cold water!
 * Practical project lead experience
@@ -172,13 +169,12 @@ solution one week from failing the whole course.
 
 # Homework
 
-* I've been reading and reviewing code for a long time
-* I will be reading and reviewing homework from each one of you
+* We've been reading and reviewing code for a long time
+* We will be reading and reviewing homework from each one of you
 * It is easy for me to detect when code was pieced together from multiple sources
-* I've had to deal with **plagiarism** **every year**
 * If you plagiarize homework, you will get an F for the whole course and a note of plagiarism on your university record
 
-I am here to teach as a guest lecturer and have zero patience for plagiarism.
+We are here to teach as a guest lecturer and have zero patience for plagiarism.
 There are easier ways to score 3 EAPs.
 
 ---
@@ -204,7 +200,7 @@ There are easier ways to score 3 EAPs.
 
 # Course info
 
-Everything is linked to on https://courses.cs.ut.ee/2021/react
+Everything is linked to on https://courses.cs.ut.ee/2022/react
 
 ---
 
