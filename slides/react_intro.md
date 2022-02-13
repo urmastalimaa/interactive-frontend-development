@@ -1,14 +1,14 @@
 name: react_intro
-class: middle, center
+class: cols, middle, main
 
+.fifty.main-left[
 # Interactive Front-end Development
 
-## Urmas Talimaa
-## _Glia Inc_
+by Artem Halas and Stanislav Deviatykh
+]
+.fifty.main-right[.main-circle[].secondary-circle[]]
 
 ???
-
-<!-- Dummy notes to check presenter display  -->
 
 Presenter display slide notes
 
@@ -23,119 +23,7 @@ Pre-lecture checklist
 
 ---
 
-.full-image[![JS-tooling](assets/basic-website-2014.jpg)]
-
----
-
-# JavaScript function context
-
-```js
-class Foo {
-  printThis() { console.log('this:', this); }; 
-};
-class Bar {
-  printThis() { console.log('this:', this); };
-}; 
-
-(new Foo()).printThis(); 
-(new Bar()).printThis();
-const func = (new Foo()).printThis;
-func();
-const boundFunc = func.bind(document)
-boundFunc();
-```
----
-
-# JavaScript function context
-
-```js
-class Foo {
-  printThis() { console.log('this:', this); }; 
-};
-class Bar {
-  printThis() { console.log('this:', this); };
-}; 
-
-* (new Foo()).printThis(); 
-* (new Bar()).printThis();
-const func = (new Foo()).printThis;
-* func();
-const boundFunc = func.bind(document)
-* boundFunc();
-```
-
----
-
-# JavaScript function context
-
-```js
-class Foo {
-  printThis() { console.log('this:', this); }; 
-};
-class Bar {
-  printThis() { console.log('this:', this); };
-}; 
-
-(new Foo()).printThis();                      // this: Foo {}
-(new Bar()).printThis();                      // this: Bar {}
-const func = (new Foo()).printThis;
-func();                                       // this: undefined
-const boundFunc = func.bind(document)
-boundFunc();                                  // this: #document
-```
-
----
-
-# JavaScript function context
-
-
-```js
-class Foo {
-  constructor() {
-    // this.printThis refers to the function 
-    // that is defined on Foo’s prototype.
-    this.printThis = this.printThis.bind(this);
-    // this.printThis now refers to a new function 
-    // that is bound to current instance. 
-    // This is usually what you want 
-    // when you need to pass functions around.
-  }
-  printThis() { console.log('this:', this); };
-};
-const func = (new Foo()).printThis;
-func(); 
-```
-
----
-
-# JavaScript function context
-
-```js
-class Foo {
-  constructor() {
-    // this.printThis refers to the function 
-    // that is defined on Foo’s prototype.
-    this.printThis = this.printThis.bind(this);
-    // this.printThis now refers to a new function 
-    // that is bound to current instance. 
-    // This is usually what you want 
-    // when you need to pass functions around.
-  }
-  printThis() { console.log('this:', this); };
-};
-const func = (new Foo()).printThis;
-func();                                     // this: Foo {}
-```
-
----
-
-# More on prototypical inheritance
-
-[https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain)
-
----
-
-# What is a Single Page Application (SPA)?
+# Single Page Application (SPA)
 
 * A web application that requires a single page load in a web browser.
 * All changes to the DOM after the initial page load are done using JavaScript (via DOM APIs).
@@ -157,9 +45,15 @@ func();                                     // this: Foo {}
 
 Most framework designs are flavours of the [Model-View-Controller](https://en.wikipedia.org/wiki/Model–view–controller) (MVC) pattern
 
+.cols[
+.fifty[
 * Model holds data and logic
 * View presents data
-* Controller passes data from model to views,  accepts input from views and passes to model
+* Controller passes data from model to views, accepts input from views and passes to model
+]
+
+.full-image[![MVC](assets/lecture-2/MVC.svg)]
+]
 
 ---
 
@@ -202,12 +96,6 @@ Differences usually come from
 * [For chrome](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en)
 * [For firefox](https://addons.mozilla.org/en-US/firefox/addon/react-devtools/)
 * Open browser console and find out the state of each component
-
----
-
-# Let's get a taste of React
-
-.full-image[![Exploration](assets/Alli-flower.jpg)]
 
 ---
 
@@ -275,7 +163,6 @@ back when JavaScript is disabled is not too much of an issue here.
 </button>
 ```
 
-
 ---
 
 # JSX
@@ -316,7 +203,9 @@ Cons:
 
 ---
 
-from https://github.com/hyperhype/hyperscript
+# Hyperscript
+
+https://github.com/hyperhype/hyperscript
 
 ```js
 var h = require('hyperscript')
@@ -345,6 +234,44 @@ h('div#page',
 * _ReactDOM_ renders _React_ views in _DOM_
 * Other renderers are possible
 * React Native renders React views using native (mobile) UI elements
+
+---
+
+# Familiar Components
+
+```html
+<div>
+  <div>
+      <label for="name">Text Input:</label>
+      <input type="text" id="name" value="" />
+  </div>
+  <div>
+      <h4>Radio Button Choice</h4>
+    <label for="radio-choice-2">Choice</label>
+      <input type="radio" id="radio-choice-2" />
+  </div>
+</div>
+```
+
+.full-image[![lego](assets/lecture-2/lego.jpeg)]
+
+---
+
+# React Components
+
+* JavaScript function
+* Reusable UI element
+* Let you combines JS, CSS, markup
+
+```js
+export default function Settings() {
+  return (
+    <div>
+      <a href="#">Link</a>
+    </div>
+  );
+}
+```
 
 ---
 
@@ -436,10 +363,6 @@ State management is the hardest thing to get right in an interactive application
 * Each React component can have state
 * State can only be changed by the very component that defines it
   * No surprise updates to state!
-  * 
-  ```js
-    this.setState(newState);
-  ```
   * If state is an object, new state is merged into the old one
 
 ---
@@ -455,35 +378,82 @@ State management is the hardest thing to get right in an interactive application
 
 ---
 
+# React classes
+
 ```jsx
-import {Component} from 'react';   
+import { Component } from 'react';
 
 class OneClickButton extends Component {
-  constructor(props) { 
+  constructor(props) {
     super(props);
     this.state = {
-      buttonClickedAtLeastOnce = false; 
+      buttonClickedAtLeastOnce = false;
     }
     this.setButtonToClicked = this.setButtonToClicked.bind(this);
-  } 
+  }
 
   setButtonToClicked(event) {
-    this.setState({buttonClickedAtLeastOnce: true});  
-  } 
+    this.setState({buttonClickedAtLeastOnce: true});
+  }
 
-  render() { 
-    // State should hold logical values, 
-    // any text or view-related values should
-    // be kept in `render`
+  render() {
     const text = this.state.buttonClickedAtLeastOnce
       ? "Click me"
-      : "Clicked"; 
+      : "Clicked";
 
     return 
       <button onClick={this.setButtonToClicked}>
         {text}
       </button>;
-  }}
+  }
+}
+```
+
+---
+
+# More on prototypical inheritance
+
+[https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain)
+
+---
+
+# React hooks
+
+* Special functions starting with ”use” that let you “hook into” React state and lifecycle features
+* Can only be called at the top level of your components or custom hook
+* Don't call Hooks inside loops, conditions, or other nested functions
+* Think of them as declarations about your component’s needs
+* You will meet the other hooks later
+
+
+---
+
+# React hooks
+
+* Functional components using hooks:
+  * Greatly improve readability as the hooks repeat standard patterns
+  * Sacrifice readability for the uninitiated by being _magic_
+  * Allow injecting application logic to the UI without needing class-based components
+
+---
+
+# React hooks - useState
+
+```jsx
+import { useState } from 'react';
+
+export default function OneClickButton() {
+  const [clicked, setClicked] = useState(false);
+
+  const setButtonToClicked = () => setClicked(true);
+  const text = clicked ? "Click me" : "Clicked";
+
+  return (
+    <button onClick={setButtonToClicked}>
+      {text}
+    </button>
+  );
+}
 ```
 
 ???
@@ -494,6 +464,37 @@ You'll almost never want to keep a sentence, such as "Click me" in state
 as that is purely a rendering concern.
 
 ---
+
+# React hooks - useState
+
+How does React know which state to return?
+
+```js
+let hooks = [];
+let index = 0;
+
+const useState = (initialValue) => {
+  let pair = hooks[index];
+  if (pair) {
+    index++;
+    return pair;
+  }
+
+  const setState = (nextState) => {
+    pair[0] = nextState;
+    updateDOM();
+  }
+
+  pair = [initialState, setState];
+
+  hooks[index] = pair;
+  index++;
+
+  return pair;
+};
+```
+
+--- 
 
 # Where to hold state?
 
@@ -513,7 +514,7 @@ as that is purely a rendering concern.
 
 ---
 
-.full-image[![React component hierarcy](assets/react-component-hierarchy.png)]
+.full-image[![React component hierarcy](assets/lecture-2/react-component-hierarchy.png)]
 
 .footer[From: https://blog.risingstack.com/the-react-js-way-flux-architecture-with-immutable-js/]
 
@@ -555,10 +556,7 @@ On every update
 * Diff it against the old subtree
 * Compute the minimal set of real DOM mutations and put them into a queue
 * Batch execute all the real DOM mutations
-
-.right-image[![Need to go deeper](assets/need-to-go-deeper.jpg)]
-
-.footer[[https://reactkungfu.com/2015/10/the-difference-between-virtual-dom-and-dom/](https://reactkungfu.com/2015/10/the-difference-between-virtual-dom-and-dom/)]
+* https://reactkungfu.com/2015/10/the-difference-between-virtual-dom-and-dom/
 
 ---
 
@@ -691,11 +689,11 @@ Excellent tutorials, examples and API documentation
 
 # Homework
 
-[Requirements](https://github.com/urmastalimaa/interactive-frontend-development/blob/master/homework/mathemagician/exercise2.md)
+[Requirements](https://github.com/urmastalimaa/interactive-frontend-development/blob/master/homework/weather/exercise2.md)
 
 **Only submit what is yours**
 
-Deadline 21/03/2021 23:59
+Deadline 06/03/2022 23:59
 
 Unit tests for **React components only** are **not** mandatory
 
@@ -713,8 +711,9 @@ script](https://gist.github.com/urmastalimaa/70edc0728cb711234f42) (usage:
 `node zipHomework.js`) to automate zipping.
 
 ---
+class: middle, center
 
 <video width="100%" height="50%" controls>
-  <source src="assets/homework-mathemagician-2-result.m4v" type="video/mp4">
+  <source src="assets/lecture-2/hm2.mov" type="video/mp4">
   Your browser does not support the video tag.
 </video> 
