@@ -53,11 +53,10 @@ or alternatively `React` must be imported so that JSX can be transpiled to
 React.createElement(MyComponent, {foo: "bar"})
 ```
 
-## View classes
+## View functions
 
-React views can be defined as ES6 classes. When doing so, they must inherit
-from the `Component` class that is exported from React. The `render` function
-of the class must return a React node.
+React views can be defined as functions. The `return` statement
+of the function must return a React node.
 
 ## Components in the example
 

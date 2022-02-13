@@ -1,5 +1,3 @@
-import {Component} from 'react';
-
 /*
   Has `onSubmit` and `text` props. `onSubmit` is a callback function, it will
   be called whenever the button is clicked (i.e form is submitted).
@@ -9,18 +7,14 @@ import {Component} from 'react';
   CommentForm is only a view that represents one kind of a form (which has no
   fields and which you submit by clicking a button).
 
-  `CommentForm` also specifies `defaultProps` to initialize the `text` prop if
-  it is not specified in props.
+  `CommentForm` also initializes the `text` prop if it is not specified in props.
 */
-class CommentForm extends Component {
-  render() {
-    return (
-      <button className="comment-form" onClick={this.props.onSubmit}>
-        {this.props.text}
-      </button>
-    );
-  }
+const CommentForm = ( {text = "Submit a comment", onSubmit }) => {
+  return (
+    <button className="comment-form" onClick={onSubmit}>
+      {text}
+    </button>
+  );
 }
-CommentForm.defaultProps = {text: 'Submit a comment'};
 
 export default CommentForm;

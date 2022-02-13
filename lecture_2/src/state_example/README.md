@@ -21,6 +21,7 @@ understand. Therefore React limits the usage of _state_ to a single Component.
 No other Components can read or change the state of other Components.
 
 State can be initialized in the [class constructor][react-class-state]
+or using the [useState hook][react-use-state]
 
 ## Components in the example
 
@@ -32,4 +33,5 @@ Build on top of the props example.
   has been upgraded to take a list of comment objects as props.
 
 [react-state]: https://reactjs.org/docs/state-and-lifecycle.html
+[react-use-state]: https://reactjs.org/docs/hooks-reference.html#usestate
 [react-class-state]: https://reactjs.org/docs/state-and-lifecycle.html#adding-local-state-to-a-class
