@@ -84,7 +84,8 @@ Differences usually come from
 * Works in native mobile applications through React Native.
 * Can be used to implement high-performance UIs
 * Scales when used in big teams.
-* [https://reactjs.org/](https://reactjs.org/)
+* [New beta documentation](https://beta.reactjs.org/)
+* [Old documentation](https://reactjs.org/)
 * Rethinking best practices by Pete Hunt: [https://www.youtube.com/watch?v=DgVS-zXgMTk](https://www.youtube.com/watch?v=DgVS-zXgMTk)
 * Excellent documentation
 * A lot of low-effort tutorials and blogosphere noise
@@ -175,7 +176,7 @@ back when JavaScript is disabled is not too much of an issue here.
 
 _Reminder_
 
->> Nothing works when user disables JavaScript. You are building an application, right?
+>> Nothing works when user disables JavaScript. You are building an application, right?
 
 ---
 
@@ -184,47 +185,6 @@ _Reminder_
 * Simplifies mapping JavaScript views to the HTML they generate.
 * Allows using JavaScript to generate all the markup.
   * No control flow through HTML extensions or another templating language!
-
----
-
-# Hyperscript
-
-* Alternative to JSX
-* [https://github.com/dominictarr/hyperscript](https://github.com/dominictarr/hyperscript)
-
-Pros:
-
-* No transpiling
-* Boils down to the same elements
-
-Cons:
-
-* Less resemblance to the rendered HTML
-
----
-
-# Hyperscript
-
-https://github.com/hyperhype/hyperscript
-
-```js
-var h = require('hyperscript')
-h('div#page',
-  h('div#header',
-    h('h1.classy', 'h', { style: {'background-color': '#22f'} })),
-  h('div#menu', { style: {'background-color': '#2f2'} },
-    h('ul',
-      h('li', 'one'),
-      h('li', 'two'),
-      h('li', 'three'))),
-  h('h2', 'content title',  { style: {'background-color': '#f22'} }),
-  h('p',
-    "so it's just like a templating engine,\n",
-    "but easy to use inline with javascript\n"),
-  h('p',
-    "the intention is for this to be used to create\n",
-    "reusable, interactive html widgets. "))
-```
 
 ---
 
@@ -378,6 +338,29 @@ State management is the hardest thing to get right in an interactive application
 
 ---
 
+# Before React
+
+```html
+<!doctype html>
+<html lang="en">
+<body>
+  <button id="btn">Click me</button>
+</body>
+<script type="text/javascript" src="./app.js" defer=true></script>
+</html>
+```
+
+```js
+const button = document.getElementById('btn')
+button.addEventListener('click', setClicked)
+
+function setClicked() {
+  button.innerText = `Clicked`;
+}
+```
+
+---
+
 # React classes
 
 ```jsx
@@ -386,23 +369,19 @@ import { Component } from 'react';
 class OneClickButton extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      buttonClickedAtLeastOnce = false;
-    }
-    this.setButtonToClicked = this.setButtonToClicked.bind(this);
+
+    this.state = { clicked = false };
+    this.setClicked = this.setClicked.bind(this);
   }
 
-  setButtonToClicked(event) {
-    this.setState({buttonClickedAtLeastOnce: true});
+  setClicked(event) {
+    this.setState({ clicked: true });
   }
 
   render() {
-    const text = this.state.buttonClickedAtLeastOnce
-      ? "Click me"
-      : "Clicked";
-
+    const text = this.state.clicked ? "Click me" : "Clicked";
     return 
-      <button onClick={this.setButtonToClicked}>
+      <button onClick={this.setClicked}>
         {text}
       </button>;
   }
@@ -703,7 +682,7 @@ Unit tests for **React components only** are **not** mandatory
 
 If you need to provide further information, include it in README.md.
 
-Submit zipped file to https://courses.cs.ut.ee/2021/react/Main/Submit
+Submit zipped file to https://courses.cs.ut.ee/2022/react/Main/Submit
 
 Don’t include node_modules/ or .git/, .hg/, .svn/, make sure that your zipped
 file size is reasonable. You can use/modify/extend [this
