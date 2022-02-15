@@ -250,15 +250,19 @@ Goals:
 
 # Implicit two-way databinding
 
+.cols[
+.fifty[
 [Example](https://www.w3schools.com/angular/angular_databinding.asp)
 
-* When data in the model changes, 
-
+* When data in the model changes,
   the view reflects the change, 
 
-* and when data in the view changes, 
-
+* and when data in the view changes,
   the model is updated as well.
+]
+
+.fifty[.full-image[![2way-binding](assets/lecture-2/2-way-data-binding.svg)]]
+]
 
 ---
 
