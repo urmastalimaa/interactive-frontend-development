@@ -19,6 +19,17 @@ Lecture 2 gives an overview of React, a library for writing declarative UI compo
 
 [State in React](./src/state_example/README.md)
 
+## Path to Hooks
+
+All components that can be, are implemented as pure function components.
+
+## React hooks
+
+[React hooks][hooks-intro] are functions that can be used in functional React
+components to use simple cases of local state in functional components.
+
+[hooks-intro]: https://reactjs.org/docs/hooks-intro.html
+
 ## Pure function components
 
 - What are class components and pure function components, when to use which?
