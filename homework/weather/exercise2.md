@@ -34,7 +34,6 @@
 * All other components must use simple objects (numbers, arrays, objects of the former etc) for props and state.
 * Every component should be as simple (have very little responsibilities) as possible
   * One component body should not exceed 50 lines
-* At least 3 React components must be used
 * Only put state to components that need it
 * All prop types must be validated
 
