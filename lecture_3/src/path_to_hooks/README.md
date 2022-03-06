@@ -20,7 +20,6 @@ All components that can be, are implemented as pure function components.
 
 CommentForm components have local state, but contain no application logic.
 
-- [`ControlledCommentForm`](./ControlledCommentForm.js)
 - [`UncontrolledCommentForm`](./UncontrolledCommentForm.js)
 - [`HooksCommentForm`](./HooksCommentForm.js)
 
@@ -34,13 +33,13 @@ as the glue that ties application logic to the view components.
 - [App](./App.js)
 
 ## Controlled forms
-
 [Official documentation on Controlled components](https://reactjs.org/docs/forms.html#controlled-components)
-[`ControlledCommentForm`](./ControlledCommentForm.js)
-syncs the state of its HTML inputs with React component state. The `value` of
+[React hooks][hooks-intro] are functions that can be used in functional React
+components to use simple cases of local state or side-effects in functional
+components. Syncs the state of its HTML inputs with React component state. The `value` of
 inputs is linked to `state` and whenever an input changes, `state` is updated.
 All state is therefore captured and tracked.
-
+[`HooksCommentForm`](./HooksCommentForm.js).
 ## Uncontrolled forms
 
 [Official documentation on Uncontrolled components](https://reactjs.org/docs/uncontrolled-components.html)
@@ -62,13 +61,6 @@ This is done so in [`App`](./App.js)
 where both forms are taken a reference to and whenever a comment is submitted,
 the same form input is focused again. Read more about React Refs
 [here][react-ref].
-
-## React hooks
-
-[React hooks][hooks-intro] are functions that can be used in functional React
-components to use simple cases of local state or side-effects in functional
-components. The most basic of those are described in
-[`HooksCommentForm`](./HooksCommentForm.js).
 
 [hooks-intro]: https://reactjs.org/docs/hooks-intro.html
 [react-ref]: https://reactjs.org/docs/refs-and-the-dom.html

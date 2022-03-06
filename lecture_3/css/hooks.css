@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    font-family: 'Lato', sans-serif;
+    box-sizing: border-box;
+}
+
+p, h1, h2, h3, h4 {
+    margin: 0;
+}
+
+.hooks_example {
+    width: 500px;
+    font-size: 2em;
+    margin: 1em auto;
+    padding: 1em;
+}
+
+.hooks_example .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: .5em;
+}
+
+.hooks_example .container {
+    padding: .5em;
+    border: 1px solid black;
+}
+
+.hooks_example .actions {
+    display: flex;
+    gap: 8px;
+}
+
+.hooks_example .basic, .hooks_example .advanced {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+button {
+    background-color: #485fc7;
+    border-radius: 4px;
+    border-color: transparent;
+    color: #fff;
+    cursor: pointer;
+    justify-content: center;
+    padding: 8px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+button:disabled {
+    opacity: .5;
+}
+
+button.secondary {
+    background-color: #48c78e;
+}
+
+button.warning {
+    background-color: #ffe08a;
+    color: #000000b3;
+}
+
+input {
+    box-shadow: inset 0 0.0625em 0.125em rgb(10 10 10 / 5%);
+    max-width: 100%;
+    background-color: #fff;
+    border-radius: 4px;
+    color: #363636;
+    align-items: center;
+    border: 1px solid #dbdbdb;
+    display: inline-flex;
+    font-size: .5em;
+    justify-content: flex-start;
+    padding: 7px 11px;
+    position: relative;
+    vertical-align: top;
+}
+
+.advanced form > section {
+    display: flex;
+    gap: 8px;
+}
+
+
+.advanced form > section label {
+    font-size: .5em;
+}
+
+.advanced form > section input {
+    width: 100%;
+}
