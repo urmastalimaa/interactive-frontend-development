@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
-import CommentForm from "../src/path_to_hooks/ControlledCommentForm";
+import CommentForm from "../src/path_to_hooks/HooksCommentForm";
 
 describe("CommentForm", () => {
   // This test has both good and bad examples.
