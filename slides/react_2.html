@@ -26,17 +26,17 @@ h1, h2, h3 {
     </style>
   </head>
   <body>
-    <textarea id="source">name: react_2
-class: middle, center
+    <textarea id="source">name: react_intro
+class: cols, middle, main
 
+.fifty.main-left[
 # Interactive Front-end Development
 
-## Urmas Talimaa
-## _Glia Inc_
+by Artem Halas and Stanislav Deviatykh
+]
+.fifty.main-right[.main-circle[].secondary-circle[]]
 
 ???
-
-<!-- Dummy notes to check presenter display  -->
 
 Presenter display slide notes
 
@@ -71,22 +71,16 @@ Quality code does not have
   
 ---
 
-# Thinking in React
-
-More on concepts covered in previous seminar:
-https://reactjs.org/docs/thinking-in-react.html
-   
----
-
-# Don’t let challenges weigh you down
-
-.full-image[![Älli-down](assets/Alli-down.jpg)]
-  
----
-
 # Types of Components
 
+.cols[
+.fifty[
 In the end, it is all about state...
+]
+.fifty[
+.full-image[![Components](assets/lecture-3/puzzle.png)]
+]
+]
 
 ---
 
@@ -98,7 +92,16 @@ In the end, it is all about state...
   * Can almost always be pure functions
   * Rarely have state
 * Have no dependencies on other libraries/frameworks
-  
+
+```jsx
+function Button({variant = "primary", onClick, children}) {
+  return <button 
+            className={`button__${variant}`}
+            onClick={onClick}>
+                {children}
+        </button>
+}
+```
 ---
 
 # Stateless views
@@ -115,7 +118,24 @@ In the end, it is all about state...
 
 * Receive input from users
 * Have **local** state concerning current form state
-* Feed data to parent components
+* Pass data to parent components ⬆️
+
+```jsx
+function InputForm({value='', type='text', onChange}) {
+    const [localValue, setLocalValue] = useState(value);
+    
+    const localOnChange = (event) => {
+        const v = event.target.value;
+        setLocalValue(v);
+        onChange(v);
+    }
+    
+    
+    return <input type={type}
+                  value={localValue} 
+                  onChange={localOnChange}/>
+}
+```
 
 ---
 
@@ -126,6 +146,31 @@ In the end, it is all about state...
 * May interact with external services
 * Always have state
   
+---
+# Application logic containers
+
+```jsx
+function ApplicationContainer() {
+  const [inputState, setInputState] = useState('');
+  
+  const onChange = (value) => setInputState(value);
+  
+  const onClick = () => {
+      fetch('/v1/form', {
+          method: 'POST', 
+          body: {
+              name: inputState
+          }
+      });
+  }
+
+  return <section>
+        <InputForm value={inputState} onChange={onChange}/>
+        <Button onClick={onClick}>Submit</Button>
+    </section>
+}
+```
+
 ---
 
 # Separation of concerns
@@ -140,19 +185,13 @@ In the end, it is all about state...
 ???
 
 As previously noted, React is mostly just a view library.
-  
----
-
-# Path to hooks
-
-[Code Example](https://github.com/urmastalimaa/interactive-frontend-development/blob/master/lecture_3/src/path_to_hooks/README.md)
 
 ---
-
 # React inverse data-flow
 
 * HTML form elements (input, select, textarea) inherently hold state 
 * [https://reactjs.org/docs/forms.html](https://reactjs.org/docs/forms.html)
+* [https://beta.reactjs.org/apis/usestate#examples-objects](https://beta.reactjs.org/apis/usestate#examples-objects)
 * React offers a few ways to deal with such elements
   * [Controlled components](https://reactjs.org/docs/forms.html#controlled-components)
   * [Uncontrolled components](https://reactjs.org/docs/uncontrolled-components.html)
@@ -173,18 +212,102 @@ As previously noted, React is mostly just a view library.
 * Do not bind element value to React state
 * Get element value from DOM when required
   > (e.g. when a submit button is clicked)
-
 * Uncontrolled components can be simpler
 * Usually prefer controlled components to _capture_ all the state
  
 ---
 
-# React inverse data flow
+## React Hooks
 
-[Code example](https://github.com/urmastalimaa/interactive-frontend-development/blob/master/lecture_3/src/path_to_hooks/README.md)
-   
+[https://reactjs.org/docs/hooks-reference.html](https://reactjs.org/docs/hooks-reference.html)
+
+.cols[
+.fifty[
+### Basic
+- `useState`
+- `useEffect`
+- `useContext`
+]
+.fifty[
+### Additional
+- `useCallback`
+- `useRef`
+- `useMemo`
+- `useReducer`
+- `useImperativeHandle`
+- `useLayoutEffect`
+- `useDebugValue`
+]
+]
 ---
+# Basic Hooks
 
+```jsx
+const [number, setNumber] = useState(3); 
+```
+--
+Runs **everytime** if number is changed
+
+```jsx
+useEffect(() => {
+    if (number > 5) {
+        console.log(number)
+    }
+}, [number])
+```
+--
+Runs **only** once on component initiate or removed
+
+```jsx
+useEffect(
+    () => console.log('Initial Load'),
+    return () => console.log('Component Removed'); 
+[]);
+```
+---
+# Advanced Hooks
+
+```jsx
+const memoized = useCallback(
+        () => console.log('Do not reinit variable')
+, [])
+```
+--
+```jsx
+const memoized = useMemo(() => fibonachi(n), [n])
+```
+---
+# Advanced Hooks
+
+```jsx
+const elementRef = useRef(null);
+const inputValue = elementRef.current.value;
+
+<input ref={elementRef} />
+```
+---
+# Custom Hooks
+
+- allows you to create any hooks what you wish
+- could use any hooks into another hook
+- move out business logic out of component
+
+
+--
+```jsx
+const useAmazing = () => {
+    useEffect(() => {
+      console.log('You are amazing ✨')
+    }, [])
+}
+```
+
+---
+# Hooks by example
+
+[Example](../lecture_3/src/hooks_example/App.js)
+
+---
 # Component lifecycle
 
 * In addition to render and constructor, React provides hooks that are executed at different points in component lifecycle
@@ -201,7 +324,12 @@ As previously noted, React is mostly just a view library.
 * Documentation: https://reactjs.org/docs/react-component.html#the-component-lifecycle
     
 ---
+# Testing
+.full-image[![Components](assets/lecture-3/jest-rtl.png)]
 
+---
+.full-image[![Components](assets/lecture-3/testing.png)]
+---
 # Testing React components
 
 * Code that isn’t tested can’t be believed
@@ -210,22 +338,21 @@ As previously noted, React is mostly just a view library.
 * We'll be using [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
      
 ---
-
 # Why React Testing Library
 
 * It strongly encourages writing _accessible_ UIs
 * It is not brittle as it renders the component to an actual DOM
 * Drawback: It requires a [headless DOM](https://github.com/jsdom/jsdom) to be setup for running tests in NodeJS
 
-```js
+```jsx
 import { render } from "@testing-library/react";
-/* ... */
-  render(<MyComponent myText={'foo'} />);
-  screen.getByText('foo'); // throws error when text cannot be found
+
+render(<MyComponent myText={'foo'} />);
+
+expect(screen.getByText('foo')).toBeInTheDocument();
 ```
 
 ---
-
 # User events
 
 * Trigger events just as in an actual web browser
@@ -235,18 +362,16 @@ import { render } from "@testing-library/react";
 
 ```js
 import userEvent from "@testing-library/user-event";
-/* ... */
-  userEvent.type(screen.getByRole("textbox", { name: "Author" }), "foo");
+
+userEvent.type(screen.getByRole("textbox", { name: "Author" }), "foo");
 ```
    
 ---
-
 # React testing example
 
 [Code example](https://github.com/urmastalimaa/interactive-frontend-development/blob/master/lecture_3/test/README.md)
 
 ---
-   
 # Debugging in Browser
 
 * Developer console allows you to assign variables, run functions, set
@@ -310,34 +435,28 @@ documentation.
 
 ```js
 const onClick = jest.fn();
-const button = shallow(<button onClick={() => onClick('foo')} />);
+const button = render(<button onClick={() => onClick('foo')} />);
 
-button.simulate('click');
+userEvent.click(button);
 
 expect(onClick).toHaveBeenCalledWith('foo');
 ```
-  
 ---
-
-# Stub callback example
-
-[Code example](https://github.com/urmastalimaa/interactive-frontend-development/blob/master/lecture_3/test/components/CommentFormTest.js#L45)
-   
----
-
 # Homework
 
-[Requirements](https://github.com/urmastalimaa/interactive-frontend-development/blob/master/homework/mathemagician/exercise3.md)
+[Requirements](https://github.com/urmastalimaa/interactive-frontend-development/blob/master/homework/weather/exercise3.md)
 
-* Deadline 28/03/2021 23:59
-* Submit zipped file to https://courses.cs.ut.ee/2021/react/Main/Submit
+* Deadline 20/03/2021 23:59
+* Submit zipped file to https://courses.cs.ut.ee/2022/react/Main/Submit
 * React tests are a focal point of this homework, omitting them loses a lot of points
 * **Only submit what is yours**
+
+.full-image[![HW-3-testing](assets/lecture-3/hw-3-test-coverage.png)]
 
 ---
 
 <video width="100%" height="50%" controls>
-  <source src="assets/homework-mathemagician-3-result.m4v" type="video/mp4">
+  <source src="assets/lecture-3/hw-3.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video> 
 </textarea>
