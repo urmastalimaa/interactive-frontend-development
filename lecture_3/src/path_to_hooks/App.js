@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 
 import AppHeader from "./AppHeader";
 import CommentList from "./CommentList";
-import ControlledCommentForm from "./ControlledCommentForm";
 import UncontrolledCommentForm from "./UncontrolledCommentForm";
 import HooksCommentForm from "./HooksCommentForm";
 import {
@@ -24,7 +23,6 @@ export const App = ({ focusForms }) => {
   );
 
   // See the documentation of useRef in https://reactjs.org/docs/hooks-reference.html
-  const controlledCommentForm = useRef();
   const uncontrolledCommentForm = useRef();
   const hooksCommentForm = useRef();
 
@@ -36,16 +34,6 @@ export const App = ({ focusForms }) => {
   return (
     <div>
       <AppHeader />
-      <ControlledCommentForm
-        ref={controlledCommentForm}
-        onSubmit={(comment) => {
-          addComment(comment);
-          if (focusForms) {
-            controlledCommentForm.current.focus();
-          }
-        }}
-        text="Submit comment"
-      />
       <UncontrolledCommentForm
         ref={uncontrolledCommentForm}
         onSubmit={(comment) => {

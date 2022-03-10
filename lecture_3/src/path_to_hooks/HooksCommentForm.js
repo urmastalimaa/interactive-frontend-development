@@ -1,9 +1,6 @@
 import { useState, useRef, forwardRef, useImperativeHandle } from "react";
 import PropTypes from "prop-types";
 
-// This is functionally equivalent to the ControlledCommentForm.
-// The style is however much different.
-// It uses declarative, functional style over class and instance-based style.
 let HooksCommentForm = (props, ref) => {
   // `useState` can be used to use local state in functional components
   // `useState` can be called multiple times, call-order is used to distinguish
@@ -47,7 +44,7 @@ let HooksCommentForm = (props, ref) => {
 
   return (
     <div className="comment-form" title="Hooks form">
-      <h3>Controlled form with hooks</h3>
+      <h3>Controlled form</h3>
       <label htmlFor="hooks-form-author-input">Author</label>
       <input
         id="hooks-form-author-input"
