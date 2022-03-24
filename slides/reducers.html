@@ -27,16 +27,16 @@ h1, h2, h3 {
   </head>
   <body>
     <textarea id="source">name: reducers
-class: middle, center
+class: cols, middle, main
 
+.fifty.main-left[
 # Interactive Front-end Development
 
-## Urmas Talimaa
-## _Glia Inc_
+by Artem Halas and Stanislav Deviatykh
+]
+.fifty.main-right[.main-circle[].secondary-circle[]]
 
 ???
-
-<!-- Dummy notes to check presenter display  -->
 
 Presenter display slide notes
 
@@ -49,12 +49,6 @@ Pre-lecture checklist
 * Dependencies installed and scripts are working for lecture example code
 * Terminal(s) open with code and window to run scripts
 
----
-
-# Feedback
-
-* When a React component is 50+ lines long, it’s time to refactor
-                     
 ---
 
 # React and State
@@ -74,21 +68,21 @@ Pre-lecture checklist
 * **Stateful function** - If a function is invoked with same arguments at two
   different points in time and it returns different values then it is stateful.
   * It is not a pure function
-   
+
 ---
 
 # Pure functions and stateful functions
 
 Pure function: 
 ```js
-const addOne = (x) => x+1;
+const addOne = (x) => x + 1;
 ```
 
 Stateful function:
 
 ```js
 private int _number = 0;
- function int addOne() {
+function int addOne() {
    _number++;
    return _number;
 }
@@ -154,17 +148,11 @@ Global, mutable state that you modify directly is:
 * Hard to test + hard to change = impossible to maintain
 * [https://programmers.stackexchange.com/a/148109](https://programmers.stackexchange.com/a/148109)
 
-.right-image[![Mutable State](assets/mutable-state.jpg)]
-      
 ---
 
 # Final boss: mutable state
 
 The moment you are afraid to change your own program is the time to rethink your methodology.
-
----
-   
-.full-image[![Mutable State - Inevitable fail](assets/mutable-state--inevitable-fail.jpg)]
 
 ---
 
@@ -192,7 +180,7 @@ The moment you are afraid to change your own program is the time to rethink your
 * View translates state to HTML
 * Can be used for the whole application or any sub-system
 
-.right-image[![Elm Architecture](assets/elm_runtime.png)]
+.full-image[![Elm Architecture](assets/elm_runtime.png)]
 
 ---
 
@@ -294,6 +282,23 @@ const [state, dispatch] = useReducer(reducer, initialArg, init);
 # Reducers in React
 
 ```js
+function useReducer(reducer, initState) {
+  const [state, setState] = useState(initState);
+
+  const dispatch = useCallback((action) => {
+    const nextState = reducer(state, action)
+    setState(nextState)
+  }, [setState, state])
+
+  return [state, dispatch];
+}
+```
+
+---
+
+# Reducers in React
+
+```js
 const [state, dispatch] = useReducer(reducer, initialArg, init);
 return <CommentForm onSubmit=`(commentAttributes) => dispatch(submitComment(commentAttributes))` />;
 ```
@@ -335,9 +340,9 @@ return <Comments comments=`filterComments(state)` />;
 
 * A reducer must never mutate state!
 * No objects in old state should be mutated
-  * ~~state.foo = 'bar';~~
-  * ~~state.foos[1] = 'bar';~~
-  * ~~state.foos.push(‘bar’);~~
+  * ❌ state.foo = 'bar';
+  * ❌ state.foos[1] = 'bar';
+  * ❌ state.foos.push(‘bar’);
   * Violations will cause faulty application behaviour
 
 ---
@@ -373,17 +378,16 @@ test("...", () => {
 
 # Homework
 
-[Requirements](https://github.com/urmastalimaa/interactive-frontend-development/blob/master/homework/mathemagician/exercise4.md)
+[Requirements](https://github.com/urmastalimaa/interactive-frontend-development/blob/master/homework/weather/exercise4.md)
 
-* Deadline 11/04/2021 23:59 (Sunday 2 weeks from now!)
-* Submit zipped file to [https://courses.cs.ut.ee/2021/react/spring/](https://courses.cs.ut.ee/2021/react/spring/)
-* Tests will give significant points
+* Deadline 03/04/2022 23:59 (Sunday 2 weeks from now!)
+* Submit zipped file to [https://courses.cs.ut.ee/2022/react/spring/](https://courses.cs.ut.ee/2022/react/spring/)
 * **Only submit what is yours**
 
 ---
 
 <video width="100%" height="50%" controls>
-  <source src="assets/homework-mathemagician-4-result.m4v" type="video/mp4">
+  <source src="assets/lecture-4/hm-4.mov" type="video/mp4">
   Your browser does not support the video tag.
 </video> 
 </textarea>
