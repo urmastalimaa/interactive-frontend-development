@@ -64,8 +64,10 @@ const CommentFormWithServer = ({ dispatch }) => {
   } else if (requestState.error) {
     return (
       <div>
-        <p>Failed to post comment</p>
-        <p>{requestState.error}</p>
+        <div className="notification warning">
+          <h3>Failed to post comment</h3>
+          <p>{requestState.error}</p>
+        </div>
         <CommentForm onSubmit={onSubmit} />
       </div>
     );
