@@ -13,6 +13,7 @@ import { ServerContext } from "../ServerContext";
 import useServerBasedOnParams from "../hooks/UseServerBasedOnParams";
 import loggingMiddleware from "../LoggingMiddleware";
 import useReducerWithMiddleware from "../hooks/UseReducerWithMiddleware";
+import '../../../css/index.scss';
 
 const App = () => {
   const [state, dispatch] = useReducerWithMiddleware(
@@ -35,7 +36,7 @@ const App = () => {
 
   return (
     <ServerContext.Provider value={server}>
-      <div>
+      <div className="app">
         <AppHeader />
         <CommentFormWithServer dispatch={dispatch} />
         <Filter value={filterValue} onChange={onFilterChange} />

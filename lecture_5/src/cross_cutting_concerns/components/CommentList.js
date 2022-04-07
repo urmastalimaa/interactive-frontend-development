@@ -11,7 +11,7 @@ const CommentList = (props) => {
     );
   });
   return (
-    <div className="comment-list" title="Comment list">
+    <div className="comment-list" title="Comment list" role="list">
       <h2>Comments:</h2>
       {commentElements}
     </div>
