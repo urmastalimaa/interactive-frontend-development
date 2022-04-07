@@ -27,16 +27,17 @@ h1, h2, h3 {
   </head>
   <body>
     <textarea id="source">name: asynchronous_actions
-class: middle, center
 
+class: cols, middle, main
+
+.fifty.main-left[
 # Interactive Front-end Development
 
-## Urmas Talimaa
-## _Glia Inc_
+by Artem Halas and Stanislav Deviatykh
+]
+.fifty.main-right[.main-circle[].secondary-circle[]]
 
 ???
-
-<!-- Dummy notes to check presenter display  -->
 
 Presenter display slide notes
 
@@ -114,10 +115,10 @@ Use helper functions, include a functional programming library if necessary.
 
 * Avoid writing arbitrary loops and object processors
 * Use map, filter, reduce for clear and less-error-prone code
-* [Ramda (personal favourite)](https://ramdajs.com/)
+* [Ramda](https://ramdajs.com/)
   * Great documentation and function composition
   * [Hey Underscore, You're Doing It Wrong!](https://www.youtube.com/watch?v=m3svKOdZijA)
-* [Lodash](https://lodash.com/)
+* [Lodash](https://lodash.com/) or [LodashFP](https://github.com/lodash/lodash/wiki/FP-Guide)
 
 ---
 
@@ -131,11 +132,30 @@ Use helper functions, include a functional programming library if necessary.
 
 ---
 
+# Context
+
+.full-image[![diagram-react](./assets/lecture-5/diagram.png)]
+
+---
+# Context
+
+<img src="./assets/lecture-5/diagram-context.png" alt="diagram-context" height="450px">
+
+[Doc](https://reactjs.org/docs/context.html)
+---
+
+# Context
+
+Context is designed to share data that can be considered "global" for a tree of React components,
+such as the current authenticated user, theme, or preferred language.
+
+```jsx
+export const ServerContext = createContext({theme, language});
+```
+
+---
+
 # Interacting with the outside world
-
-???
-
-This will start with the main content of the lecture
 
 --
 
@@ -155,13 +175,13 @@ Usually **at least three actions** per asynchronous operation are necessary:
 
 An action informing the reducers that
 
-* a request began,
-* the request finished successfully,
-* the request failed.
+* a request **started**
+* the request finished **successfully**,
+* the request **failed**.
 
 ---
 
-# Call me maybe
+# Asynchronous code
 
 Most modern asynchronous JavaScript APIs return a
 [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
@@ -172,8 +192,6 @@ const p = new Promise((resolve, reject) => {
   // provider calls resolve/reject at a later time
 });
 
-// ...
-
 // promise user:
 p.then(
   (success) => console.log('success', success),
@@ -182,7 +200,7 @@ p.then(
 ```
 ---
 
-# Call me maybe
+# Asynchronous code
 
 Promises can be chained
 
@@ -195,7 +213,7 @@ const nextStepPromise = p.then(
 
 ---
 
-# Call me maybe
+# Asynchronous code
 
 Promises can be `await`ed on in [`async`
 functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function).
@@ -214,7 +232,7 @@ const f = async (p) => {
 
 ---
 
-# Call me maybe
+# Asynchronous code
 
 Asynchronous processes are not tied to the "caller"
 
@@ -224,7 +242,7 @@ const [commentsFromServer, setCommentsFromServer] = useState([]);
 useEffect(() => {
   server.getComments()
     .then(
-      ({comments}) => setCommentsFromServer(comment)
+      ({comments}) => setCommentsFromServer(comment),
       (failure) => handleFailureSomehow(failure)
     );
 }, []);
@@ -234,7 +252,7 @@ What is the problem here?
 
 ---
 
-# Call me maybe
+# Asynchronous code
 
 Asynchronous processes are not tied to the "caller"
 
@@ -245,7 +263,7 @@ useEffect(() => {
   server.getComments()
     .then(
       // Component can be unmounted by now!
-      ({comments}) => setCommentsFromServer(comment) 
+      ({comments}) => setCommentsFromServer(comment) ,
       (failure) => handleFailureSomehow(failure)
     );
 }, []);
@@ -268,9 +286,11 @@ useEffect(() => {
   * `done`
   * `return promise` 
   * `.resolves`/`.rejects`
+  * `mockReturnResolvedValue` or `mockReturnRejectedValue` - for testing different promises
   * `async`/`await`
 * Avoid long timers by passing fake server APIs, configuring delays with parameters
 * `screen.findByXXX` returns a Promise in _@testing-library_
+* `waitComponentToBeRemoved`
 
 ---
 
@@ -327,12 +347,6 @@ Modern browsers support the [Fetch API](https://developer.mozilla.org/en-US/docs
 
 ---
 
-# It’s functions all the way down
-
-.full-image[![Dog sniff chain](assets/dog-sniff-chain.jpg)]
-
----
-
 # Cross cutting concerns
 
 * Middleware can be used without incorporating Redux into an application
@@ -377,12 +391,18 @@ It seems that it takes three arguments, but it actually is:
 
 # Homework
 
-* [Requirements](https://github.com/urmastalimaa/interactive-frontend-development/blob/master/homework/mathemagician/exercise5.md)
-* **Deadline 18/04/2021 23:59**
-* Submit zipped file to [https://courses.cs.ut.ee/2021/react/Main/Submit](https://courses.cs.ut.ee/2021/react/Main/Submit)
+* [Requirements](https://github.com/urmastalimaa/interactive-frontend-development/blob/master/homework/weather/exercise5.md)
+* **Deadline 17/04/2022 23:59**
+* Submit zipped file to [https://courses.cs.ut.ee/2021/react/Main/Submit](https://courses.cs.ut.ee/2022/react/Main/Submit)
 * Make sure to handle **all states of asynchronous requests**: in-flight, failed and succeeded
 * Don’t forget **tests**, they will form a part of the grade
 * **Only submit what is yours**
+
+---
+<video width="100%" height="50%" controls>
+  <source src="assets/lecture-5/hw-5.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video> 
 </textarea>
     <script src="remark.js"></script>
     
