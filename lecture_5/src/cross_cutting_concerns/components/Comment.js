@@ -2,11 +2,11 @@ import PropTypes from "prop-types";
 
 const Comment = (props) => {
   return (
-    <div className="comment">
-      <h3 className="comment-author">{props.author} said:</h3>
-      {props.children}
-      <div>
-        <button onClick={props.onDelete}>DELETE</button>
+    <div className="comment" role="listitem">
+      <p className="comment-author">{props.author} said:</p>
+      <p>{props.children}</p>
+      <div className="comment__action">
+        <button className="red small" onClick={props.onDelete}>Delete</button>
       </div>
     </div>
   );

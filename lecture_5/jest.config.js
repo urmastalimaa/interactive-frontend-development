@@ -9,6 +9,9 @@ module.exports = {
 
   // Automatically clear mock calls, instances and results before every test
   clearMocks: true,
+  "moduleNameMapper": {
+    "\\.(css|less|scss|sass)$": "identity-obj-proxy"
+  },
 
   // Indicates whether the coverage information should be collected while executing the test
   collectCoverage: true,
@@ -18,4 +21,5 @@ module.exports = {
 
   // The test environment that will be used for testing
   testEnvironment: "jsdom",
+  setupFilesAfterEnv: ['<rootDir>/jest-setup.js']
 };

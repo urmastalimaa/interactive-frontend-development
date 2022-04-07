@@ -26,7 +26,7 @@ const parse = async (fetchPromise) => {
   }
 };
 
-const postComment = ({ author, text }) => {
+export const postComment = ({ author, text }) => {
   return parse(
     fetch(SERVER_ADDRESS + "/comments", {
       method: "POST",
@@ -38,7 +38,7 @@ const postComment = ({ author, text }) => {
   );
 };
 
-const deleteComment = ({ id }) => {
+export const deleteComment = ({ id }) => {
   return parse(
     fetch(SERVER_ADDRESS + `/comments/${id}`, {
       method: "DELETE",
@@ -46,7 +46,7 @@ const deleteComment = ({ id }) => {
   );
 };
 
-const getComments = () => parse(fetch(SERVER_ADDRESS + "/comments"));
+export const getComments = () => parse(fetch(SERVER_ADDRESS + "/comments"));
 
 /*
  * @return {Object} Server API - {postComment, deleteComment, getComments}
