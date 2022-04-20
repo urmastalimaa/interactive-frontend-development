@@ -1,14 +1,14 @@
 name: bidirectional
-class: middle, center
+class: cols, middle, main
 
+.fifty.main-left[
 # Interactive Front-end Development
 
-## Urmas Talimaa
-## _Glia Inc_
+by Artem Halas and Stanislav Deviatykh
+]
+.fifty.main-right[.main-circle[].secondary-circle[]]
 
 ???
-
-<!-- Dummy notes to check presenter display  -->
 
 Presenter display slide notes
 
@@ -25,23 +25,22 @@ Pre-lecture checklist
 
 # Evaluating libraries/frameworks
 
-* What are the basic abstractions? 
+* What are the basic abstractions?
 * How well do they **compose**?
 
 ---
- 
-# React & Redux (reducers)
+
+# React & Reducers
 
 * Stateless React components
-  * compose trivially through containment 
+  * compose trivially through containment
   * **no state**, no _gotchas_, no complexity
 * Reducers
   * **Pure functions** compose whichever way you want
-  * Most notably, through name-spacing
- 
+
 ---
 
-# React & Redux (reducers)
+# React & Reducers
 
 * New abstractions or small helper functions are easy to use because the core
   abstractions are pure functions
@@ -60,15 +59,13 @@ Pre-lecture checklist
 
 Can’t I just hack things together?
 
-.right-image[![Prepare yourself](assets/prepare-functional.jpg)]
-
 ---
 
 # Why all this functional programming nonsense?
 
 * It **is not difficult** to hack together a prototype
 * It **is difficult** to build maintainable software
-  
+
 ---
 
 # Communication with remote servers
@@ -95,6 +92,15 @@ Can’t I just hack things together?
 * Client receives response from Server containing the pushed information
 * Client immediately sends a new request to Server
 * Rinse and repeat, connection kept open until user on page
+
+---
+
+# Long polling
+
+<figure>
+  <img src="./assets/lecture-6/long-polling.png" alt="Long polling" style="width:100%">
+  <figcaption>https://javascript.info/long-polling</figcaption>
+</figure>
 
 ---
 
@@ -138,19 +144,11 @@ Can’t I just hack things together?
 
 # Websockets
 
-.left-half[
+* Websockets (and web requests) are an epitome of mutable state.
 
-Websockets (and web requests) are an epitome of mutable state.
+* You never know **what**, **if** and **when** is coming from them.
 
-
-You never know **what**, **if** and **when** is coming from them.
-
-
-Put them under tight supervision, **do not** leak them all over our beautiful application code
-
-]
-
-.right-half[![Say mutable state one more time](assets/mutable-state-one-more.jpg)]
+* Put them under tight supervision, **do not** leak them all over our beautiful application code
 
 ---
 
@@ -182,11 +180,11 @@ But generally, it is simplest to
 
 ---
 
-# My advisor on distributed systems
+# Distributed systems
 
 This is not a course on distributed systems, but...
 
-.full-image[![My advisor on distributed systems](assets/Alli-advisor-distributed.jpg)]
+.full-image[![servers](assets/lecture-6/servers.jpeg)]
 
 ---
 
@@ -238,22 +236,6 @@ understand message **delivery and consistency guarantees**
 ???
 
 In practice connections are arbitrarily closed all the time
-
----
-
-# Distributed systems discussion
-
-Let’s say we add a new feature to the homework application where
-
-All players
-
-- connect to a WebSocket server and
-- one player can start 2 games concurrenctly
-- only the player who started a game can close it
-- any player can play along any game
-- maximally 10 open games are allowed altogether
-
-Detect potential problems in this distributed system
 
 ---
 
@@ -332,17 +314,17 @@ If anything fails, the maintained object is inconsistent **until user reconnects
 
 # Homework
 
-[Requirements](https://github.com/urmastalimaa/interactive-frontend-development/blob/master/homework/mathemagician/exercise6.md)
+[Requirements](https://github.com/urmastalimaa/interactive-frontend-development/blob/master/homework/weather/exercise6.md)
 
-* Deadline 25/04/2021 23:59
-* Submit zipped file to https://courses.cs.ut.ee/2021/react/Main/Submit
+* Deadline 01/05/2022 23:59
+* Submit zipped file to https://courses.cs.ut.ee/2022/react/Main/Submit
 * Tests will give significant points
 * **Only submit what is yours**
 
 ---
 
 <video width="100%" height="50%" controls>
-  <source src="assets/homework-mathemagician-6-result.m4v" type="video/mp4">
+  <source src="assets/lecture-6/hw-6.mov" type="video/mp4">
   Your browser does not support the video tag.
 </video> 
 
