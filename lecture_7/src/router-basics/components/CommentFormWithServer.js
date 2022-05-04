@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import CommentForm from "./CommentForm";
 import { ServerContext } from "../ServerContext";
 import { commentSubmitted } from "../Comments";
@@ -16,7 +16,7 @@ const CommentFormWithServer = ({ dispatch }) => {
    */
   const server = useContext(ServerContext);
 
-  const history = useHistory();
+  const navigate = useNavigate();
 
   /*
    * In contrast to `CommentListWithServer`, this component captures the
@@ -54,7 +54,7 @@ const CommentFormWithServer = ({ dispatch }) => {
       .then(({ id }) => {
         setRequestState({ inFlight: false, error: null });
         dispatch(commentSubmitted({ id, author, text }));
-        history.push("/comments");
+        navigate("/comments");
       })
       .catch((error) => {
         if (!error.isCanceled) {
@@ -68,7 +68,7 @@ const CommentFormWithServer = ({ dispatch }) => {
     return <h3>Posting comment...</h3>;
   } else if (requestState.error) {
     return (
-      <div>
+      <div className="notification warning">
         <p>Failed to post comment</p>
         <p>{requestState.error}</p>
         <CommentForm onSubmit={onSubmit} />

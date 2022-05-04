@@ -75,7 +75,7 @@ const CommentListWithServer = ({ requestState, dispatch }) => {
     return <h3>Fetching comments...</h3>;
   } else if (requestState.error) {
     return (
-      <div>
+      <div className="notification warning">
         <h3>Failed to fetch comments</h3>
         <p>{requestState.error}</p>
         {requestButton}
