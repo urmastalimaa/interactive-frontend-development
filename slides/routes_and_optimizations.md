@@ -1,14 +1,16 @@
 name: routes_and_optimizations
-class: middle, center
+name: intro
 
+class: cols, middle, main
+
+.fifty.main-left[
 # Interactive Front-end Development
 
-## Urmas Talimaa
-## _Glia Inc_
+by Artem Halas and Stanislav Deviatykh
+]
+.fifty.main-right[.main-circle[].secondary-circle[]]
 
 ???
-
-<!-- Dummy notes to check presenter display  -->
 
 Presenter display slide notes
 
@@ -22,7 +24,6 @@ Pre-lecture checklist
 * Terminal(s) open with code and window to run scripts
 
 ---
-
 
 # Front end bugs
 
@@ -48,12 +49,6 @@ not reproducible.
 
 A lot of time wasted trying to reproduce the issue, no idea what and how to
 fix. Developers are unhappy Product managers are unhappy Customers are unhappy
-
----
-
-# Front end bugs
-
-![Älli bummed out after wading through sea of bugs](assets/Alli-bummed-out.jpg)
 
 ---
 
@@ -267,3 +262,11 @@ React hooks provide very simple caches
 * Deadline Sunday 16/05/2021 23:59
 * Submit zipped file to https://courses.cs.ut.ee/2021/react/Main/Submit
 * **Only submit what is yours**
+
+---
+class: middle, center
+
+<video width="100%" height="50%" controls>
+  <source src="assets/lecture-7/hw-7.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video> 

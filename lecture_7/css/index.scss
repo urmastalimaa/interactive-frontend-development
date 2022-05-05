@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+@import "elements";
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  font-family: 'Lato', sans-serif;
+  box-sizing: border-box;
+}
+
+.app {
+  width: 500px;
+  margin: 0 auto;
+}
+
+.comment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 16px;
+
+  h2 {
+    margin-bottom: 0;
+  }
+}
+
+.input__container {
+  width: 100%;
+
+  label {
+    display: inline-block;
+    margin-bottom: 8px;
+  }
+
+  input {
+    width: 100%;
+  }
+}
+
+.commentList {
+  margin: 16px 0;
+}
+
+.comment {
+  p {
+    margin: 0;
+    &.comment-author {
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+  }
+  +.comment {
+    margin-top: 16px;
+  }
+  &__action {
+    margin-top: 8px;
+  }
+}
+
+.filter {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
