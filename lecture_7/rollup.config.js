@@ -4,9 +4,8 @@ import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
 import replace from "@rollup/plugin-replace";
 import { babel } from "@rollup/plugin-babel";
-import postcss from "rollup-plugin-postcss";
+import scss from "rollup-plugin-scss";
 import serve from "rollup-plugin-serve";
-import postCssImport from "postcss-import";
 import livereload from "rollup-plugin-livereload";
 
 const outputFolder = "public";
@@ -31,7 +30,7 @@ export default {
       preventAssignment: true,
     }),
     babel({ babelHelpers: "bundled" }),
-    postcss({ plugins: [postCssImport] }),
+    scss({sourceMap: true}),
   ].concat(
     watching
       ? [

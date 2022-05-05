@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import PropTypes from "prop-types";
-import { useParams, useHistory, Route } from "react-router-dom";
+import { useParams, useNavigate, Route } from "react-router-dom";
 import { commentDeleted } from "../Comments";
 import Comment from "./Comment";
 import { ServerContext } from "../ServerContext";
@@ -12,7 +12,7 @@ import { ServerContext } from "../ServerContext";
  */
 export const CommentOrNotFound = ({ findCommentById, dispatch }) => {
   console.count("CommentOrNotFound");
-  const history = useHistory();
+  const navigate = useNavigate();
   const commentId = useParams().commentId;
   const comment = findCommentById(commentId);
   const server = useContext(ServerContext);
@@ -27,14 +27,14 @@ export const CommentOrNotFound = ({ findCommentById, dispatch }) => {
          * Navigate to /comments (without triggering a page refresh) as the
          * individual comment can no longer be shown - it was deleted.
          */
-        history.push("/comments");
+        navigate("/comments");
       })
       .catch(() => {
         /*
          * Having identical behaviour on failure and success is generally
          * **not** a good idea.
          */
-        history.push("/comments");
+        navigate("/comments");
       });
   };
 
@@ -45,7 +45,7 @@ export const CommentOrNotFound = ({ findCommentById, dispatch }) => {
       </Comment>
     );
   } else {
-    return <div>Comment #{commentId} not found</div>;
+    return <div className="notification warning">Comment #{commentId} not found</div>;
   }
 };
 
@@ -53,11 +53,3 @@ CommentOrNotFound.propTypes = {
   findCommentById: PropTypes.func.isRequired,
   dispatch: PropTypes.func.isRequired,
 };
-
-export const RoutedComment = ({ findCommentById, dispatch }) => (
-  <Route path="/comments/:commentId">
-    <CommentOrNotFound findCommentById={findCommentById} dispatch={dispatch} />
-  </Route>
-);
-
-RoutedComment.propTypes = CommentOrNotFound.propTypes;

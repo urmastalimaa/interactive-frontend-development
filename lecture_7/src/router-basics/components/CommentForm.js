@@ -17,24 +17,28 @@ const CommentForm = (props) => {
   return (
     <div className="comment-form" title="Comment form">
       <h3>Comment form</h3>
-      <label htmlFor="author-input">Author</label>
-      <input
-        id="author-input"
-        name="author"
-        type="text"
-        placeholder="Your name"
-        value={author}
-        onChange={onAuthorChange}
-      />
-      <label htmlFor="text-input">Text</label>
-      <input
-        id="text-input"
-        name="text"
-        type="text"
-        placeholder="Say something..."
-        value={text}
-        onChange={onTextChange}
-      />
+      <div className="input__container">
+        <label htmlFor="author-input">Author</label>
+        <input
+          id="author-input"
+          name="author"
+          type="text"
+          placeholder="Your name"
+          value={author}
+          onChange={onAuthorChange}
+        />
+      </div>
+      <div className="input__container">
+        <label htmlFor="text-input">Text</label>
+        <input
+          id="text-input"
+          name="text"
+          type="text"
+          placeholder="Say something..."
+          value={text}
+          onChange={onTextChange}
+        />
+      </div>
       <button type="submit" onClick={submit}>
         Submit comment
       </button>

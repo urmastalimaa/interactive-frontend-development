@@ -1,40 +1,41 @@
 import React, { useReducer } from "react";
 import PropTypes from "prop-types";
 import AppHeader from "../components/AppHeader";
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import {
   reducer,
   initializer,
   filter,
   filteredComments,
   findCommentById,
-  filterSet,
+  filterSet
 } from "../Comments";
 import CommentFormWithServer from "./CommentFormWithServer";
 import Filter from "./Filter";
 import CommentListWithServer from "./CommentListWithServer";
 import { ServerContext } from "../ServerContext";
 import useServerBasedOnParams from "../hooks/UseServerBasedOnParams";
-import { RoutedComment } from "./CommentOrNotFound";
+import { CommentOrNotFound } from "./CommentOrNotFound";
+import "../../../css/index.scss";
 
 const CommentListWithFilter = ({ state, dispatch }) => {
   const filterValue = filter(state);
   const commentsRequestState = filteredComments(state);
   const onFilterChange = (filterValue) => dispatch(filterSet(filterValue));
   return (
-    <Route path="/comments">
+    <>
       <Filter value={filterValue} onChange={onFilterChange} />
       <CommentListWithServer
         dispatch={dispatch}
         requestState={commentsRequestState}
       />
-    </Route>
+    </>
   );
 };
 
 CommentListWithFilter.propTypes = {
   state: PropTypes.object.isRequired,
-  dispatch: PropTypes.func.isRequired,
+  dispatch: PropTypes.func.isRequired
 };
 
 const StateApp = () => {
@@ -84,14 +85,16 @@ const StateApp = () => {
    * `Route`.
    */
   return (
-    <div>
+    <div className="app">
       <AppHeader />
-      <Route
-        path="/addComment"
-        render={() => <CommentFormWithServer dispatch={dispatch} />}
-      />
-      <CommentListWithFilter state={state} dispatch={dispatch} />
-      <RoutedComment findCommentById={findComment} dispatch={dispatch} />
+      <Routes>
+        <Route
+          path="/addComment" element={<CommentFormWithServer dispatch={dispatch} />}
+        />
+        <Route path="/comments" element={<CommentListWithFilter state={state} dispatch={dispatch} />} />
+        <Route path="/comments/:commentId"
+               element={<CommentOrNotFound findCommentById={findComment} dispatch={dispatch} />} />
+      </Routes>
     </div>
   );
 };
