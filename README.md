@@ -32,7 +32,6 @@ example code.
 * Lecture 8 - Storybook, and finally, Redux
   * [Content](./lecture_8)
   * [Slides](https://urmastalimaa.github.io/interactive-frontend-development/slides/react_visual_testing.html)
-  * [Outro slides](https://urmastalimaa.github.io/interactive-frontend-development/slides/outro.html)
 
 ## Concepts and techniques
 The course will concentrate on declarative programming and extensive testing.
