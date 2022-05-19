@@ -17,11 +17,14 @@ import { ServerContext } from "../ServerContext";
 import useServerBasedOnParams from "../hooks/UseServerBasedOnParams";
 import { CommentOrNotFound } from "./CommentOrNotFound";
 import "../../../css/index.scss";
+import { useCallback } from "react/cjs/react.production.min";
 
 const CommentListWithFilter = ({ state, dispatch }) => {
   const filterValue = filter(state);
   const commentsRequestState = filteredComments(state);
+
   const onFilterChange = (filterValue) => dispatch(filterSet(filterValue));
+
   return (
     <>
       <Filter value={filterValue} onChange={onFilterChange} />

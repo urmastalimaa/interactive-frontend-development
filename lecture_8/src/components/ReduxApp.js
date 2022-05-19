@@ -4,14 +4,15 @@ import { BrowserRouter, Route } from "react-router-dom";
 import {
   reducer,
   initializer,
-  findCommentById,
+  findCommentById
 } from "../Comments";
 import CommentFormWithServer from "./CommentFormWithServer";
 import { ServerContext } from "../ServerContext";
 import useServerBasedOnParams from "../hooks/UseServerBasedOnParams";
 import { RoutedComment } from "./CommentOrNotFound";
 import { CommentListWithFilter } from "./App";
-import {createStore} from "redux";
+import { configureStore } from "@reduxjs/toolkit";
+import { Provider } from "react-redux";
 
 /*
  * This "App" integrates with the Redux state-management library instead of the
@@ -33,21 +34,17 @@ export const StateApp = () => {
    * Create a store passing a reducer and initial state,
    * very similar to `useReducer` hook.
    *
-   * A "store enhancer" is provided which hooks the store to the Redux
-   * development tools plugin if provided.
    */
   const store = useMemo(() =>
-    createStore(
-      reducer,
-      initializer(),
-      /* eslint-disable no-underscore-dangle */
-      window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-      /* eslint-enable */
+    configureStore({
+        preloadedState: initializer(),
+        reducer,
+        devTools: true
+      }
     ), []);
 
   /*
-   * Dispatch works the same as with `useReducer`, just take it from the store
-   * interface instead of the hook return value.
+   * Dispatch works the same as with `useReducer`, just take it from the store hook
    *
    * State is kept up-to-date using `store.subscribe` + `store.getState`
    * functions.
@@ -65,15 +62,17 @@ export const StateApp = () => {
   const findComment = (id) => findCommentById(state, id);
 
   return (
-    <div>
-      <AppHeader />
-      <Route
-        path="/addComment"
-        render={() => <CommentFormWithServer dispatch={dispatch} />}
-      />
-      <CommentListWithFilter state={state} dispatch={dispatch} />
-      <RoutedComment findCommentById={findComment} dispatch={dispatch} />
-    </div>
+    <Provider store={store}>
+      <div>
+        <AppHeader />
+        <Route
+          path="/addComment"
+          render={() => <CommentFormWithServer dispatch={dispatch} />}
+        />
+        <CommentListWithFilter state={state} dispatch={dispatch} />
+        <RoutedComment findCommentById={findComment} dispatch={dispatch} />
+      </div>
+    </Provider>
   );
 };
 
@@ -84,7 +83,7 @@ const App = () => {
   return (
     <BrowserRouter>
       <ServerContext.Provider value={server}>
-        <StateApp/>
+        <StateApp />
       </ServerContext.Provider>
     </BrowserRouter>
   );
